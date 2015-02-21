@@ -1,22 +1,60 @@
 
 <html>
+<head>
+    <script type="text/javascript" src="scripts/dropzone.js"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.4.min.js"></script>
+    <!--<script type="text/javascript" src="https://code.jquery.com/jquery-git2.js"/>-->
 
+
+
+    <meta charset="utf-8">
+
+    <title>My Parse App</title>
+    <meta name="description" content="Upload new content">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/dropzone.css">
+
+
+
+</head>
 <body>
+
+<div class="container-fluid">
+
+    <div>
+        <form action="/upload" class="dropzone" drop-zone="" id="fileDropZone"></form>
+    </div>
+
+</div>
+<div id="test"/>
 
 <script type="text/javascript">
 Parse.initialize("BZ5XSiStXyIe6ukM9iuZwPg3rOeRz8l2yQDweSNv", "hWsKxXUSU6OxCnEL6jDEM1VAxwk1EWlClEWhwGqH");
-    
-    var TestObject = Parse.Object.extend("TestObject");
-    var testObject = new TestObject();
-      testObject.save({foo: "bar"}, {
-      success: function(object) {
-        $(".success").show();
-      },
-      error: function(model, error) {
-        $(".error").show();
-      }
-    });
+
+Dropzone.options.fileDropZone = {
+    paramName: "file", // The name that will be used to transfer the file
+    maxFilesize: 2, // MB
+    accept: function(file, done) {
+        done("Yeah");
+        console.log("in accept")
+        var fileUploadControl = document.querySelector("#fileDropZone");
+        console.log(fileUploadControl);
+//        var fileUploadControl = $("#fileDropZone")[0];
+        if (fileUploadControl.files.length > 0) {
+            var file = fileUploadControl.files[0];
+            var name = "photo.jpg";
+            var parseFile = new Parse.File(name, file);
+            console.log("parseFile: "+parseFile)
+        }
+
+    }
+};
+
+//var myDropzone = new Dropzone("#divForFileUploads", { url: "/file/post"});
   </script>
+
+
+
 
 
 </body>

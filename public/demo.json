@@ -1,0 +1,68 @@
+{
+  "name": "demo",
+  "type": "quiz",
+  "title": "How well do you know the world?",
+  "logoImg": "https://res.cloudinary.com/quiz/image/upload/v1424464774/logo_3_smnisd.jpg",
+  "createdBy": {
+    "firstName": "Alon",
+    "lastName": "Kiriati",
+    "imgSmall": "https://res.cloudinary.com/quiz/image/upload/v1424464775/mypic_andsm3.jpg",
+    "rating": 4.5,
+    "ratingImg": "https://res.cloudinary.com/quiz/image/upload/v1424464776/stars_qwjlgf.jpg"
+  },
+  "slides": [
+    {
+      "text": "The land of Samba and football",
+      "imgSmall": "https://res.cloudinary.com/quiz/image/upload/v1424464773/brasil_land_yovuyc.jpg",
+      "entities": [
+        {
+          "imgSmall": "https://res.cloudinary.com/quiz/image/upload/v1424464773/Canada_flag_prmxdn.jpg",
+          "title": "Canada",
+          "points": 0
+        },
+        {
+          "imgSmall": "https://res.cloudinary.com/quiz/image/upload/v1424464774/italy_flag_c9utiv.jpg",
+          "title": "Italy",
+          "points": 0
+        },
+        {
+          "imgSmall": "https://res.cloudinary.com/quiz/image/upload/v1424464772/brasil_flag_wsc42k.jpg",
+          "title": "Brazil",
+          "points": 1
+        },
+        {
+          "imgSmall": "https://res.cloudinary.com/quiz/image/upload/v1424464773/england_flag_ywfwkv.jpg",
+          "title": "England",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "text": "The land of Samba and football",
+      "imgSmall": "https://res.cloudinary.com/quiz/image/upload/v1424464773/brasil_land_yovuyc.jpg",
+      "entities": [
+        {
+          "imgSmall": "https://res.cloudinary.com/quiz/image/upload/v1424464773/england_flag_ywfwkv.jpg",
+          "title": "England",
+          "points": 0
+        },
+        {
+          "imgSmall": "https://res.cloudinary.com/quiz/image/upload/v1424464773/Canada_flag_prmxdn.jpg",
+          "title": "Canada",
+          "points": 0
+        },
+        {
+          "imgSmall": "https://res.cloudinary.com/quiz/image/upload/v1424464774/italy_flag_c9utiv.jpg",
+          "title": "Italy",
+          "points": 0
+        },
+        {
+          "imgSmall": "https://res.cloudinary.com/quiz/image/upload/v1424464772/brasil_flag_wsc42k.jpg",
+          "title": "Brazil",
+          "points": 1
+        }
+
+      ]
+    }
+  ]
+}
