@@ -71,6 +71,7 @@ Parse.initialize("BZ5XSiStXyIe6ukM9iuZwPg3rOeRz8l2yQDweSNv", "hWsKxXUSU6OxCnEL6j
     
     var TestObject = Parse.Object.extend("TestObject");
     var testObject = new TestObject();
+    testObject.set("atestColumn","test");
       testObject.save({foo: "bar"}, {
       success: function(object) {
         $(".success").show();
