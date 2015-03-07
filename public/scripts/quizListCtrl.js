@@ -8,7 +8,8 @@ app.controller("quizListCtrl", function ($scope) {
             // Do something with the returned Parse.Object values
             for (var i = 0; i < results.length; i++) {
                 var object = results[i];
-                $scope.objects.push({"objectId":object.id,"title":object.get("title")});
+                var pageJson = JSON.parse(object.get("page"));
+                $scope.objects.push({"objectId":object.id,"title":object.get("title"),"logoImg":pageJson.logoImg});
             }
             $scope.$apply();
         },

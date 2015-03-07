@@ -11,7 +11,7 @@
 
 <div ng-controller="quizUploaderCtrl">
 
-    <h2>My Note</h2>
+    <h2>Enter you quiz json here</h2>
 
     <p><textarea ng-model="message" cols="40" rows="10"></textarea></p>
 
@@ -28,7 +28,7 @@
     <p>You can share the following:</p>
 
     <div ng-repeat="object in objects track by $index">
-        <a ng-href="http://quiz22.parseapp.com/page/{{object.objectId}}">{{object.title}}</a>
+        <a ng-href="http://quiz22.parseapp.com/item/{{object.objectId}}?title={{object.title}}&logoImg={{object.logoImg}}">{{object.title}}</a>
     </div>
 
 </div>

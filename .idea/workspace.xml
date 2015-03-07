@@ -5,78 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="054dcea1-a01b-4fce-9ddc-f622f7e44bfc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/war/js/FileAPI.flash.swf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/dist/FileAPI.flash.swf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/dist/FileAPI.flash.swf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/nuget/NuGet.exe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/war/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/war/img/tea.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/war/img/tea.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/.classpath" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/.project" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/src/com/df/angularfileupload/CORSFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/war/js/FileAPI.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/war/js/FileAPI.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/dist/FileAPI.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/dist/FileAPI.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/src/com/df/angularfileupload/FileUpload.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/Gruntfile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/nuget/Package.nuspec" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/src/com/df/angularfileupload/S3Signature.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/C#/UploadController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/C#/UploadHandler.ashx.cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/C#/UploadHandler.ashx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/war/js/angular-file-upload-all.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/dist/angular-file-upload-all.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/dist/angular-file-upload-all.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/dist/angular-file-upload-all.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/dist/angular-file-upload-all.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/war/js/angular-file-upload-shim.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/dist/angular-file-upload-shim.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/dist/angular-file-upload-shim.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/dist/angular-file-upload-shim.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/dist/angular-file-upload-shim.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/war/js/angular-file-upload.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/dist/angular-file-upload.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/dist/angular-file-upload.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/dist/angular-file-upload.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/dist/angular-file-upload.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/angular-load.min.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/angular-load.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/war/WEB-INF/appengine-web.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/nuget/build.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/war/common.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/war/crossdomain.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/war/donate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fdf.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/war/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/src/META-INF/jdoconfig.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/src/log4j.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/war/WEB-INF/logging.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/myCSS.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/war/js/ng-file-upload-all.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/dist/ng-file-upload-all.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/dist/ng-file-upload-all.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/dist/ng-file-upload-all.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/dist/ng-file-upload-all.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/src/META-INF/persistence.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/quiz.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/quizApp.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/quizListCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/quizUploader.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/quizUploaderCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/war/js/upload.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-file-upload/demo/war/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/MyCloudCode.iml" afterPath="$PROJECT_DIR$/.idea/MyCloudCode.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/dropzone.js" afterPath="$PROJECT_DIR$/public/scripts/dropzone.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cloud/views/quiz.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud/main.js" afterPath="$PROJECT_DIR$/cloud/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/upload.html" afterPath="$PROJECT_DIR$/public/upload.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/quizListCtrl.js" afterPath="$PROJECT_DIR$/public/scripts/quizListCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/quizUploader.html" afterPath="$PROJECT_DIR$/public/quizUploader.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MyCloudCode.iws" />
@@ -101,52 +33,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="upload.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/upload.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="22.875" vertical-offset="609" max-vertical-offset="1365">
-              <caret line="4" column="22" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="quizUploader.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="quizUploader.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/quizUploader.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.82417583" vertical-offset="0" max-vertical-offset="750">
-              <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
+            <state vertical-scroll-proportion="-10.25" vertical-offset="204" max-vertical-offset="750">
+              <caret line="30" column="120" selection-start-line="30" selection-start-column="120" selection-end-line="30" selection-end-column="120" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="quizUploaderCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/scripts/quizUploaderCtrl.js">
+      <file leaf-file-name="quiz.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/quiz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-              <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="quizListCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/scripts/quizListCtrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-              <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LICENSE" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LICENSE">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="525">
+              <caret line="27" column="222" selection-start-line="27" selection-start-column="222" selection-end-line="27" selection-end-column="222" />
+              <folding>
+                <element signature="e#258#2255#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -161,11 +65,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="quizApp.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/scripts/quizApp.js">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cloud/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
-              <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+              <caret line="17" column="89" selection-start-line="17" selection-start-column="89" selection-end-line="17" selection-end-column="89" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hello.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cloud/views/hello.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="255">
+              <caret line="8" column="4" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="quiz.ejs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cloud/views/quiz.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.521978" vertical-offset="0" max-vertical-offset="615">
+              <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="quizUploaderCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/scripts/quizUploaderCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+              <caret line="11" column="33" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="quizListCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/scripts/quizListCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+              <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -174,28 +118,18 @@
       <file leaf-file-name="team.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/team.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="39.125" vertical-offset="939" max-vertical-offset="1485">
+            <state vertical-scroll-proportion="38.125" vertical-offset="915" max-vertical-offset="1485">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="demo.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/demo.json">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="1095">
-              <caret line="18" column="34" selection-start-line="0" selection-start-column="0" selection-end-line="67" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="angular-load.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/scripts/angular-load.min.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
-              <caret line="0" column="52" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="52" />
+            <state vertical-scroll-proportion="-15.625" vertical-offset="30" max-vertical-offset="1425">
+              <caret line="27" column="11" selection-start-line="27" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -210,8 +144,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="216" />
-    <option name="y" value="186" />
+    <option name="x" value="114" />
+    <option name="y" value="110" />
     <option name="width" value="1260" />
     <option name="height" value="693" />
   </component>
@@ -304,6 +238,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cloud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyCloudCode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyCloudCode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cloud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -408,7 +360,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="216" y="186" width="1260" height="693" extended-state="0" />
+    <frame x="114" y="110" width="1260" height="693" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -465,28 +417,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/demo.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/dropzone.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5805" max-vertical-offset="5895">
-          <caret line="387" column="39" selection-start-line="387" selection-start-column="39" selection-end-line="387" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="838" max-vertical-offset="1425">
-          <caret line="73" column="41" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/fdf.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="225">
@@ -679,13 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cloud/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Caches/WebStorm9/extLibs/http_github.com_borisyankov_DefinitelyTyped_raw_master_angular-file-upload_angular-file-upload.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
@@ -733,24 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/quiz.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="525">
-          <caret line="27" column="222" selection-start-line="27" selection-start-column="222" selection-end-line="27" selection-end-column="222" />
-          <folding>
-            <element signature="e#258#2255#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-34.375" vertical-offset="195" max-vertical-offset="1425">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="82" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/dist/angular-file-upload.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="320" max-vertical-offset="9015">
@@ -775,34 +680,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/upload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="22.875" vertical-offset="609" max-vertical-offset="1365">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/team.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="39.125" vertical-offset="939" max-vertical-offset="1485">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/angular-load.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
           <caret line="0" column="52" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/myCSS.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -831,26 +712,100 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cloud/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="31.625" vertical-offset="819" max-vertical-offset="1365">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/team.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="38.125" vertical-offset="915" max-vertical-offset="1485">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/myCSS.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/quiz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="525">
+          <caret line="27" column="222" selection-start-line="27" selection-start-column="222" selection-end-line="27" selection-end-column="222" />
+          <folding>
+            <element signature="e#258#2255#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cloud/views/hello.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="255">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/quizUploaderCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/quizListCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cloud/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="17" column="89" selection-start-line="17" selection-start-column="89" selection-end-line="17" selection-end-column="89" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/quizUploader.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82417583" vertical-offset="0" max-vertical-offset="750">
-          <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
+        <state vertical-scroll-proportion="-10.25" vertical-offset="204" max-vertical-offset="750">
+          <caret line="30" column="120" selection-start-line="30" selection-start-column="120" selection-end-line="30" selection-end-column="120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.625" vertical-offset="30" max-vertical-offset="1425">
+          <caret line="27" column="11" selection-start-line="27" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cloud/views/quiz.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.521978" vertical-offset="0" max-vertical-offset="615">
+          <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
           <folding />
         </state>
       </provider>
