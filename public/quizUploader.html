@@ -28,7 +28,7 @@
     <p>You can share the following:</p>
 
     <div ng-repeat="object in objects track by $index">
-        <a ng-href="http://quiz22.parseapp.com/item/{{object.objectId}}?title={{object.title}}&logoImg={{object.logoImg}}">{{object.title}}</a>
+        <a ng-href="http://quiz22.parseapp.com/item/{{object.objectId}}?title={{object.title}}&logoImg={{object.logoImg}}">{{object.title}}</a> <span>parse id: {{object.objectId}} </span>
     </div>
 
 </div>

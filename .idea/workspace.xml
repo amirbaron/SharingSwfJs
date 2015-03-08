@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="054dcea1-a01b-4fce-9ddc-f622f7e44bfc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cloud/views/quiz.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud/main.js" afterPath="$PROJECT_DIR$/cloud/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/quizListCtrl.js" afterPath="$PROJECT_DIR$/public/scripts/quizListCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud/views/quiz.ejs" afterPath="$PROJECT_DIR$/cloud/views/quiz.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/quizUploader.html" afterPath="$PROJECT_DIR$/public/quizUploader.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MyCloudCode.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/public/quizUploader.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-10.25" vertical-offset="204" max-vertical-offset="750">
-              <caret line="30" column="120" selection-start-line="30" selection-start-column="120" selection-end-line="30" selection-end-column="120" />
+              <caret line="30" column="187" selection-start-line="30" selection-start-column="187" selection-end-line="30" selection-end-column="187" />
               <folding />
             </state>
           </provider>
@@ -69,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/cloud/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
-              <caret line="17" column="89" selection-start-line="17" selection-start-column="89" selection-end-line="17" selection-end-column="89" />
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="18" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -88,8 +86,18 @@
       <file leaf-file-name="quiz.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cloud/views/quiz.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.521978" vertical-offset="0" max-vertical-offset="615">
-              <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.3846154" vertical-offset="0" max-vertical-offset="660">
+              <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cloud/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+              <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="18" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -99,7 +107,7 @@
         <entry file="file://$PROJECT_DIR$/public/scripts/quizUploaderCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-              <caret line="11" column="33" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="33" />
+              <caret line="9" column="50" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -110,16 +118,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
               <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="team.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/team.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="38.125" vertical-offset="915" max-vertical-offset="1485">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -144,8 +142,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="114" />
-    <option name="y" value="110" />
+    <option name="x" value="79" />
+    <option name="y" value="58" />
     <option name="width" value="1260" />
     <option name="height" value="693" />
   </component>
@@ -219,11 +217,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -360,7 +354,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="114" y="110" width="1260" height="693" extended-state="0" />
+    <frame x="79" y="58" width="1260" height="693" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -369,7 +363,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2015873" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39903846" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -712,14 +706,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cloud/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/upload.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="31.625" vertical-offset="819" max-vertical-offset="1365">
@@ -762,34 +748,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/quizUploaderCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/quizListCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
           <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cloud/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
-          <caret line="17" column="89" selection-start-line="17" selection-start-column="89" selection-end-line="17" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/quizUploader.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.25" vertical-offset="204" max-vertical-offset="750">
-          <caret line="30" column="120" selection-start-line="30" selection-start-column="120" selection-end-line="30" selection-end-column="120" />
           <folding />
         </state>
       </provider>
@@ -802,10 +764,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/quizUploaderCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="9" column="50" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/quizUploader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.25" vertical-offset="204" max-vertical-offset="750">
+          <caret line="30" column="187" selection-start-line="30" selection-start-column="187" selection-end-line="30" selection-end-column="187" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cloud/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cloud/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="18" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cloud/views/quiz.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.521978" vertical-offset="0" max-vertical-offset="615">
-          <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.3846154" vertical-offset="0" max-vertical-offset="660">
+          <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
           <folding />
         </state>
       </provider>
