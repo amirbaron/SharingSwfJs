@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="054dcea1-a01b-4fce-9ddc-f622f7e44bfc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud/app.js" afterPath="$PROJECT_DIR$/cloud/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud/views/quiz.ejs" afterPath="$PROJECT_DIR$/cloud/views/quiz.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/uploaderCtrl.js" afterPath="$PROJECT_DIR$/public/scripts/uploaderCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/templates/uploader.html" afterPath="$PROJECT_DIR$/public/templates/uploader.html" />
     </list>
     <ignored path="MyCloudCode.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,20 +48,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uploader.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="uploader.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/templates/uploader.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.7" vertical-offset="555" max-vertical-offset="1065">
-              <caret line="46" column="37" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.1734104" vertical-offset="0" max-vertical-offset="1065">
+              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="demo.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="demo.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/demo.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16129032" vertical-offset="0" max-vertical-offset="3180">
+            <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="3180">
               <caret line="4" column="125" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="125" />
               <folding />
             </state>
@@ -790,14 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/templates/uploader.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7" vertical-offset="555" max-vertical-offset="1065">
-          <caret line="46" column="37" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/uploaderCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.3076925" vertical-offset="282" max-vertical-offset="1485">
@@ -824,8 +814,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/demo.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16129032" vertical-offset="0" max-vertical-offset="3180">
+        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="3180">
           <caret line="4" column="125" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="125" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/templates/uploader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1734104" vertical-offset="0" max-vertical-offset="1065">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
           <folding />
         </state>
       </provider>
