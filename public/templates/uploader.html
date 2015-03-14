@@ -18,17 +18,24 @@
 <div>
     <p>You can share the following:</p>
     Search:<input ng-model="searchQuery" type="text"/>
-    <table>
+
+
+    <table class="table table-hover">
+        <thead>
         <tr>
             <th><a href="" ng-click="searchParam.sortField = 'title';searchParam.ascending = !searchParam.ascending">Title</a>
             </th>
             <th><a href="" ng-click="searchParam.sortField = 'objectId';searchParam.ascending =!searchParam.ascending">Item</a>
             </th>
             <th>Image</th>
+            <th><a href="" ng-click="searchParam.sortField = 'updatedAt';searchParam.ascending =!searchParam.ascending">Updated at</a>
+            </th>
             <th></th>
 
         </tr>
-        <tr ng-repeat="object in objects  |filter:searchQuery |orderBy:searchParam.sortField:searchParam.ascending track by object.objectId">
+        </thead>
+        <tbody>
+        <tr ng-repeat="object in getObjects()  |filter:searchQuery |orderBy:searchParam.sortField:searchParam.ascending track by object.objectId">
             <td>
                 <a ng-href="{{getItemUrl(object)}}">{{object.title}}</a>
             </td>
@@ -39,8 +46,12 @@
                 <img ng-src="{{object.previewImg}}" width="100"/>
             </td>
             <td>
-                <a href="" ng-click="removeItem(name)">remove</a></li>
+                {{object.updatedAt|date:'HH:mm:ss yyyy-dd-MM'}}
             </td>
+            <td>
+                <a href="" ng-click="removeItem(object)">remove</a></li>
+            </td>
+        </tbody>
     </table>
 
 
