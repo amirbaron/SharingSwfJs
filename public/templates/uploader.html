@@ -4,21 +4,27 @@
 
     <h2>Enter you quiz json here</h2>
 
+
+    <!--<input type="text" name="name" id="inputID" class="form-control" value="" title="" required="required" >-->
+
     <p><textarea ng-model="message" cols="40" rows="10"></textarea></p>
 
-    <p>
-        <button ng-click="save()">Save</button>
-        <button ng-click="clear()">Clear</button>
-    </p>
+
+    <div class="btn-group">
+        <button ng-click="save()" class="btn btn-default">Save</button>
+        <button ng-click="clear()" class="btn btn-default">Clear</button>
+    </div>
+
 
     <p>Number of characters: <span ng-bind="numberOfChars()"></span></p>
 
 </div>
 
 <div>
-    <p>You can share the following:</p>
-    Search:<input ng-model="searchQuery" type="text"/>
-
+    <div>
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> <input ng-model="searchQuery" type="text"
+                                                                                   class="form-control"/>
+    </div>
 
     <table class="table table-hover">
         <thead>
@@ -28,7 +34,8 @@
             <th><a href="" ng-click="searchParam.sortField = 'objectId';searchParam.ascending =!searchParam.ascending">Item</a>
             </th>
             <th>Image</th>
-            <th><a href="" ng-click="searchParam.sortField = 'updatedAt';searchParam.ascending =!searchParam.ascending">Updated at</a>
+            <th><a href="" ng-click="searchParam.sortField = 'updatedAt';searchParam.ascending =!searchParam.ascending">Updated
+                at</a>
             </th>
             <th></th>
 

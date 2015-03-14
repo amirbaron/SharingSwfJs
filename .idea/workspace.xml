@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="054dcea1-a01b-4fce-9ddc-f622f7e44bfc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/quizUploader.html" afterPath="$PROJECT_DIR$/public/quizUploader.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/templates/uploader.html" afterPath="$PROJECT_DIR$/public/templates/uploader.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/uploaderCtrl.js" afterPath="$PROJECT_DIR$/public/scripts/uploaderCtrl.js" />
     </list>
     <ignored path="MyCloudCode.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,20 +48,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="uploader.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="uploader.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/templates/uploader.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.18" vertical-offset="614" max-vertical-offset="960">
-              <caret line="37" column="43" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.4768786" vertical-offset="165" max-vertical-offset="1065">
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="demo.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="demo.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/demo.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8064516" vertical-offset="1365" max-vertical-offset="3180">
+            <state vertical-scroll-proportion="-12.5" vertical-offset="1365" max-vertical-offset="3180">
               <caret line="111" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="206" selection-end-column="1" />
               <folding />
             </state>
@@ -83,7 +81,7 @@
       <file leaf-file-name="uploaderCtrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/scripts/uploaderCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-31.73077" vertical-offset="60" max-vertical-offset="1485">
+            <state vertical-scroll-proportion="-34.03846" vertical-offset="0" max-vertical-offset="1485">
               <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
               <folding />
             </state>
@@ -238,38 +236,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyCloudCode" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyCloudCode" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyCloudCode" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyCloudCode" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cloud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -387,14 +353,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="115" y="40" width="1294" height="800" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32907802" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23261206" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23261206" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39858156" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -431,14 +397,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/public/scripts/uploaderCtrl.js</url>
-          <line>1</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="10" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -754,6 +713,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-route.js">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/demo.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.5" vertical-offset="1365" max-vertical-offset="3180">
+          <caret line="111" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="206" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/quizApp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
@@ -762,9 +739,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-route.js">
-      <provider selected="true" editor-type-id="httpFileEditor">
-        <state />
+    <entry file="file://$PROJECT_DIR$/public/scripts/uploaderCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-34.03846" vertical-offset="0" max-vertical-offset="1485">
+          <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/quiz.html">
@@ -777,11 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js">
-      <provider selected="true" editor-type-id="httpFileEditor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/quizUploader.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="300">
@@ -790,26 +765,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/uploaderCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.73077" vertical-offset="60" max-vertical-offset="1485">
-          <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/templates/uploader.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.18" vertical-offset="614" max-vertical-offset="960">
-          <caret line="37" column="43" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/demo.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8064516" vertical-offset="1365" max-vertical-offset="3180">
-          <caret line="111" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="206" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.4768786" vertical-offset="165" max-vertical-offset="1065">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding />
         </state>
       </provider>
