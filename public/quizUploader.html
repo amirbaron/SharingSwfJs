@@ -4,42 +4,14 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
     <script src="scripts/angular-load.min.js"></script>
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.3.4.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-route.min.js"></script>
 
 </head>
-
-<body>
-
-<div ng-controller="quizUploaderCtrl">
-
-    <h2>Enter you quiz json here</h2>
-
-    <p><textarea ng-model="message" cols="40" rows="10"></textarea></p>
-
-    <p>
-        <button ng-click="save()">Save</button>
-        <button ng-click="clear()">Clear</button>
-    </p>
-
-    <p>Number of characters: <span ng-bind="numberOfChars()"></span></p>
-
-</div>
-
-<div ng-controller="quizListCtrl" >
-    <p>You can share the following:</p>
-
-    <div ng-repeat="object in objects track by $index">
-        <a ng-href="http://quiz22.parseapp.com/item/{{object.objectId}}?title={{object.title}}&logoImg={{object.logoImg}}">{{object.title}}</a> <span>parse id: {{object.objectId}} </span>
-    </div>
-
-</div>
-
 
 
 
 <script src="scripts/quizApp.js"></script>
-<script src="scripts/quizUploaderCtrl.js"></script>
-<script src="scripts/quizListCtrl.js"></script>
-
-
+<script src="scripts/uploaderCtrl.js"></script>
+<div ng-view></div>
 </body>
 </html>

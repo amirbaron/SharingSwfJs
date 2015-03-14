@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<div>
+
+    <h2>Enter you quiz json here</h2>
+
+    <p><textarea ng-model="message" cols="40" rows="10"></textarea></p>
+
+    <p>
+        <button ng-click="save()">Save</button>
+        <button ng-click="clear()">Clear</button>
+    </p>
+
+    <p>Number of characters: <span ng-bind="numberOfChars()"></span></p>
+
+</div>
+
+<div>
+    <p>You can share the following:</p>
+    Search:<input ng-model="searchQuery" type="text"/>
+    <table>
+        <tr>
+            <th><a href="" ng-click="searchParam.sortField = 'title';searchParam.ascending = !searchParam.ascending">Title</a>
+            </th>
+            <th><a href="" ng-click="searchParam.sortField = 'objectId';searchParam.ascending =!searchParam.ascending">Item</a>
+            </th>
+            <th>Image</th>
+            <th></th>
+
+        </tr>
+        <tr ng-repeat="object in objects  |filter:searchQuery |orderBy:searchParam.sortField:searchParam.ascending track by object.objectId">
+            <td>
+                <a ng-href="{{getItemUrl(object)}}">{{object.title}}</a>
+            </td>
+            <td>
+                {{object.objectId}}
+            </td>
+            <td>
+                <img ng-src="{{object.previewImg}}" width="100"/>
+            </td>
+            <td>
+                <a href="" ng-click="removeItem(name)">remove</a></li>
+            </td>
+    </table>
+
+
+</div>
