@@ -1,65 +1,78 @@
 <!DOCTYPE html>
 
-<div>
+<div class="container-fluid">
 
-    <h2>Enter your quiz json here</h2>
-
-
-    <!--<input type="text" name="name" id="inputID" class="form-control" value="" title="" required="required" >-->
-
-    <p><textarea ng-model="message" cols="40" rows="10"></textarea></p>
-
-
-    <div class="btn-group">
-        <button ng-click="save()" class="btn btn-default">Save</button>
-        <button ng-click="clear()" class="btn btn-default">Clear</button>
+    <form role="form">
+        <div class="form-group">
+            <h2 for="comment">Enter your quiz json here:</h2>
+            <textarea ng-model="message" class="form-control" rows="10" cols="40" id="comment"></textarea>
+        </div>
+    </form>
+    <div class="grid">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="btn-group">
+                    <button ng-click="save()" class="btn btn-default">Save</button>
+                    <button ng-click="clear()" class="btn btn-default">Clear</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="input-group">
+                    <input type="text" ng-model="searchQuery" class="form-control" placeholder="Search for...">
+                </div>
+                <!-- /input-group -->
+            </div>
+            <!-- /.col-lg-6 -->
+        </div>
     </div>
+    <div class="container-fluid">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-condensed">
+                <thead>
+                <tr>
+                    <th><a href=""
+                           ng-click="searchParam.sortField = 'title';searchParam.ascending = !searchParam.ascending">Title</a>
+                    </th>
+                    <th><a href=""
+                           ng-click="searchParam.sortField = 'objectId';searchParam.ascending =!searchParam.ascending">Item</a>
+                    </th>
+                    <th>Image</th>
+                    <th><a href=""
+                           ng-click="searchParam.sortField = 'updatedAt';searchParam.ascending =!searchParam.ascending">Updated
+                        at</a>
+                    </th>
+                    <th>Link</th>
+                    <th></th>
 
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="animate" ng-repeat="object in getObjects()  |filter:searchQuery |orderBy:searchParam.sortField:searchParam.ascending track by $index">
+                    <td>
+                        <a ng-href="{{getItemUrl(object)}}">{{object.title}}</a>
+                    </td>
+                    <td>
+                        {{object.objectId}}
+                    </td>
+                    <td>
+                        <img ng-src="{{object.previewImg}}" width="100"/>
+                    </td>
+                    <td>
+                        {{object.updatedAt|date:'HH:mm:ss yyyy-dd-MM'}}
+                    </td>
+                    <td>
+                        <a href="" clip-copy="getItemUrl(object)" clip-click-fallback="setItemCopied($index)"
+                           clip-click="setItemCopied($index)">Copy link</a>
+                        <span class="glyphicon glyphicon-ok" ng-show="getItemCopied($index)"/>
 
-    <p>Number of characters: <span ng-bind="numberOfChars()"></span></p>
-
-</div>
-
-<div>
-    <div>
-        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> <input ng-model="searchQuery" type="text"
-                                                                                   class="form-control"/>
+                    </td>
+                    <td>
+                        <a href="" ng-click="removeItem(object)">remove</a></li>
+                    </td>
+                </tbody>
+            </table>
+        </div>
     </div>
-
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            <th><a href="" ng-click="searchParam.sortField = 'title';searchParam.ascending = !searchParam.ascending">Title</a>
-            </th>
-            <th><a href="" ng-click="searchParam.sortField = 'objectId';searchParam.ascending =!searchParam.ascending">Item</a>
-            </th>
-            <th>Image</th>
-            <th><a href="" ng-click="searchParam.sortField = 'updatedAt';searchParam.ascending =!searchParam.ascending">Updated
-                at</a>
-            </th>
-            <th></th>
-
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="object in getObjects()  |filter:searchQuery |orderBy:searchParam.sortField:searchParam.ascending track by object.objectId">
-            <td>
-                <a ng-href="{{getItemUrl(object)}}">{{object.title}}</a>
-            </td>
-            <td>
-                {{object.objectId}}
-            </td>
-            <td>
-                <img ng-src="{{object.previewImg}}" width="100"/>
-            </td>
-            <td>
-                {{object.updatedAt|date:'HH:mm:ss yyyy-dd-MM'}}
-            </td>
-            <td>
-                <a href="" ng-click="removeItem(object)">remove</a></li>
-            </td>
-        </tbody>
-    </table>
-
-
 </div>

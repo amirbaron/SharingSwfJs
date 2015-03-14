@@ -1,4 +1,4 @@
-var app = angular.module("quizApp", ['angularLoad','ngRoute']);
+var app = angular.module("quizApp", ['angularLoad','ngClipboard','ngRoute']);
 app.config(function($routeProvider) {
     $routeProvider.
         when('/', {
@@ -14,6 +14,9 @@ app.config(function($routeProvider) {
         });
 });
 
+app.config(['ngClipProvider', function(ngClipProvider) {
+    ngClipProvider.setPath("components/zeroclipboard/dist/ZeroClipboard.swf");
+}]);
 
 (function() {
     Parse.initialize("BZ5XSiStXyIe6ukM9iuZwPg3rOeRz8l2yQDweSNv", "hWsKxXUSU6OxCnEL6jDEM1VAxwk1EWlClEWhwGqH");

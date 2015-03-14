@@ -1,4 +1,4 @@
-app.controller("uploaderCtrl", function ($scope, $location) {
+app.controller("uploaderCtrl", function ($scope, $location,$timeout) {
     $scope.message = "";
     $scope.numberOfChars = function () {
         return $scope.message.length;
@@ -35,6 +35,7 @@ app.controller("uploaderCtrl", function ($scope, $location) {
     };
 
     var myObjects = [];
+    var copiedLinks = [];
     $scope.getObjects = function () {
 
         var AppPage = Parse.Object.extend("AppPage");
@@ -86,9 +87,23 @@ app.controller("uploaderCtrl", function ($scope, $location) {
                 console.log("Failed to retrieve " + guiItem.objectId)
             }
         });
+    };
+
+    $scope.setItemNotCopied=function(x){
+        console.log("set to not copy " + x);
+        copiedLinks[x]=false;
+    };
+
+    $scope.setItemCopied=function($index){
+        console.log("set to copy " + $index);
+        copiedLinks[($index)]=true;
+        $timeout(function(){ $scope.setItemNotCopied($index)},1000, true, $index);
+    };
+
+
+    $scope.getItemCopied=function($index){
+       return copiedLinks[($index)];
     }
-
-
 
 
 });
