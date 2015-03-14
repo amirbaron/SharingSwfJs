@@ -15,7 +15,7 @@ app.get('/hello', function(req, res) {
 });
 
 app.get('/item/:id', function(req, res) {
-  res.render('quiz', {id:req.params.id,title:req.query.title,logoImg:req.query.logoImg});
+  res.render('quiz', {id:req.params.id,title:req.query.title,previewImg:req.query.previewImg});
 });
 // // Example reading from the request query string of an HTTP get request.
 // app.get('/test', function(req, res) {

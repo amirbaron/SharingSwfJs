@@ -26,7 +26,7 @@ app.controller("uploaderCtrl", function ($scope, $location) {
         });
     };
     $scope.getItemUrl = function (item) {
-        return encodeURI($location.protocol() + "://" + $location.host() + "/item/" + item.objectId + "?title=" + item.title + "&logoImg=" + item.logoImg);
+        return encodeURI($location.protocol() + "://" + $location.host() + "/item/" + item.objectId + "?title=" + item.title + "&previewImg=" + item.previewImg);
     };
 
     $scope.searchParam = {
