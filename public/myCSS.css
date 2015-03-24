@@ -7,6 +7,7 @@
     margin: 10px;
     width: 70px;
 }
+
 .drop-box {
     background: #F8F8F8;
     border: 5px dashed #DDD;
@@ -16,6 +17,11 @@
     padding-top: 25px;
     margin: 10px;
 }
+
 .dragover {
     border: 5px dashed blue;
+}
+
+body {
+    background: #F2F2F2 !important;
 }
