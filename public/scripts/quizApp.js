@@ -1,4 +1,4 @@
-var app = angular.module("quizApp", ['angularLoad','ngClipboard','ngRoute','parse-angular','parse-angular.enhance']);
+var app = angular.module("quizApp", ['ngClipboard','ngRoute']);
 app.config(function($routeProvider) {
     $routeProvider.
         when('/', {
