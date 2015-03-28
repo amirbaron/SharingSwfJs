@@ -57,10 +57,9 @@
     <div class="row clearfix">
         <div class="col-md-4 column" ng-repeat="appPage in appPages track by $index">
             <h4 class="text-left">
-               {{appPage.getTitle()}}
+                {{appPage.getPageObject().title}}
             </h4>
-            {{appPage.getTitle()}}
-            <img alt="360*276" ng-src="{{appPage.getPage().previewImg}}" data-toggle="modal"/>
+            <img alt="360*276" ng-src="{{appPage.getPageObject().previewImg}}" width="360" height="276"  data-toggle="modal"/>
 
 
             <div class="modal fade" id="modal-container-162453" role="dialog" aria-labelledby="myModalLabel"

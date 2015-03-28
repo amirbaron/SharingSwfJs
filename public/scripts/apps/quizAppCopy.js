@@ -1,4 +1,4 @@
-var app = angular.module('quizAppCopy', ['ui.router','parse-angular']);
+var app = angular.module('quizAppCopy', ['ui.router','parse-angular','parse-angular.enhance']);
 //app.config(['ngClipProvider', function(ngClipProvider) {
 //    ngClipProvider.setPath("components/zeroclipboard/dist/ZeroClipboard.swf");
 //}]);
