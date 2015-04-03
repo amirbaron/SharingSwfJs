@@ -6,13 +6,18 @@
 </head>
 <div class="container">
     <div class="row clearfix">
-        <div class="col-md-4 column">
-            <img ng-src="{{item.getPageObject().slides[selectedSlide].imgSmall}}" />
+        <div class="col-md-4 column" style="padding:3px">
+            <img class="img-responsive" ng-src="{{item.getPageObject().slides[selectedSlide].imgSmall}}" />
+            <h4 style="color:#FBF7F7;padding:3px;z-index:100;position:absolute;left:3px;bottom:0px;opacity: 0.76;filter: alpha(opacity=76);background-color: #000000">{{item.getPageObject().slides[selectedSlide].text}}</h4>
         </div>
+
+
     </div>
-    <div class="row clearfix">
-        <div class="col-md-1 column" ng-repeat="entity in item.getPageObject().slides[selectedSlide].entities">
-            <img ng-src="{{entity.imgSmall}}" data-toggle="modal" ng-click="entityClicked()"/>
+    <div class="row">
+        <div class="col-md-1 column" style="padding:3px"  ng-repeat="entity in item.getPageObject().slides[selectedSlide].entities" >
+            <button style="padding:3px" type="button" width="100%" class="btn btn-default">
+                <img class="img-responsive" ng-src="{{entity.imgSmall}}" data-toggle="modal" ng-click="entityClicked()"/>
+            </button>
         </div>
     </div>
 </div>
