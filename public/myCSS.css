@@ -22,6 +22,59 @@
     border: 5px dashed blue;
 }
 
+.defaultPad
+{
+    padding:3px;
+}
+
+.slideMainText{
+    color:#FBF7F7;
+    z-index:100;
+    position:absolute;
+    left:3px;
+    bottom:0px;
+    opacity: 0.76;
+    filter: alpha(opacity=76);
+    background-color: #000000
+}
+
+
+
 body {
     background: #F2F2F2 !important;
+}
+
+.animate-show {
+    opacity: 1;
+
+}
+
+.animate-show.ng-hide-add.ng-hide-add-active,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+    -webkit-transition: all linear 0.5s;
+    transition: all linear 0.5s;
+}
+
+.slide-visible {
+    opacity: 0.5;
+    -webkit-transition: all linear 0.5s;
+    transition: all linear 0.5s;
+}
+
+.slide-visible.hideit {
+    opacity: 0;
+
+}
+
+.big-button
+{
+    height: 12px;
+    width:12px;
+    border-radius: 12px;
+}
+
+.thinRow
+{
+    height:20px;
+    vertical-align: top;
 }
