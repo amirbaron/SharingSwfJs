@@ -1,7 +1,10 @@
 
 // These two lines are required to initialize Express in Cloud Code.
+
 var express = require('express');
+
 var app = express();
+
 
 // Global app configuration section
 app.set('views', 'cloud/views');  // Specify the folder to find templates
@@ -15,19 +18,39 @@ app.get('/hello', function(req, res) {
 });
 
 app.get('/item/:id', function(req, res) {
-  res.render('quiz', {id:req.params.id,title:req.query.title,previewImg:req.query.previewImg});
-});
-// // Example reading from the request query string of an HTTP get request.
-// app.get('/test', function(req, res) {
-//   // GET http://example.parseapp.com/test?message=hello
-//   res.send(req.query.message);
-// });
+  var AppPage = Parse.Object.extend("AppPage");
+  var query = new Parse.Query(AppPage);
+  query.get(req.params.id, {
+    success: function(page) {
+      var pageJson = JSON.parse(page.get("page"));
+      res.render('quiz', {id:req.params.id,title:pageJson.title,previewImg:pageJson.previewImg});
 
-// // Example reading from the request body of an HTTP post request.
-// app.post('/test', function(req, res) {
-//   // POST http://example.parseapp.com/test (with request body "message=hello")
-//   res.send(req.body.message);
-// });
+    },
+    error: function(object, error) {
+      console.error("Failed to find page with id: " + req.params.id);
+      res.status(500).send('Something broke!');
+    }
+  });
+
+});
+
+app.get('/i/:id', function(req, res) {
+  var AppPage = Parse.Object.extend("AppPage");
+  var query = new Parse.Query(AppPage);
+  query.get(req.params.id, {
+    success: function(page) {
+      var pageJson = JSON.parse(page.get("page"));
+      res.render('quiz', {id:req.params.id,title:pageJson.title,previewImg:pageJson.previewImg});
+
+    },
+    error: function(object, error) {
+      console.error("Failed to find page with id: " + req.params.id);
+      res.status(500).send('Something broke!');
+    }
+  });
+
+});
+
 
 // Attach the Express app to Cloud Code.
 app.listen();

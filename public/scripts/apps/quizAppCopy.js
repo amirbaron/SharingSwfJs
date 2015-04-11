@@ -11,16 +11,11 @@ app.service('itemsService', function ($q) {
 
     return {
         getItems: function () {
-
-            var dfd = $q.defer()
-
+            var dfd = $q.defer();
             var query = new Parse.Query("AppPage");
             query.find().then(function (result) {
-                dfd.resolve(result
-                )
-
+                dfd.resolve(result);
             });
-
 
             return dfd.promise
         },
@@ -39,22 +34,8 @@ app.service('itemsService', function ($q) {
 })
 
 
-//app.config(['ngClipProvider', function(ngClipProvider) {
-//    ngClipProvider.setPath("components/zeroclipboard/dist/ZeroClipboard.swf");
-//}]);
-
-app.run(function ($rootScope) {
-    $rootScope.$on("$stateChangeError", console.log.bind(console));
-});
-
 app.config(function ($stateProvider, $urlRouterProvider) {
-    //
-
-    // For any unmatched url, redirect to /state1
-    //fg0ckQ7Zq6
     $urlRouterProvider.otherwise("/itemList");
-    //
-    // Now set up the states
     $stateProvider
         .state('itemList', {
             url: "/itemList",
@@ -73,7 +54,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 $modal.open({
                     templateUrl: "partials/itemViewer.html",
                     resolve: {
-                        item: function(itemsService){
+                        item: function (itemsService) {
                             return itemsService.getItem($stateParams.itemId);
                         }
                     },
