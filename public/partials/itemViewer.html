@@ -2,68 +2,73 @@
 <html>
 
 <style>
-.slide-visible {
-    opacity: 0.5;
-    -webkit-transition: all linear 0.5s;
-    transition: all linear 0.5s;
-}
+    .slide-visible {
+        opacity: 0.5;
+        -webkit-transition: all linear 0.5s;
+        transition: all linear 0.5s;
+    }
 
-.slide-visible.hideit {
-    opacity: 0;
+    .slide-visible.hideit {
+        opacity: 0;
 
-}
+    }
 
-.animate-enter,
-.animate-leave
-{
-    -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    position: relative;
-    display: block;
-    overflow: hidden;
-    text-overflow: clip;
-    white-space:nowrap;
-}
+    .animate-enter,
+    .animate-leave {
+        -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        position: relative;
+        display: block;
+        overflow: hidden;
+        text-overflow: clip;
+        white-space: nowrap;
+    }
 
-.animate-leave.animate-leave-active,
-.animate-enter {
-    opacity: 0;
-    width: 0px;
-    height: 0px;
-}
+    .animate-leave.animate-leave-active,
+    .animate-enter {
+        opacity: 0;
+        width: 0px;
+        height: 0px;
+    }
 
-.animate-enter.animate-enter-active,
-.animate-leave {
-    opacity: 1;
-    width: 150px;
-    height: 30px;
-}
-
-
+    .animate-enter.animate-enter-active,
+    .animate-leave {
+        opacity: 1;
+        width: 150px;
+        height: 30px;
+    }
 </style>
-
-<div  ng-class="slideVisibility">
-    <div class="container" >
+<div ng-class="slideVisibility">
+    <a ng-click="shareToFacebook()" ng-href="{{myUrl}}">
+    Share on facebook</a>
+    <div class="container">
         <div class="row clearfix">
-            <div class="col-md-4 column defaultPad" >
-                <img class="img-responsive" ng-animate="'animate'" ng-src="{{page.slides[selectedSlide].imgSmall}}" />
+            <div class="col-md-4 column defaultPad">
+
+
+                <img class="img-responsive" ng-animate="'animate'" ng-src="{{page.slides[selectedSlide].imgSmall}}"/>
                 <h4 class="slideMainText defaultPad">{{item.getPageObject().slides[selectedSlide].text}}</h4>
             </div>
             <div class="col-md-1">
                 <div class="row clearfix defaultPad thinRow" ng-repeat="slide in page.slides">
-                    <button class="btn btn-default defaultPad big-button" ng-class="{'btn-success' : slide.isSuccess, 'btn-danger' : slide.isFailed, 'active' : $index == selectedSlide }"  ng-click="jumpToSlide($index)">
-                       </button>
+                    <button class="btn btn-default defaultPad big-button"
+                            ng-class="{'btn-success' : slide.isSuccess, 'btn-danger' : slide.isFailed, 'active' : $index == selectedSlide }"
+                            ng-click="jumpToSlide($index)">
+                    </button>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-1 column defaultPad"  ng-repeat="entity in page.slides[selectedSlide].entities" >
-                <button class="btn btn-default defaultPad  " ng-class="{'btn-success' : entity.isSucess, 'btn-danger' : entity.isFailed, 'disabled' : entity.isPressed }" type="button" width="100%"  ng-click="entityClicked($index, this)">
-                    <img class="img-responsive " ng-src="{{entity.imgSmall}}" data-toggle="modal" />
+            <div class="col-md-1 column defaultPad" ng-repeat="entity in page.slides[selectedSlide].entities">
+                <button class="btn btn-default defaultPad  "
+                        ng-class="{'btn-success' : entity.isSucess, 'btn-danger' : entity.isFailed, 'disabled' : entity.isPressed }"
+                        type="button" width="100%" ng-click="entityClicked($index, this)">
+                    <img class="img-responsive " ng-src="{{entity.imgSmall}}" data-toggle="modal"/>
                 </button>
+
             </div>
         </div>
 
@@ -71,6 +76,8 @@
     </div>
 
 </div>
+
+
 <!--
 <input id="setbtn" type="button" value="set" ng-click="slideVisibility='hideit'">
 <input id="clearbtn" type="button" value="clear" ng-click="slideVisibility=''">
