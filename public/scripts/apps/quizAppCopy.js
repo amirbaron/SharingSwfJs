@@ -1,46 +1,57 @@
 var app = angular.module('quizAppCopy', ['ui.router', 'parse-angular', 'parse-angular.enhance', 'ui.bootstrap']);
-app.service('appPagesService', function($q) {
+app.service('itemsService', function ($q) {
+    Parse.Object.extend({
+        className: "AppPage",
+        attrs: ['page', 'name', 'title', 'type'],
+        getPageObject: function () {
+            return angular.fromJson(this.getPage());
+        }
+    });
+
+
     return {
-        getAppPages: function() {
+        getItems: function () {
+
             var dfd = $q.defer()
 
-            setTimeout(function() {
-                Parse.Object.extend({
-                    className: "AppPage",
-                    attrs: ['page', 'name', 'title', 'type'],
-                    getPageObject: function () {
-                        return angular.fromJson(this.getPage());
-                    }
-                });
-                var query = new Parse.Query("AppPage");
-                query.find()
-                    .then(function (result) {
-                        result;
-                        dfd.resolve(result
+            var query = new Parse.Query("AppPage");
+            query.find().then(function (result) {
+                dfd.resolve(result
+                )
 
-                        )
+            });
 
-                    })
-
-
-
-            }, 2000)
 
             return dfd.promise
+        },
+
+        getItem: function (itemId) {
+            var dfd = $q.defer()
+            var query = new Parse.Query("AppPage");
+            query.get(itemId).then(function (result) {
+                dfd.resolve(result
+                )
+            });
+            return dfd.promise
+
         }
     }
 })
-
-
 
 
 //app.config(['ngClipProvider', function(ngClipProvider) {
 //    ngClipProvider.setPath("components/zeroclipboard/dist/ZeroClipboard.swf");
 //}]);
 
+app.run(function ($rootScope) {
+    $rootScope.$on("$stateChangeError", console.log.bind(console));
+});
+
 app.config(function ($stateProvider, $urlRouterProvider) {
     //
+
     // For any unmatched url, redirect to /state1
+    //fg0ckQ7Zq6
     $urlRouterProvider.otherwise("/itemList");
     //
     // Now set up the states
@@ -50,19 +61,21 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "partials/itemList.html",
             resolve: {
 
-                appPages: function (appPagesService) {
-                    return appPagesService.getAppPages();
+                items: function (itemsService) {
+                    return itemsService.getItems();
                 }
             },
             controller: "itemListCtrl"
 
         }).state('itemList.item', {
-            url: "/itemList:itemId",
+            url: "/:itemId",
             onEnter: ['$stateParams', '$state', '$modal', function ($stateParams, $state, $modal) {
                 $modal.open({
                     templateUrl: "partials/itemViewer.html",
                     resolve: {
-                        //appPages: 'appPages'
+                        item: function(itemsService){
+                            return itemsService.getItem($stateParams.itemId);
+                        }
                     },
                     controller: "itemViewerCtrl"
                 }).result.finally(function () {

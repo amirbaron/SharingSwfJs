@@ -1,9 +1,8 @@
-app.controller("itemListCtrl", function ($scope, $location, $modal,appPages) {
+app.controller("itemListCtrl", function ($scope, $location, $modal,items) {
     // Queries
 
     //$scope.appPages = appPages;
-    console.log("in itemListCtrl " + appPages);
-    $scope.appPages = appPages;
+    $scope.items = items;
     $scope.viewItem = function (item) {
         var itemViewerCtrl = $modal.open({
             templateUrl: 'partials/itemViewer.html',

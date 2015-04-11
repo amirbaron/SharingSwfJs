@@ -55,36 +55,14 @@
         </div>
     </div>
     <div class="row clearfix">
-        <div class="col-md-4 column" ng-repeat="appPage in appPages track by $index">
+        <div class="col-md-4 column" ng-repeat="item in items track by $index">
             <h4 class="text-left">
-                {{appPage.getPageObject().title}}
+                {{item.getPageObject().title}}
             </h4>
-            <img alt="360*276" ng-click="viewItem(appPage)"
-                 ng-src="{{appPage.getPageObject().previewImg}}" width="360" height="276" data-toggle="modal"/>
-            <script type="text/ng-template" id="itemViewer.html">
-                <div class="modal fade" role="dialog" aria-labelledby="myModalLabel"
-                     aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                <h4 class="modal-title" id="myModalLabel">
-                                    Modal title
-                                </h4>
-                            </div>
-                            <div class="modal-body">
-                                ...
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </script>
+            <a ng-href="#/itemList/{{item.id}}">
+                <img alt="360*276"
+                     ng-src="{{item.getPageObject().previewImg}}" width="360" height="276" data-toggle="modal">
+            </a>
 
         </div>
     </div>
