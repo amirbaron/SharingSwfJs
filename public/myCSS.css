@@ -83,49 +83,25 @@ body {
     border-radius: 12px;
 }
 
+.defaultPad
+{
+    padding:3px;
+}
+.defaultMargin
+{
+    margin:3px;
+}
+
 @media all
 {
-
-    .defaultPad
-    {
-        padding:3px;
-    }
-    .defaultMargin
-    {
-        margin:3px;
-    }
 }
 @media all and (max-width: 1200px) {
-    .defaultPad
-    {
-        padding:1px;
-    }
-    .defaultMargin
-    {
-        margin:1px;
-    }
-
 }
 @media all and (max-width: 992px) {
-    .defaultPad
-    {
-        padding:2px;
-    }
-    .defaultMargin
-    {
-        margin:2px;
-    }
 
 }
 @media all and (max-width: 460px) {
-    .defaultPad
-    {
-        padding:3px;
-    }
-    .defaultMargin
-    {
-        margin:3px;
-    }
+
 
     .modal-dialog {
         width: 100%;
