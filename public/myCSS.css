@@ -76,14 +76,16 @@ body {
     background-color: #000000
 }
 
+.jump-button
+{
+    height: 12px;
+    width:12px;
+    border-radius: 12px;
+}
+
 @media all
 {
-    .jump-button
-    {
-        height: 12px;
-        width:12px;
-        border-radius: 12px;
-    }
+
     .defaultPad
     {
         padding:3px;
@@ -92,26 +94,8 @@ body {
     {
         margin:3px;
     }
-    .slideMainText
-    {
-    }
-    .thinRow
-    {
-        height:20px;
-        vertical-align: top;
-    }
-    h4
-    {
-        font-size: 1.3em;
-    }
 }
 @media all and (max-width: 1200px) {
-    .jump-button
-    {
-        height: 12px;
-        width:12px;
-        border-radius: 12px;
-    }
     .defaultPad
     {
         padding:1px;
@@ -121,27 +105,8 @@ body {
         margin:1px;
     }
 
-    .slideMainText
-    {
-    }
-
-    .thinRow
-    {
-        height:20px;
-        vertical-align: top;
-    }
-    h4
-    {
-        font-size: 1.3em;
-    }
 }
 @media all and (max-width: 992px) {
-    .jump-button
-    {
-        height: 11px;
-        width:11px;
-        border-radius: 11px;
-    }
     .defaultPad
     {
         padding:2px;
@@ -151,27 +116,8 @@ body {
         margin:2px;
     }
 
-    .slideMainText
-    {
-    }
-
-    .thinRow
-    {
-        height:15px;
-        vertical-align: top;
-    }
-    h4
-    {
-        font-size: 1.3em;
-    }
 }
 @media all and (max-width: 460px) {
-    .jump-button
-    {
-        height: 10px;
-        width:10px;
-        border-radius: 10px;
-    }
     .defaultPad
     {
         padding:3px;
@@ -181,23 +127,6 @@ body {
         margin:3px;
     }
 
-    .mobileFullScreen
-    {
-        .make-xs-column(12; : @grid-gutter-width)
-    }
-    .slideMainText
-    {
-    }
-
-    .thinRow
-    {
-        height:14px;
-        vertical-align: top;
-    }
-    h4
-    {
-        font-size: 1.3em;
-    }
     .modal-dialog {
         width: 100%;
         padding: 0;

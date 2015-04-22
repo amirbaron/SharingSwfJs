@@ -15,17 +15,17 @@
                 <img class="img-responsive" ng-animate="'animate'" ng-src="{{page.slides[selectedSlide].imgSmall}}" >
                 <h4 class="slideMainText defaultPad defaultMargin " >{{page.slides[selectedSlide].text}}</h4></img>
             </div>
-         <!--   <div class="col-sm-1 col-xs-2">
-                <div class="row clearfix defaultPad thinRow" ng-repeat="slide in page.slides">
-                    <button class="btn btn-default defaultPad jump-button"  ng-class="{'btn-success' : slide.isSuccess, 'btn-danger' : slide.isFailed, 'active' : $index == selectedSlide }"  ng-click="jumpToSlide($index)">
-                       </button>
-                </div>
-            </div>-->
         </div>
         <div class="row">
             <div class="col-md-2 col-sm-3 col-xs-6 column defaultPad"  ng-repeat="entity in page.slides[selectedSlide].entities" >
                 <button class="btn btn-default defaultPad  " ng-class="{'btn-success' : entity.isSucess, 'btn-danger' : entity.isFailed, 'disabled' : entity.isPressed }" type="button" width="100%"  ng-click="entityClicked($index, this)">
                     <img class="img-responsive "  ng-src="{{entity.imgSmall}}" data-toggle="modal" />
+                </button>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad text-center">
+                <button class="btn btn-default defaultPad jump-button" ng-repeat="slide in page.slides"  ng-class="{'btn-success' : slide.isSuccess, 'btn-danger' : slide.isFailed, 'active' : $index == selectedSlide }"  ng-click="jumpToSlide($index)">
                 </button>
             </div>
         </div>
