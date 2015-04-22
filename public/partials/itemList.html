@@ -2,7 +2,7 @@
 
 <div class="container">
     <div class="row clearfix">
-        <div class="col-md-12 column">
+        <div class="col-xs-24 column">
             <ul class="nav nav-pills">
                 <li class="active">
                     <a href="#">Home</a>
@@ -55,13 +55,13 @@
         </div>
     </div>
     <div class="row clearfix">
-        <div class="col-md-4 column" ng-repeat="item in items track by $index">
+        <div class="col-md-8 col-sm-12 col-xs-24 column col-no-gutter" ng-repeat="item in items track by $index">
             <h4 class="text-left">
                 {{item.getPageObject().title}}
             </h4>
             <a ng-href="#/itemList/{{item.id}}">
                 <img alt="360*276"
-                     ng-src="{{item.getPageObject().previewImg}}" width="360" height="276" data-toggle="modal">
+                     ng-src="{{item.getPageObject().previewImg}}" class="img-responsive" data-toggle="modal">
             </a>
 
         </div>

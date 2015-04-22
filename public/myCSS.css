@@ -22,16 +22,12 @@
     border: 5px dashed blue;
 }
 
-.defaultPad
-{
-    padding:3px;
-}
+
 
 .slideMainText{
     color:#FBF7F7;
     z-index:100;
     position:absolute;
-    left:3px;
     bottom:0px;
     opacity: 0.76;
     filter: alpha(opacity=76);
@@ -66,15 +62,156 @@ body {
 
 }
 
-.big-button
-{
-    height: 12px;
-    width:12px;
-    border-radius: 12px;
+
+
+
+
+.slideMainText{
+    color:#FBF7F7;
+    z-index:100;
+    position:absolute;
+    bottom:3px;
+    opacity: 0.76;
+    filter: alpha(opacity=76);
+    background-color: #000000
 }
 
-.thinRow
+@media all
 {
-    height:20px;
-    vertical-align: top;
+    .jump-button
+    {
+        height: 12px;
+        width:12px;
+        border-radius: 12px;
+    }
+    .defaultPad
+    {
+        padding:3px;
+    }
+    .defaultMargin
+    {
+        margin:3px;
+    }
+    .slideMainText
+    {
+    }
+    .thinRow
+    {
+        height:20px;
+        vertical-align: top;
+    }
+    h4
+    {
+        font-size: 1.3em;
+    }
+}
+@media all and (max-width: 1200px) {
+    .jump-button
+    {
+        height: 12px;
+        width:12px;
+        border-radius: 12px;
+    }
+    .defaultPad
+    {
+        padding:1px;
+    }
+    .defaultMargin
+    {
+        margin:1px;
+    }
+
+    .slideMainText
+    {
+    }
+
+    .thinRow
+    {
+        height:20px;
+        vertical-align: top;
+    }
+    h4
+    {
+        font-size: 1.3em;
+    }
+}
+@media all and (max-width: 992px) {
+    .jump-button
+    {
+        height: 11px;
+        width:11px;
+        border-radius: 11px;
+    }
+    .defaultPad
+    {
+        padding:2px;
+    }
+    .defaultMargin
+    {
+        margin:2px;
+    }
+
+    .slideMainText
+    {
+    }
+
+    .thinRow
+    {
+        height:15px;
+        vertical-align: top;
+    }
+    h4
+    {
+        font-size: 1.3em;
+    }
+}
+@media all and (max-width: 460px) {
+    .jump-button
+    {
+        height: 10px;
+        width:10px;
+        border-radius: 10px;
+    }
+    .defaultPad
+    {
+        padding:3px;
+    }
+    .defaultMargin
+    {
+        margin:3px;
+    }
+
+    .mobileFullScreen
+    {
+        .make-xs-column(12; : @grid-gutter-width)
+    }
+    .slideMainText
+    {
+    }
+
+    .thinRow
+    {
+        height:14px;
+        vertical-align: top;
+    }
+    h4
+    {
+        font-size: 1.3em;
+    }
+    .modal-dialog {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        top: 0;
+        left: 0;
+    }
+    .row-no-gutter{
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    .col-no-gutter{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 }
