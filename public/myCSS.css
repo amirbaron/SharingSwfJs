@@ -62,20 +62,6 @@ body {
 
 }
 
-
-
-
-
-.slideMainText{
-    color:#FBF7F7;
-    z-index:100;
-    position:absolute;
-    bottom:3px;
-    opacity: 0.76;
-    filter: alpha(opacity=76);
-    background-color: #000000
-}
-
 .jump-button
 {
     height: 12px;
