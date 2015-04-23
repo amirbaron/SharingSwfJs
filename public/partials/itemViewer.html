@@ -30,12 +30,13 @@
 
         <div class="row clearfix">
             <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad" >
-                <img class="img-responsive" ng-animate="'animate'" ng-src="{{page.slides[selectedSlide].imgSmall}}" ng-show="!editMode" >
+                <img class="img-responsive" ng-animate="'animate'" ng-src="{{page.slides[selectedSlide].imgSmal!=null?page.slides[selectedSlide].imgSmall:'http://placehold.it/468X263&text=Question ' + (selectedSlide + 1)}}">
                 <h4 class="slideMainText defaultPad defaultMargin " ng-show="!editMode">{{page.slides[selectedSlide].text}}</h4>
-                <div ng-show="editMode"><input type="hidden" role="uploadcare-uploader"
-                       data-crop="468x263 minimum"
-                       data-images-only="true"></div>
-                <textarea class="slideMainText defaultPad defaultMargin" style="width:97%" ng-show="editMode"></textarea></img>
+                  <!--  <div ng-show="editMode"><input type="hidden" role="uploadcare-uploader"
+                                                   data-crop="468x263 minimum"
+                                                   data-images-only="true"></div>-->
+
+                <textarea class="slideMainText defaultPad defaultMargin" style="width:97%" ng-show="editMode" placeholder="Type Your Question.."></textarea></img>
             </div>
         </div>
         <div class="row">
