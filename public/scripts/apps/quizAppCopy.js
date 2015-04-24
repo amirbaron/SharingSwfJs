@@ -1,4 +1,4 @@
-var app = angular.module('quizAppCopy', ['ui.router', 'parse-angular', 'parse-angular.enhance', 'ui.bootstrap']);
+var app = angular.module('quizAppCopy', ['ui.router', 'parse-angular', 'parse-angular.enhance', 'ui.bootstrap', 'ng-uploadcare']);
 app.service('itemsService', function ($q) {
     Parse.Object.extend({
         className: "AppPage",
