@@ -34,15 +34,15 @@
                 <h4 class="slideMainText defaultPad defaultMargin " ng-show="!editMode">{{page.slides[selectedSlide].text}}</h4>
                   <div class="selectMainImage" ng-show="editMode"><uploadcare-widget
                           ng-model="object.image.info.uuid"
-                          data-public-key="YOURKEYHERE"
+                          data-public-key="4b4265edeea7c06bf980"
                           data-locale="en"
-                          data-tabs="file url"
+                          data-tabs="file url facebook gdrive dropbox instagram evernote flickr skydrive box vk"
                           data-images-only="true"
                           data-path-value="true"
                           data-preview-step="true"
                           data-clearable="true"
                           data-multiple="false"
-                          data-crop="400:200"
+                          data-crop="468:263 minimum"
                           on-upload-complete="onUCUploadComplete(info)"
                           on-widget-ready="onUCWidgetReady(widget)"
 
