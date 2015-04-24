@@ -32,7 +32,7 @@
             <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad" >
                 <img class="img-responsive" ng-animate="'animate'" ng-src="{{(page.slides[selectedSlide].imgSmall != null)?page.slides[selectedSlide].imgSmall : 'http://placehold.it/468X263&text=+'}}">
                 <h4 class="slideMainText defaultPad defaultMargin " ng-show="!editMode">{{page.slides[selectedSlide].text}}</h4>
-                  <div class="selectMainImage" ng-show="editMode"><uploadcare-widget
+                  <div ng-class="{'selectMainImageNoImage' : (page.slides[selectedSlide].imgSmall == null), 'selectMainImage' : (page.slides[selectedSlide].imgSmall != null)}"  ng-show="editMode"><uploadcare-widget
                           ng-model="object.image.info.uuid"
                           data-public-key="4b4265edeea7c06bf980"
                           data-locale="en"
