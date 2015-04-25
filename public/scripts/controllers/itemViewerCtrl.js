@@ -67,7 +67,7 @@ app.controller("itemViewerCtrl", function ($scope, $location,$modalInstance,item
         appPage.set("name", $scope.item.attributes["name"]);
         appPage.set("title", $scope.item.attributes["title"]);*/
        // $scope.item.attributes["page"] = angular.toJson($scope.page, true);
-
+        $scope.item.setPageObject($scope.page);
         $scope.item.save(null, {
             success: function (object) {
                 console.log("Saved with parse id: " + object.id);

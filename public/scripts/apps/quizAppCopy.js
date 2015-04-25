@@ -5,6 +5,9 @@ app.service('itemsService', function ($q) {
         attrs: ['page', 'name', 'title', 'type'],
         getPageObject: function () {
             return angular.fromJson(this.getPage());
+        },
+        setPageObject: function(pageObject){
+            this.setPage(angular.toJson(pageObject));
         }
 
     });
