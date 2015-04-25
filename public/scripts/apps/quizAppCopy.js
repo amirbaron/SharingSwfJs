@@ -6,6 +6,7 @@ app.service('itemsService', function ($q) {
         getPageObject: function () {
             return angular.fromJson(this.getPage());
         }
+
     });
 
 

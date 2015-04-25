@@ -18,7 +18,12 @@
                     <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                 </button>
             </div>
+
+            <button type="button" class="btn btn-info" aria-label="Save" ng-click="save()">
+                <span class="glyphicon glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+            </button>
         </div>
+
 
 
 
@@ -45,6 +50,7 @@
                           data-crop="468:263 minimum"
                           on-upload-complete="onUCUploadComplete(info)"
                           on-widget-ready="onUCWidgetReady(widget)"
+                          value="http://www.ucarecdn.com/793f15d5-5ed9-4ce4-83c5-212026f15bce/-/crop/960x539/0,91/-/preview/"
 
                           />
                      <!-- <input  type="hidden" role="uploadcare-uploader"

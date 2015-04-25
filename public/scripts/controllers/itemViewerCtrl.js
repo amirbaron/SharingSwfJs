@@ -60,5 +60,23 @@ app.controller("itemViewerCtrl", function ($scope, $location,$modalInstance,item
         uploadcare.start();
     }
 
+    $scope.save = function () {
+       /* var AppPage = Parse.Object.extend("AppPage");
+        var appPage = new AppPage();
+        appPage.set("page", angular.toJson($scope.page, true));
+        appPage.set("name", $scope.item.attributes["name"]);
+        appPage.set("title", $scope.item.attributes["title"]);*/
+       // $scope.item.attributes["page"] = angular.toJson($scope.page, true);
+
+        $scope.item.save(null, {
+            success: function (object) {
+                console.log("Saved with parse id: " + object.id);
+            },
+            error: function (model, error) {
+                alert("Error" + error);
+            }
+        });
+    };
+
 });
 
