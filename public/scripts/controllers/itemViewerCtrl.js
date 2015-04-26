@@ -53,20 +53,15 @@ app.controller("itemViewerCtrl", function ($scope, $location,$modalInstance,item
         var fbpopup = window.open('https://www.facebook.com/sharer/sharer.php?u=quiz22.parseapp.com/i/'+item.id, "pop", "width=600, height=400, scrollbars=no");
     }
 
-    $scope.onUCUploadComplete = function(info)
+  //  $scope.onUCUploadComplete = function(index, info)
+    $scope.onUCUploadComplete = function(info, slideIndex)
     {
-        $scope.page.slides[$scope.selectedSlide].imgSmall = info.cdnUrl;
+        $scope.page.slides[slideIndex].imgSmall = info.cdnUrl;
         $scope.$apply();
         uploadcare.start();
     }
 
     $scope.save = function () {
-       /* var AppPage = Parse.Object.extend("AppPage");
-        var appPage = new AppPage();
-        appPage.set("page", angular.toJson($scope.page, true));
-        appPage.set("name", $scope.item.attributes["name"]);
-        appPage.set("title", $scope.item.attributes["title"]);*/
-       // $scope.item.attributes["page"] = angular.toJson($scope.page, true);
         $scope.item.setPageObject($scope.page);
         $scope.item.save(null, {
             success: function (object) {

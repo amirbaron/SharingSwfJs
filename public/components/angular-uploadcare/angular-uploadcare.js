@@ -17,6 +17,7 @@ angular.module('ng-uploadcare', [])
         onWidgetReady: '&',
         onUploadComplete: '&',
         onChange: '&',
+        slideIndex: '@slideIndex'
       },
       controller: ['$scope', '$element', '$log', function($scope, $element, $log) {
         if(!uploadcare) {
@@ -26,7 +27,7 @@ angular.module('ng-uploadcare', [])
         $scope.widget = uploadcare.Widget($element);
         $scope.onWidgetReady({widget: $scope.widget});
         $scope.widget.onUploadComplete(function(info) {
-          $scope.onUploadComplete({info: info});
+          $scope.onUploadComplete({info: info},$scope.slideIndex);
         });
         $scope.widget.onChange(function(file) {
           $scope.onChange({file: file});

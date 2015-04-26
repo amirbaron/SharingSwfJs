@@ -37,7 +37,8 @@
             <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad" >
                 <img class="img-responsive" ng-animate="'animate'" ng-src="{{(page.slides[selectedSlide].imgSmall != null)?page.slides[selectedSlide].imgSmall : 'http://placehold.it/468X263&text=+'}}">
                 <h4 class="slideMainText defaultPad defaultMargin " ng-show="!editMode">{{page.slides[selectedSlide].text}}</h4>
-                  <div ng-class="{'selectMainImageNoImage' : (page.slides[selectedSlide].imgSmall == null), 'selectMainImage' : (page.slides[selectedSlide].imgSmall != null)}"  ng-show="editMode"><uploadcare-widget
+                <div ng-repeat="slide in page.slides">
+                  <div  ng-class="{'selectMainImageNoImage' : (slide.imgSmall == null), 'selectMainImage' : (slide.imgSmall != null)}"  ng-show="(selectedSlide == $index) && editMode"><uploadcare-widget
                           ng-model="object.image.info.uuid"
                           data-public-key="4b4265edeea7c06bf980"
                           data-locale="en"
@@ -48,17 +49,19 @@
                           data-clearable="true"
                           data-multiple="false"
                           data-crop="468:263 minimum"
-                          on-upload-complete="onUCUploadComplete(info)"
+                          on-upload-complete="onUCUploadComplete(info, slideIndex)"
                           on-widget-ready="onUCWidgetReady(widget)"
-                          value="http://www.ucarecdn.com/793f15d5-5ed9-4ce4-83c5-212026f15bce/-/crop/960x539/0,91/-/preview/"
-
+                          value="{{slide.imgSmall}}"
+                          slideIndex="vgfgfgf"
                           />
-                     <!-- <input  type="hidden" role="uploadcare-uploader"
-                              data-crop="468x263 minimum"
-                              data-images-only="true">-->
+                      </div>
                   </div>
 
                 <input type="text" class="form-control slideMainText defaultPad defaultMargin" ng-show="editMode" placeholder="Type Your Question.." ng-model="page.slides[selectedSlide].text"></textarea></img>
+                <button type="button" class="btn btn-default btn-xs copyrightMain dropdown-toggle"  data-toggle="dropdown" aria-label="copyright" ng-show="!editMode">
+                    <span class="copyrightMainFont" aria-hidden="true">©</span>
+                </button>
+                <input type="text" class="form-control creditTextEdit" ng-show="editMode" placeholder=" © Credit the author" aria-describedby="basic-addon1">
             </div>
         </div>
         <div class="row">
