@@ -54,11 +54,10 @@ app.controller("itemViewerCtrl", function ($scope, $location,$modalInstance,item
     }
 
   //  $scope.onUCUploadComplete = function(index, info)
-    $scope.onUCUploadComplete = function(info, slideIndex)
+    $scope.onUCUploadComplete = function(info)
     {
-        $scope.page.slides[slideIndex].imgSmall = info.cdnUrl;
+        $scope.page.slides[$scope.selectedSlide].imgSmall = info.cdnUrl;
         $scope.$apply();
-        uploadcare.start();
     }
 
     $scope.save = function () {
