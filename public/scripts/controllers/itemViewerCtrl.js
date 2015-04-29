@@ -53,13 +53,6 @@ app.controller("itemViewerCtrl", function ($scope, $location,$modalInstance,item
         var fbpopup = window.open('https://www.facebook.com/sharer/sharer.php?u=quiz22.parseapp.com/i/'+item.id, "pop", "width=600, height=400, scrollbars=no");
     }
 
-  //  $scope.onUCUploadComplete = function(index, info)
-    $scope.onUCUploadComplete = function(info)
-    {
-        $scope.page.slides[$scope.selectedSlide].imgSmall = info.cdnUrl;
-        $scope.$apply();
-    }
-
     $scope.save = function () {
         $scope.item.setPageObject($scope.page);
         $scope.item.save(null, {

@@ -17,7 +17,7 @@ angular.module('ng-uploadcare', [])
         onWidgetReady: '&',
         onUploadComplete: '&',
         onChange: '&',
-          bindedValue: '@'
+          bindedValue: '='
       },
       controller: ['$scope', '$element', '$log', function($scope, $element, $log) {
         if(!uploadcare) {
