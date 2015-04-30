@@ -51,8 +51,8 @@
 }
 .selectMainImageNoImage{
     position:absolute;
-    bottom:100px;
-    left:125px;
+    bottom:10px;
+    left:0px;
 }
 
 .selectMainImage{

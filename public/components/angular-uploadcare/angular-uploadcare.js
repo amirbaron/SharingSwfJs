@@ -27,13 +27,14 @@ angular.module('ng-uploadcare', [])
         $scope.widget = uploadcare.Widget($element);
         $scope.onWidgetReady({widget: $scope.widget});
         $scope.widget.onUploadComplete(function(info) {
-          $scope.onUploadComplete({info: info});
+            $scope.bindedValue = info.cdnUrl;
+            $scope.apply();
         });
           $scope.$watch('bindedValue', function(newValue, oldValue) {
               $scope.widget.value(newValue);
           });
         $scope.widget.onChange(function(file) {
-          $scope.onChange({file: file});
+       //     $scope.bindedValue = $scope.widget.value();
         })
       }]
     };
