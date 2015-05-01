@@ -1,4 +1,4 @@
-app.controller("itemEditorCtrl", function ($scope, $location,item) {
+app.controller("itemEditorCtrl", function ($scope, $location,item,loginService) {
     // Queries
     console.log("in itemEditorCtrl");
     console.log("in itemEditorCtrl selected item is " + item);
@@ -11,21 +11,17 @@ app.controller("itemEditorCtrl", function ($scope, $location,item) {
 
 
     $scope.jumpToSlide = function(slideIndex) {
-        $scope.selectedSlide =  slideIndex; }
+        $scope.selectedSlide =  slideIndex;
+    }
 
     $scope.shareToFacebook= function(){
-        if(!Parse.User.current()){
-            console.log("$scope.$parent.login is " + $scope.$parent.login);
-        }
+        loginService.login();
         var fbpopup = window.open('https://www.facebook.com/sharer/sharer.php?u=quiz22.parseapp.com/i/'+item.id, "pop", "width=600, height=400, scrollbars=no");
-
     }
 
     $scope.save = function () {
+        loginService.login();
         $scope.item.setPageObject($scope.page);
-        if(!Parse.User.current()){
-            console.log("$scope.$parent.login is " + $scope.$parent.login);
-        }
         $scope.item.setUser(Parse.User.current());
         $scope.item.save(null, {
             success: function (object) {

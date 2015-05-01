@@ -1,4 +1,4 @@
-app.controller("itemViewerCtrl", function ($scope, $location,item) {
+app.controller("itemViewerCtrl", function ($scope, $location,item,loginService) {
     // Queries
     console.log("in itemViewerCtrl");
     console.log("in itemViewerCtrl selected item is " + item);
@@ -10,9 +10,6 @@ app.controller("itemViewerCtrl", function ($scope, $location,item) {
     $scope.myUrl = '#'+$location.url();
 
     $scope.entityClicked = function(entityIndex, itemSelected) {
-      //  $scope.selectedSlide++;
-        //$scope.page.slides[$scope.selectedSlide].entities[entityIndex];
-
         setTimeout(function() {
             $scope.selectedSlide++; $scope.$apply()}, 1000);
 
@@ -39,9 +36,6 @@ app.controller("itemViewerCtrl", function ($scope, $location,item) {
                 entity.isPressed = true;
             }
         );
-
-       // $scope.a++;
-       // slideVisibility='hideit';
     }
 
 

@@ -48,7 +48,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 items: function (itemsService) {
                     return itemsService.getItems();
                 },
-                loginService:'loginService'
+                loginService: 'loginService'
             },
             controller: "itemListCtrl"
         }).state('itemList.item', {
@@ -59,7 +59,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 item: function (itemsService, $stateParams) {
                     console.log("Item id is " + $stateParams.itemId);
                     return itemsService.getItem($stateParams.itemId);
-                }
+                },
+                loginService: 'loginService'
             },
             onEnter: ['$stateParams', '$state', '$modal', function ($stateParams, $state, $modal) {
                 console.log('Open modal');
