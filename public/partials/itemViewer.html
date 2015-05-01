@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Can you see the item??....</title>
-</head>
-
-
-<div  ng-class="slideVisibility">
-    <div class="container" >
+<div ng-class="slideVisibility">
+    <div class="container">
 
         <div class="row clearfix">
             <div class="btn-group" role="group" aria-label="...">
-                <button type="button" class="btn btn-info" aria-label="Edit" ng-class="{'active' : editMode}"   ng-click="editMode=true;">
+                <a class="btn btn-info" ng-href="#/itemList/{{item.id}}/edit">
                     <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                </button>
-                <button type="button" class="btn btn-info" aria-label="Show" ng-class="{'active' : !editMode}" ng-click="editMode=false;">
+                </a>
+                <a class="btn btn-info" ng-href="#/itemList/{{item.id}}/view">
                     <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                </button>
+                </a>
             </div>
 
             <button type="button" class="btn btn-info" aria-label="Save" ng-click="save()">
@@ -25,47 +17,55 @@
         </div>
 
 
-
-
         <div class="row clearfix">
             <a ng-click="shareToFacebook()" ng-href="{{myUrl}}">
-            Share on facebook</a>
+                Share on facebook</a>
         </div>
 
 
         <div class="row clearfix">
-            <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad" >
-                <img class="img-responsive" ng-animate="'animate'" ng-src="{{(page.slides[selectedSlide].imgSmall != null)?page.slides[selectedSlide].imgSmall : 'http://placehold.it/468X263&text=+'}}">
-                <h4 class="slideMainText defaultPad defaultMargin " ng-show="!editMode">{{page.slides[selectedSlide].text}}</h4>
-                  <div  ng-class="{'selectMainImageNoImage' : (page.slides[selectedSlide].imgSmall == null), 'selectMainImage' : (page.slides[selectedSlide].imgSmall != null)}"  ng-show="editMode">
-                      <uploadcare-widget
-                          ng-model="object.image.info.uuid"
-                          data-public-key="4b4265edeea7c06bf980"
-                          data-locale="en"
-                          data-tabs="file url facebook gdrive dropbox instagram evernote flickr skydrive box vk"
-                          data-images-only="true"
-                          data-path-value="true"
-                          data-preview-step="true"
-                          data-clearable="true"
-                          data-multiple="false"
-                          data-crop="468:263 minimum"
-                          on-upload-complete="onUCUploadComplete(info)"
-                          on-widget-ready="onUCWidgetReady(widget)"
-                          binded-value="page.slides[selectedSlide].imgSmall"
-                          />
-                      </div>
+            <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad">
+                <img class="img-responsive" ng-animate="'animate'"
+                     ng-src="{{(page.slides[selectedSlide].imgSmall != null)?page.slides[selectedSlide].imgSmall : 'http://placehold.it/468X263&text=+'}}">
+                <h4 class="slideMainText defaultPad defaultMargin " ng-show="!editMode">
+                    {{page.slides[selectedSlide].text}}</h4>
 
-                <input type="text" class="form-control slideMainText defaultPad defaultMargin" ng-show="editMode" placeholder="Type Your Question.." ng-model="page.slides[selectedSlide].text"></textarea></img>
-                <button type="button" class="btn btn-default btn-xs copyrightMain dropdown-toggle"  data-toggle="dropdown" aria-label="copyright" ng-show="!editMode">
+                <div ng-class="{'selectMainImageNoImage' : (page.slides[selectedSlide].imgSmall == null), 'selectMainImage' : (page.slides[selectedSlide].imgSmall != null)}"
+                     ng-show="editMode">
+                    <uploadcare-widget
+                            ng-model="object.image.info.uuid"
+                            data-public-key="4b4265edeea7c06bf980"
+                            data-locale="en"
+                            data-tabs="file url facebook gdrive dropbox instagram evernote flickr skydrive box vk"
+                            data-images-only="true"
+                            data-path-value="true"
+                            data-preview-step="true"
+                            data-clearable="true"
+                            data-multiple="false"
+                            data-crop="468:263 minimum"
+                            on-upload-complete="onUCUploadComplete(info)"
+                            on-widget-ready="onUCWidgetReady(widget)"
+                            binded-value="page.slides[selectedSlide].imgSmall"
+                            />
+                </div>
+
+                <input type="text" class="form-control slideMainText defaultPad defaultMargin" ng-show="editMode"
+                       placeholder="Type Your Question.." ng-model="page.slides[selectedSlide].text"></textarea></img>
+                <button type="button" class="btn btn-default btn-xs copyrightMain dropdown-toggle"
+                        data-toggle="dropdown" aria-label="copyright" ng-show="!editMode">
                     <span class="copyrightMainFont" aria-hidden="true">©</span>
                 </button>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-6 column defaultPad"  ng-repeat="entity in page.slides[selectedSlide].entities" >
-                <button class="btn btn-default defaultPad  " ng-class="{'btn-success' : entity.isSucess, 'btn-danger' : entity.isFailed, 'disabled' : entity.isPressed }" type="button" width="100%"  ng-click="entityClicked($index, this)">
-                    <img class="img-responsive "  ng-src="{{entity.imgSmall}}" data-toggle="modal" />
-                    <div  ng-class="{'selectButtonImage':true}",  ng-show="editMode">
+            <div class="col-md-2 col-sm-3 col-xs-6 column defaultPad"
+                 ng-repeat="entity in page.slides[selectedSlide].entities">
+                <button class="btn btn-default defaultPad  "
+                        ng-class="{'btn-success' : entity.isSucess, 'btn-danger' : entity.isFailed, 'disabled' : entity.isPressed }"
+                        type="button" width="100%" ng-click="entityClicked($index, this)">
+                    <img class="img-responsive " ng-src="{{entity.imgSmall}}" data-toggle="modal"/>
+
+                    <div ng-class="{'selectButtonImage':true}" , ng-show="editMode">
                         <uploadcare-widget
                                 ng-model="object.image.info.uuid"
                                 data-public-key="4b4265edeea7c06bf980"
@@ -87,7 +87,9 @@
         </div>
         <div class="row clearfix">
             <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad text-center">
-                <button class="btn btn-default defaultPad jump-button" ng-repeat="slide in page.slides"  ng-class="{'btn-success' : slide.isSuccess, 'btn-danger' : slide.isFailed, 'active' : $index == selectedSlide }"  ng-click="jumpToSlide($index)">
+                <button class="btn btn-default defaultPad jump-button" ng-repeat="slide in page.slides"
+                        ng-class="{'btn-success' : slide.isSuccess, 'btn-danger' : slide.isFailed, 'active' : $index == selectedSlide }"
+                        ng-click="jumpToSlide($index)">
                 </button>
             </div>
         </div>

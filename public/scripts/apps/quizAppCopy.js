@@ -76,9 +76,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             },
             controller: "itemListCtrl"
         }).state('itemList.item', {
-            url: "",
+            url: "/:itemId",
             abstract: true,
             backdrop: false,
+            resolve: {
+                item: function (itemsService, $stateParams) {
+                    console.log("Item id is " + $stateParams.itemId);
+                    return itemsService.getItem($stateParams.itemId);
+                }
+            },
             onEnter: ['$stateParams', '$state', '$modal', function ($stateParams, $state, $modal) {
                 console.log('Open modal');
                 $modal.open({
@@ -92,20 +98,23 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }).state('itemList.item.view', {
             abstract: false,
             parent:'itemList.item',
-            url: "/:itemId",
+            url:'/view',
             views: {
                 'modal@': {
                     templateUrl: 'partials/itemViewer.html',
-                    resolve: {
-                        item: function (itemsService, $stateParams) {
-                            console.log("Item id is " + $stateParams.itemId);
-                            return itemsService.getItem($stateParams.itemId);
-                        }
-                    },
                     controller: "itemViewerCtrl"
                 }
             }
-
+        }).state('itemList.item.edit', {
+            abstract: false,
+            parent:'itemList.item',
+            url:'/edit',
+            views: {
+                'modal@': {
+                    templateUrl: 'partials/itemViewer.html',
+                    controller: "itemEditorCtrl"
+                }
+            }
         })
 })
 ;
