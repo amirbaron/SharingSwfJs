@@ -39,7 +39,7 @@
     z-index: 100;
     position: absolute;
     right: 3px;
-    top: 3px;
+    bottom: 3px;
     width: 20px;
     height: 20px;
 }
@@ -51,10 +51,15 @@
 }
 .selectMainImageNoImage{
     position:absolute;
-    bottom:10px;
-    left:0px;
+    top:100px;
+    left:145px;
 }
 
+.selectButtonImage{
+    position:absolute;
+    top:5px;
+    left:4px;
+}
 .selectMainImage{
     position:absolute;
     top:3px;
