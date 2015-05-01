@@ -1,58 +1,17 @@
 <!DOCTYPE html>
 
 <div class="container">
+
     <div class="row clearfix">
-        <div class="col-xs-24 column">
-            <ul class="nav nav-pills">
-                <li class="active">
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">Profile</a>
-                </li>
-                <li class="disabled">
-                    <a href="#">Messages</a>
-                </li>
-                <li class="dropdown pull-right">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Dropdown<strong
-                            class="caret"></strong></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#">Action</a>
-                        </li>
-                        <li>
-                            <a href="#">Another action</a>
-                        </li>
-                        <li>
-                            <a href="#">Something else here</a>
-                        </li>
-                        <li class="divider">
-                        </li>
-                        <li>
-                            <a href="#">Separated link</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="btn-group">
-                <button class="btn btn-default">Action</button>
-                <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a href="#">Action</a>
-                    </li>
-                    <li class="disabled">
-                        <a href="#">Another action</a>
-                    </li>
-                    <li class="divider">
-                    </li>
-                    <li>
-                        <a href="#">Something else here</a>
-                    </li>
-                </ul>
-            </div>
+        <div class="col-md-8 col-sm-12 col-xs-24 column col-no-gutter">
+            <button popover-placement="bottom" popover="Login with facebook" popover-trigger="mouseenter"
+                    class="btn btn-sm btn-primary" ng-click="login()" ng-show="!userLoggedIn()">Login
+            </button>
+            <button popover-placement="bottom" popover="Why? :(" popover-trigger="mouseenter"
+                    class="btn btn-sm btn-primary" ng-click="logout()" ng-show="userLoggedIn()">Logout
+            </button>
         </div>
+
     </div>
     <div class="row clearfix">
         <div class="col-md-8 col-sm-12 col-xs-24 column col-no-gutter" ng-repeat="item in items track by $index">

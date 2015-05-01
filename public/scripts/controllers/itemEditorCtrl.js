@@ -1,8 +1,8 @@
-app.controller("itemViewerCtrl", function ($scope, $location,item) {
+app.controller("itemEditorCtrl", function ($scope, $location,$modalInstance,item) {
     // Queries
-    console.log("in itemViewerCtrl");
-    console.log("in itemViewerCtrl selected item is " + item);
-    console.log("in itemViewerCtrl selected item is " + item.id);
+    console.log("in itemEditorCtrl");
+    console.log("in itemEditorCtrl selected item is " + item);
+    console.log("in itemEditorCtrl selected item is " + item.id);
     $scope.item=item;
     $scope.selectedSlide = 0;
     $scope.page = $scope.item.getPageObject();
@@ -10,7 +10,7 @@ app.controller("itemViewerCtrl", function ($scope, $location,item) {
     $scope.myUrl = '#'+$location.url();
 
     $scope.entityClicked = function(entityIndex, itemSelected) {
-      //  $scope.selectedSlide++;
+        //  $scope.selectedSlide++;
         //$scope.page.slides[$scope.selectedSlide].entities[entityIndex];
 
         setTimeout(function() {
@@ -40,8 +40,8 @@ app.controller("itemViewerCtrl", function ($scope, $location,item) {
             }
         );
 
-       // $scope.a++;
-       // slideVisibility='hideit';
+        // $scope.a++;
+        // slideVisibility='hideit';
     }
 
 
