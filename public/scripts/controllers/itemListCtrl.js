@@ -27,5 +27,9 @@ app.controller("itemListCtrl", function ($scope, $location, $modal, items,loginS
        loginService.logout();
     }
 
+    $scope.create= function(){
+
+    }
+
 
 });
