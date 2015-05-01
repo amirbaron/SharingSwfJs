@@ -34,7 +34,10 @@ angular.module('ng-uploadcare', [])
               $scope.widget.value(newValue);
           });
         $scope.widget.onChange(function(file) {
-       //     $scope.bindedValue = $scope.widget.value();
+            if (!file) {
+                $scope.bindedValue = null;
+                $scope.apply();
+            };
         })
       }]
     };

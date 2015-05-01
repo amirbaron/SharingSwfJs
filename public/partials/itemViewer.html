@@ -59,14 +59,13 @@
                 <button type="button" class="btn btn-default btn-xs copyrightMain dropdown-toggle"  data-toggle="dropdown" aria-label="copyright" ng-show="!editMode">
                     <span class="copyrightMainFont" aria-hidden="true">©</span>
                 </button>
-                <input type="text" class="form-control creditTextEdit" ng-show="editMode" placeholder="Picture credit" aria-describedby="basic-addon1">
             </div>
         </div>
         <div class="row">
             <div class="col-md-2 col-sm-3 col-xs-6 column defaultPad"  ng-repeat="entity in page.slides[selectedSlide].entities" >
                 <button class="btn btn-default defaultPad  " ng-class="{'btn-success' : entity.isSucess, 'btn-danger' : entity.isFailed, 'disabled' : entity.isPressed }" type="button" width="100%"  ng-click="entityClicked($index, this)">
                     <img class="img-responsive "  ng-src="{{entity.imgSmall}}" data-toggle="modal" />
-                    <div  ng-class="{'selectMainImageNoImage':true}",  ng-show="editMode">
+                    <div  ng-class="{'selectButtonImage':true}",  ng-show="editMode">
                         <uploadcare-widget
                                 ng-model="object.image.info.uuid"
                                 data-public-key="4b4265edeea7c06bf980"
