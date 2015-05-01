@@ -10,7 +10,6 @@ app.controller("itemEditorCtrl", function ($scope, $location,item) {
     $scope.editMode=true;
 
 
-
     $scope.jumpToSlide = function(slideIndex) {
         $scope.selectedSlide =  slideIndex; }
 

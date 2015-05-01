@@ -1,4 +1,4 @@
-app.controller("itemListCtrl", function ($scope, $location, $modal, items) {
+app.controller("itemListCtrl", function ($scope, $location, $modal, items,loginService) {
     // Queries
 
     //$scope.appPages = appPages;
@@ -16,34 +16,15 @@ app.controller("itemListCtrl", function ($scope, $location, $modal, items) {
     }
 
     $scope.userLoggedIn = function () {
-        if (Parse.User.current()) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return loginService.isLoggedIn();
     }
 
     $scope.login = function () {
-        var currentUser = Parse.User.current();
-        if (currentUser) {
-            return;
-        }
-        // Run code after the Facebook SDK is loaded.
-        Parse.FacebookUtils.logIn(null, {
-            success: function (user) {
-            },
-            error: function (user, error) {
-            }
-        });
+        loginService.login();
     }
 
     $scope.logout = function () {
-        var currentUser = Parse.User.current();
-        if (currentUser) {
-            Parse.User.logOut();
-        }
-        return;
+       loginService.logout();
     }
 
 

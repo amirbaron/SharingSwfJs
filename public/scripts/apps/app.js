@@ -1,27 +1,5 @@
-var app = angular.module('quizAppCopy', ['ui.router', 'parse-angular', 'parse-angular.enhance', 'ui.bootstrap', 'ng-uploadcare']);
-app.run(['$rootScope', function ($rootScope) {
-    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
-        console.log('$stateChangeStart to ' + toState.to + '- fired when the transition begins. toState,toParams : \n', toState, toParams);
-    });
-    $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
-        console.log('$stateChangeError - fired when an error occurs during transition.');
-        console.log(arguments);
-    });
-    $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-        console.log('$stateChangeSuccess to ' + toState.name + '- fired once the state transition is complete.');
-    });
-// $rootScope.$on('$viewContentLoading',function(event, viewConfig){
-//   // runs on individual scopes, so putting it in "run" doesn't work.
-//   console.log('$viewContentLoading - view begins loading - dom not rendered',viewConfig);
-// });
-    $rootScope.$on('$viewContentLoaded', function (event) {
-        console.log('$viewContentLoaded - fired after dom rendered', event);
-    });
-    $rootScope.$on('$stateNotFound', function (event, unfoundState, fromState, fromParams) {
-        console.log('$stateNotFound ' + unfoundState.to + '  - fired when a state cannot be found by its name.');
-        console.log(unfoundState, fromState, fromParams);
-    });
-}]);
+var app = angular.module('app', ['ui.router', 'parse-angular', 'parse-angular.enhance', 'ui.bootstrap', 'ng-uploadcare']);
+
 
 app.service('itemsService', function ($q) {
     Parse.Object.extend({
@@ -33,10 +11,7 @@ app.service('itemsService', function ($q) {
         setPageObject: function (pageObject) {
             this.setPage(angular.toJson(pageObject));
         }
-
-
     });
-
 
     return {
         getItems: function () {
@@ -72,7 +47,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             resolve: {
                 items: function (itemsService) {
                     return itemsService.getItems();
-                }
+                },
+                loginService:'loginService'
             },
             controller: "itemListCtrl"
         }).state('itemList.item', {
@@ -97,8 +73,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         }).state('itemList.item.view', {
             abstract: false,
-            parent:'itemList.item',
-            url:'/view',
+            parent: 'itemList.item',
+            url: '/view',
             views: {
                 'modal@': {
                     templateUrl: 'partials/itemViewer.html',
@@ -107,8 +83,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         }).state('itemList.item.edit', {
             abstract: false,
-            parent:'itemList.item',
-            url:'/edit',
+            parent: 'itemList.item',
+            url: '/edit',
             views: {
                 'modal@': {
                     templateUrl: 'partials/itemViewer.html',
