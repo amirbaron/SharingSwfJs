@@ -1,4 +1,4 @@
-app.controller("itemViewerCtrl", function ($scope, $location,item,loginService) {
+app.controller("itemViewerCtrl", function ($scope, $location,item,loginService,$state) {
     // Queries
     console.log("in itemViewerCtrl");
     console.log("in itemViewerCtrl selected item is " + item);
@@ -6,7 +6,7 @@ app.controller("itemViewerCtrl", function ($scope, $location,item,loginService) 
     $scope.item=item;
     $scope.selectedSlide = 0;
     $scope.page = $scope.item.getPageObject();
-    $scope.editMode = false;
+    //$scope.editMode = false;
     $scope.myUrl = '#'+$location.url();
 
     $scope.entityClicked = function(entityIndex, itemSelected) {
@@ -41,11 +41,12 @@ app.controller("itemViewerCtrl", function ($scope, $location,item,loginService) 
     }
 
     $scope.jumpToSlide = function(slideIndex) {
-        $scope.selectedSlide =  slideIndex; }
-
-    $scope.shareToFacebook= function(){
-        var fbpopup = window.open('https://www.facebook.com/sharer/sharer.php?u=quiz22.parseapp.com/i/'+item.id, "pop", "width=600, height=400, scrollbars=no");
+        $scope.selectedSlide =  slideIndex;
     }
+
+    //$scope.shareToFacebook= function(){
+    //    var fbpopup = window.open('https://www.facebook.com/sharer/sharer.php?u=quiz22.parseapp.com/i/'+item.id, "pop", "width=600, height=400, scrollbars=no");
+    //}
 
     $scope.save = function () {
         loginService.login();
@@ -61,21 +62,22 @@ app.controller("itemViewerCtrl", function ($scope, $location,item,loginService) 
         });
     };
 
-    $scope.openImageSelector = function (item, strCrop) {
-       // var file = uploadcare.fileFrom('uploaded', image);
-        uploadcare.openDialog(null, {
-            publicKey: "4b4265edeea7c06bf980",
-            imagesOnly: true,
-            crop: strCrop
-        }).done(function(file) {
-            if (file) {
-                file.done(function (info) {
-                    item.imgSmall = info.cdnUrl;
-                });
-                $scope.$apply();
-            }
-        });
-    }
+    //$scope.openImageSelector = function (item, strCrop) {
+    //   // var file = uploadcare.fileFrom('uploaded', image);
+    //    uploadcare.openDialog(null, {
+    //        publicKey: "4b4265edeea7c06bf980",
+    //        imagesOnly: true,
+    //        crop: strCrop
+    //    }).done(function(file) {
+    //        if (file) {
+    //            file.done(function (info) {
+    //                item.imgSmall = info.cdnUrl;
+    //            });
+    //            $scope.$apply();
+    //        }
+    //    });
+    //}
+
 
 });
 

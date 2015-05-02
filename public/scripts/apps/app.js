@@ -83,7 +83,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             views: {
                 'userInfo': {
                     templateUrl: "partials/userInfo.html",
-                    controller:"userInfoCtrl"
+                    controller: "userInfoCtrl"
                 },
                 'itemList': {
                     templateUrl: "partials/itemList.html",
@@ -106,14 +106,25 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 },
                 loginService: 'loginService'
             },
-            onEnter: ['$stateParams', '$state', '$modal', function ($stateParams, $state, $modal) {
-                console.log('Open modal');
+
+            onEnter: ['$stateParams', '$state', '$modal', 'item','loginService', function ($stateParams, $state, $modal, item,loginService) {
+                console.log('Passed item as ' + item.id);
                 $modal.open({
-                    template: '<div ui-view="modal"></div>',
+                    templateUrl: 'partials/itemBase.html',
                     animation: true,
-                    size:'lg'
+                    abstract: true,
+                    size: 'lg',
+                    controller: 'itemBaseCtrl',
+                    resolve: {
+                        item: function () {
+                            return item;
+                        },
+                        loginService:function(){
+                            return loginService;
+                        }
+                    }
                 }).result.finally(function () {
-                        $state.go('^.^');
+                        $state.go('base.itemList');
                     });
             }]
 
@@ -121,20 +132,37 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             abstract: false,
             url: '/view',
             views: {
-                'modal@': {
-                    templateUrl: 'partials/itemViewer.html',
-                    controller: "itemViewerCtrl"
+                'slides@': {
+                    templateUrl: 'partials/slides.html',
+                    controller: 'itemViewerCtrl'
                 }
             }
-        }).state('base.itemList.item.edit', {
-            abstract: false,
+        }).state('base.itemList.item.view.edit', {
+            abstract: true,
             url: '/edit',
             views: {
-                'modal@': {
-                    templateUrl: 'partials/itemViewer.html',
-                    controller: "itemEditorCtrl"
+                'itemTabs@': {
+                    templateUrl: 'partials/itemTabs.html',
+                    controller: 'itemTabsCtrl'
                 }
             }
+        }).state('base.itemList.item.view.edit.slides', {
+            abstract: false,
+            url: '/slides',
+            views: {
+                'slides': {
+                    //templateUrl: 'partials/slides.html',
+                    controller: 'slidesEditorCtrl'
+                }
+            }
+        }).state('base.itemList.item.view.edit.cover', {
+            abstract: false,
+            url: '/cover'
+
+        }).state('base.itemList.item.view.edit.results', {
+            abstract: false,
+            url: '/results'
+
         })
 })
 ;

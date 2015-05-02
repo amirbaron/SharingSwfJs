@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad">
+            <img class="img-responsive" ng-animate="'animate'"
+                 ng-src="{{(page.slides[selectedSlide].imgSmall != null)?page.slides[selectedSlide].imgSmall : 'http://placehold.it/468X263&text=+'}}">
+            <h4 class="slideMainText defaultPad defaultMargin " ng-show="!editMode">
+                {{page.slides[selectedSlide].text}}</h4>
+
+            <div ng-class="{'selectMainImageNoImage' : (page.slides[selectedSlide].imgSmall == null), 'selectMainImage' : (page.slides[selectedSlide].imgSmall != null)}"
+                 ng-show="editMode">
+                <button type="button" class="btn btn-default cameraButton" aria-label="Save"
+                        ng-click="openImageSelector(page.slides[selectedSlide], '468:263 minimum')">
+                    <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+                </button>
+            </div>
+
+
+            <input type="text" class="form-control slideMainText defaultPad defaultMargin" ng-show="editMode"
+                   placeholder="Type Your Question.." ng-model="page.slides[selectedSlide].text"></textarea></img>
+            <button type="button" class="btn btn-default btn-xs copyrightMain dropdown-toggle"
+                    data-toggle="dropdown" aria-label="copyright" ng-show="!editMode">
+                <span class="copyrightMainFont" aria-hidden="true">©</span>
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-sm-3 col-xs-6 column defaultPad"
+             ng-repeat="entity in page.slides[selectedSlide].entities">
+            <button class="btn btn-default defaultPad  "
+                    ng-class="{'btn-success' : (!editMode && entity.isSucess) || (editMode && entity.points>0),
+                                   'btn-danger' : (!editMode && entity.isFailed) || (editMode && entity.points==0),
+                                   'disabled' : (!editMode && entity.isPressed )}"
+                    type="button" width="100%" ng-click="entityClicked($index, this)">
+                <img class="img-responsive " ng-src="{{entity.imgSmall}}" data-toggle="modal"/>
+            </button>
+
+            <div ng-class="{'selectButtonImage':true}" ng-show="editMode">
+                <button type="button" class="btn btn-default btn-xs cameraButton" aria-label="Save"
+                        ng-click="openImageSelector(entity, '85:63 minimum')">
+                    <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <div class="btn-group answerRightWrong cameraButton" role="rightAnswer" aria-label="rightOrWrong"
+                 ng-show="editMode">
+                <button type="button" class="btn btn-default btn-xs  " aria-label="Right"
+                        ng-class="{'btn-success' : entity.points>0}" ng-click="entity.points=!entity.points">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                </button>
+
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad text-center">
+            <input type="checkbox" checked data-toggle="toggle">
+            <button class="btn btn-default btn-xs defaultPad "
+                    ng-click="jumpToSlide($index)">Title
+            </button>
+            <button class="btn btn-default defaultPad jump-button" ng-repeat="slide in page.slides"
+                    ng-class="{'btn-success' : slide.isSuccess && !editMode, 'btn-danger' : slide.isFailed && !editMode, 'active' : $index == selectedSlide }"
+                    ng-click="jumpToSlide($index)">
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,22 +1,30 @@
-app.controller("itemEditorCtrl", function ($scope, $location,item,loginService) {
-    // Queries
-    console.log("in itemEditorCtrl");
-    console.log("in itemEditorCtrl selected item is " + item);
-    console.log("in itemEditorCtrl selected item is " + item.id);
+app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$state) {
+// Queries
+    console.log("in itemBaseCtrl");
+    console.log("in itemBaseCtrl selected item is " + item);
+    console.log("in itemBaseCtrl selected item is " + item.id);
+
+
     $scope.item=item;
     $scope.selectedSlide = 0;
     $scope.page = $scope.item.getPageObject();
+    $scope.editMode = false;
     $scope.myUrl = '#'+$location.url();
-    $scope.editMode=true;
 
 
-    $scope.jumpToSlide = function(slideIndex) {
-        $scope.selectedSlide =  slideIndex;
-    }
 
     $scope.shareToFacebook= function(){
-        loginService.login();
         var fbpopup = window.open('https://www.facebook.com/sharer/sharer.php?u=quiz22.parseapp.com/i/'+item.id, "pop", "width=600, height=400, scrollbars=no");
+    }
+
+
+    $scope.toggleEdit=function(){
+        $scope.editMode=!$scope.editMode;
+        if($scope.editMode){
+            $state.go('.edit.slides');
+        }else{
+            $state.go('^.^');
+        }
     }
 
     $scope.save = function () {
@@ -32,8 +40,6 @@ app.controller("itemEditorCtrl", function ($scope, $location,item,loginService) 
             }
         });
     };
-
-
 
 });
 

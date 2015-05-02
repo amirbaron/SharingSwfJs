@@ -28,15 +28,9 @@
             </div>
         </div>
     </div>
-    <div ui-view="editTabs">
+    <div ui-view="itemTabs">
     </div>
 </div>
-
-<!--
-<input id="setbtn" type="button" value="set" ng-click="slideVisibility='hideit'">
-<input id="clearbtn" type="button" value="clear" ng-click="slideVisibility=''">
-<br>
-<span class="slide-visible" ng-class="slideVisibility">Sample Text</span>
-<button class="btn btn-default defaultPad" type="button" width="100%"  ng-click="slideVisibility='hideit'">
-    <img class="img-responsive" ng-src="{{entity.imgSmall}}" data-toggle="modal" />
-</button>-->
+<div class="modal-body">
+    <div ui-view="slides"></div>
+</div>
