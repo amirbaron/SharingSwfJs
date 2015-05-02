@@ -79,6 +79,11 @@
     border-bottom: none;
 }
 
+.cameraImageMain
+{
+    opacity: 0.40;
+    filter: alpha(opacity=40);
+}
 .creditTextEdit
 {
     z-index:100;

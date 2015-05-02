@@ -33,5 +33,7 @@ app.controller("itemEditorCtrl", function ($scope, $location,item,loginService) 
         });
     };
 
+
+
 });
 

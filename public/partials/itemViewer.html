@@ -41,7 +41,11 @@
 
                 <div ng-class="{'selectMainImageNoImage' : (page.slides[selectedSlide].imgSmall == null), 'selectMainImage' : (page.slides[selectedSlide].imgSmall != null)}"
                      ng-show="editMode">
-                    <uploadcare-widget
+                    <button type="button" class="btn btn-default cameraImageMain" aria-label="Save" ng-click="openImageSelector(page.slides[selectedSlide].imgSmall)">
+                        <span class="glyphicon glyphicon-camera" aria-hidden="true" ></span>
+                    </button>
+
+             <!--       <uploadcare-widget
                             ng-model="object.image.info.uuid"
                             data-public-key="4b4265edeea7c06bf980"
                             data-locale="en"
@@ -55,7 +59,7 @@
                             on-upload-complete="onUCUploadComplete(info)"
                             on-widget-ready="onUCWidgetReady(widget)"
                             binded-value="page.slides[selectedSlide].imgSmall"
-                            />
+                            />-->
                 </div>
 
                 <input type="text" class="form-control slideMainText defaultPad defaultMargin" ng-show="editMode"
