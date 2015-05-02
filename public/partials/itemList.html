@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-
 <div class="container defaultPad">
-
-    <div class="row clearfix defaultPad">
-        <div class="col-md-8 col-sm-12 col-xs-24 column col-no-gutter">
-            <div class="btn-group" role="login" aria-label="editing and saving">
-                <button popover-placement="bottom" popover="Login with facebook" popover-trigger="mouseenter"
-                        class="btn btn-primary" ng-click="login()" ng-show="!userLoggedIn()">Login
-                </button>
-                <button popover-placement="bottom" container='body' popover="Why? :(" popover-trigger="mouseenter"
-                        class="btn btn-primary" ng-click="logout()" ng-show="userLoggedIn()" >Logout
-                </button>
-
-            </div>
-            <button popover-placement="bottom" container='body' data-content="And here's some amazing content. It's very engaging. Right?" popover="Create your own cool item" popover-trigger="mouseenter"
-                    class="btn " ng-click="create()">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Crete
-            </button>
-        </div>
-
-    </div>
     <div class="row clearfix">
         <div class="col-md-8 col-sm-12 col-xs-24 column col-no-gutter" ng-repeat="item in items track by $index">
             <h4 class="text-left">

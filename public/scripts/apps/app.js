@@ -41,17 +41,41 @@ app.service('itemsService', function ($q) {
 app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/itemList");
     $stateProvider
-        .state('itemList', {
-            url: "/itemList",
-            templateUrl: "partials/itemList.html",
-            resolve: {
-                items: function (itemsService) {
-                    return itemsService.getItems();
-                },
-                loginService: 'loginService'
-            },
-            controller: "itemListCtrl"
-        }).state('itemList.item', {
+        .state('base', {
+            abstract: true,
+            url: "/",
+            templateUrl: "partials/baseView.html"
+
+        })
+        .state('base.itemList', {
+            url: "itemList",
+            views: {
+                'itemList': {
+                    templateUrl: "partials/itemList.html",
+                    controller: "itemListCtrl",
+                    resolve: {
+                        items: function (itemsService) {
+                            return itemsService.getItems();
+                        },
+                        loginService: 'loginService'
+                    }
+                }
+            }
+        }).state('base.profile', {
+            url: "profile",
+            views: {
+                'itemList': {
+                    templateUrl: "partials/itemList.html",
+                    controller: "itemListCtrl",
+                    resolve: {
+                        items: function (itemsService) {
+                            return itemsService.getItems();
+                        },
+                        loginService: 'loginService'
+                    }
+                }
+            }
+        }).state('base.itemList.item', {
             url: "/:itemId",
             abstract: true,
             backdrop: false,
@@ -68,13 +92,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     template: '<div ui-view="modal"></div>'
 
                 }).result.finally(function () {
-                        $state.go('itemList');
+                        $state.go('^.^');
                     });
             }]
 
-        }).state('itemList.item.view', {
+        }).state('base.itemList.item.view', {
             abstract: false,
-            parent: 'itemList.item',
             url: '/view',
             views: {
                 'modal@': {
@@ -82,9 +105,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     controller: "itemViewerCtrl"
                 }
             }
-        }).state('itemList.item.edit', {
+        }).state('base.itemList.item.edit', {
             abstract: false,
-            parent: 'itemList.item',
             url: '/edit',
             views: {
                 'modal@': {

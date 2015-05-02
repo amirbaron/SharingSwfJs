@@ -1,0 +1,45 @@
+<div class="container defaultPad">
+    <div class="row clearfix defaultPad">
+        <div class="col-md-8 col-sm-12 col-xs-24 column col-no-gutter pull-right">
+            <div class="btn-group" role="login" aria-label="login">
+                <button popover-placement="bottom" popover="Login with facebook" popover-trigger="mouseenter"
+                        class="btn btn-primary " ng-click="login()" ng-show="!userLoggedIn()" aria-hidden="true">Login
+                </button>
+
+                <!--<button popover-placement="bottom" container='body' popover="Why? :(" popover-trigger="mouseenter"-->
+                <!--class="btn btn-primary" ng-click="logout()" ng-show="userLoggedIn()">-->
+                <!--</button>-->
+                <span class="dropdown" dropdown on-toggle="toggled(open)" ng-show="userLoggedIn()" aria-hidden="true">
+                    <img ng-src="{{profileImg}}" class="img-thumbnail" dropdown-toggle aria-hidden="true"/>
+
+
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a ng-href="#/profile" popover-placement="left" container='body' popover="View your items"
+                               popover-trigger="mouseenter">Profile</a>
+                        </li>
+                        <li>
+                            <a popover-placement="left" container='body' popover="Why? :("
+                               popover-trigger="mouseenter"
+                               ng-click="logout()">Logout</a>
+                        </li>
+                    </ul>
+                </span>
+
+            </div>
+            <button popover-placement="bottom" container='body'
+                    data-content="And here's some amazing content. It's very engaging. Right?"
+                    popover="Create your own cool item" popover-trigger="mouseenter"
+                    class="btn btn-lg" ng-click="create()" aria-label="Create">
+
+                <span class="glyphicon glyphicon-plus" aria-hidden="false">
+                </span> Create
+            </button>
+        </div>
+
+    </div>
+    <div ui-view="itemList">
+
+    </div>
+
+</div>
