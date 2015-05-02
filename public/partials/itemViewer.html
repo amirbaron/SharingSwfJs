@@ -45,21 +45,6 @@
                         <span class="glyphicon glyphicon-camera" aria-hidden="true" ></span>
                     </button>
 
-                <!--   <uploadcare-widget
-                            ng-model="object.image.info.uuid"
-                            data-public-key="4b4265edeea7c06bf980"
-                            data-locale="en"
-                            data-tabs="file url facebook gdrive dropbox instagram evernote flickr skydrive box vk"
-                            data-images-only="true"
-                            data-path-value="true"
-                            data-preview-step="true"
-                            data-clearable="true"
-                            data-multiple="false"
-                            data-crop="468:263 minimum"
-                            on-upload-complete="onUCUploadComplete(info)"
-                            on-widget-ready="onUCWidgetReady(widget)"
-                            binded-value="page.slides[selectedSlide].imgSmall"
-                            />-->
                 </div>
 
                 <input type="text" class="form-control slideMainText defaultPad defaultMargin" ng-show="editMode"
@@ -74,7 +59,7 @@
             <div class="col-md-2 col-sm-3 col-xs-6 column defaultPad"
                  ng-repeat="entity in page.slides[selectedSlide].entities">
                 <button class="btn btn-default defaultPad  "
-                        ng-class="{'btn-success' : entity.isSucess, 'btn-danger' : entity.isFailed, 'disabled' : entity.isPressed || editMode }"
+                        ng-class="{'btn-success' : entity.isSucess, 'btn-danger' : entity.isFailed, 'disabled' : entity.isPressed}"
                         type="button" width="100%" ng-click="entityClicked($index, this)">
                     <img class="img-responsive " ng-src="{{entity.imgSmall}}" data-toggle="modal"/>
 
@@ -84,27 +69,15 @@
                     <button type="button" class="btn btn-default btn-xs cameraButton" aria-label="Save" ng-click="openImageSelector(entity, '85:63 minimum')">
                         <span class="glyphicon glyphicon-camera" aria-hidden="true" ></span>
                     </button>
-                    <!--
-                    <uploadcare-widget
-                            ng-model="object.image.info.uuid"
-                            data-public-key="4b4265edeea7c06bf980"
-                            data-locale="en"
-                            data-tabs="file url facebook gdrive dropbox instagram evernote flickr skydrive box vk"
-                            data-images-only="true"
-                            data-path-value="true"
-                            data-preview-step="true"
-                            data-clearable="true"
-                            data-multiple="false"
-                            data-crop="468:263 minimum"
-                            on-upload-complete="onUCUploadComplete(info)"
-                            on-widget-ready="onUCWidgetReady(widget)"
-                            binded-value="entitiy.imgSmall"
-                            />-->
                 </div>
             </div>
         </div>
         <div class="row clearfix">
             <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad text-center">
+                <input type="checkbox" checked data-toggle="toggle">
+                <button class="btn btn-default btn-xs defaultPad "
+                                     ng-click="jumpToSlide($index)">Title
+                </button>
                 <button class="btn btn-default defaultPad jump-button" ng-repeat="slide in page.slides"
                         ng-class="{'btn-success' : slide.isSuccess, 'btn-danger' : slide.isFailed, 'active' : $index == selectedSlide }"
                         ng-click="jumpToSlide($index)">

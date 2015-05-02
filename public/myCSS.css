@@ -32,14 +32,14 @@
     opacity: 0.76;
     filter: alpha(opacity=76);
     background-color: #000000;
-    width:90%;
+    width:97%;
 }
 
 .copyrightMain {
     z-index: 100;
     position: absolute;
     right: 3px;
-    bottom: 3px;
+    top: 3px;
     width: 20px;
     height: 20px;
 }

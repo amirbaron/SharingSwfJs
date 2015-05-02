@@ -10,6 +10,8 @@ app.controller("itemViewerCtrl", function ($scope, $location,item,loginService) 
     $scope.myUrl = '#'+$location.url();
 
     $scope.entityClicked = function(entityIndex, itemSelected) {
+        if ($scope.editMode)
+            return;
         setTimeout(function() {
             $scope.selectedSlide++; $scope.$apply()}, 1000);
 
