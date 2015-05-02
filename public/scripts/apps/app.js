@@ -42,28 +42,26 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/itemList");
     $stateProvider
         .state('base', {
-            abstract:true,
-            url: "/itemList",
-            templateUrl: "partials/itemList.html",
+            abstract: true,
+            url: "/",
+            controller: "itemListCtrl",
+            templateUrl: "partials/baseView.html",
             resolve: {
                 items: function (itemsService) {
                     return itemsService.getItems();
                 },
                 loginService: 'loginService'
-            },
-            controller: "itemListCtrl"
+            }
         })
-        .state('itemList', {
-            url: "/itemList",
-            templateUrl: "partials/itemList.html",
-            resolve: {
-                items: function (itemsService) {
-                    return itemsService.getItems();
-                },
-                loginService: 'loginService'
-            },
-            controller: "itemListCtrl"
-        }).state('itemList.item', {
+        .state('base.itemList', {
+            url: "itemList",
+            views: {
+                'itemList': {
+                    templateUrl: "partials/itemList.html",
+                    controller: "itemListCtrl"
+                }
+            }
+        }).state('base.itemList.item', {
             url: "/:itemId",
             abstract: true,
             backdrop: false,
@@ -84,9 +82,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     });
             }]
 
-        }).state('itemList.item.view', {
+        }).state('base.itemList.item.view', {
             abstract: false,
-            parent: 'itemList.item',
             url: '/view',
             views: {
                 'modal@': {
@@ -94,9 +91,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     controller: "itemViewerCtrl"
                 }
             }
-        }).state('itemList.item.edit', {
+        }).state('base.itemList.item.edit', {
             abstract: false,
-            parent: 'itemList.item',
             url: '/edit',
             views: {
                 'modal@': {
