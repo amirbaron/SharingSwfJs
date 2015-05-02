@@ -59,5 +59,21 @@ app.controller("itemViewerCtrl", function ($scope, $location,item,loginService) 
         });
     };
 
+    $scope.openImageSelector = function (image) {
+        var file = uploadcare.fileFrom('uploaded', image);
+        uploadcare.openDialog(file, {
+            publicKey: "4b4265edeea7c06bf980",
+            imagesOnly: true,
+            crop: "468:263 minimum"
+        }).done(function(file) {
+            if (file) {
+                file.done(function (info) {
+                    $scope.page.slides[$scope.selectedSlide].imgSmall = info.cdnUrl;
+                });
+                $scope.$apply();
+            }
+        });
+    }
+
 });
 
