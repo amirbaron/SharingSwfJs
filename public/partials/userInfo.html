@@ -1,12 +1,13 @@
-<div class="container-fluid well span6 defaultPad">
+<div class="container well defaultPad">
     <div class="row-fluid">
-        <div class="span2" >
-            <img ng-src="{{imgUrl}}" class="img-responsive">
-        </div>
-
-        <div class="span8">
-            <h3>{{firstName}} {{lastName}}</h3>
-            <h3>Email: {{email}}</h3>
-        </div>
+        <img ng-src="{{imgUrl}}" class="img-responsive">
+    </div>
+    <div class="row-fluid">
+        <h3>{{firstName}} {{lastName}}</h3>
+    </div>
+    <div class="row-fluid">
+        <span class="glyphicon glyphicon-envelope">
+            </span>
+        <a href="mailto:#">{{email}}</a>
     </div>
 </div>
