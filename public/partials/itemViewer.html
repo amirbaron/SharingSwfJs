@@ -75,14 +75,8 @@
 
                 <div class="btn-group answerRightWrong cameraButton" role="rightAnswer" aria-label="rightOrWrong" ng-show="editMode">
                     <button type="button" class="btn btn-default btn-xs  " aria-label="Right"
-                            ng-class="{'btn-success' : entity.points>0}" ng-click="entity.points=1;">
+                            ng-class="{'btn-success' : entity.points>0}" ng-click="entity.points=!entity.points">
                         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                    </button>
-
-                    <button type="button" class="btn btn-default btn-xs " aria-label="Wrong"
-                            ng-class="{'btn-danger' : entity.points==0}"
-                            ng-click="entity.points=0;">
-                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                     </button>
 
                 </div>
