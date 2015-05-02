@@ -44,8 +44,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('base', {
             abstract: true,
             url: "/",
-            templateUrl: "partials/baseView.html"
+            templateUrl: "partials/baseView.html",
+            resolve: {
 
+                loginService: 'loginService'
+            },
+            controller:'loginCtrl'
         })
         .state('base.itemList', {
             url: "itemList",
@@ -56,9 +60,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     resolve: {
                         items: function (itemsService) {
                             return itemsService.getItems();
-                        },
-                        loginService: 'loginService'
+                        }
                     }
+
                 }
             }
         }).state('base.profile', {
