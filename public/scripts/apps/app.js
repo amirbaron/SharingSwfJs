@@ -61,6 +61,20 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     }
                 }
             }
+        }).state('base.profile', {
+            url: "profile",
+            views: {
+                'itemList': {
+                    templateUrl: "partials/itemList.html",
+                    controller: "itemListCtrl",
+                    resolve: {
+                        items: function (itemsService) {
+                            return itemsService.getItems();
+                        },
+                        loginService: 'loginService'
+                    }
+                }
+            }
         }).state('base.itemList.item', {
             url: "/:itemId",
             abstract: true,
@@ -78,7 +92,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     template: '<div ui-view="modal"></div>'
 
                 }).result.finally(function () {
-                        $state.go('itemList');
+                        $state.go('^.^');
                     });
             }]
 
