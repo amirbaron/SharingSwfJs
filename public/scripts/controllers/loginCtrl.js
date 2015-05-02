@@ -8,6 +8,7 @@ app.controller("loginCtrl", function ($scope, $location, loginService) {
 
     $scope.login = function () {
         loginService.login();
+        $scope.profileImg=loginService.getUserImg();
     }
 
     $scope.logout = function () {
