@@ -79,10 +79,10 @@
     border-bottom: none;
 }
 
-.cameraImageMain
+.cameraButton
 {
-    opacity: 0.40;
-    filter: alpha(opacity=40);
+    opacity: 0.50;
+    filter: alpha(opacity=50);
 }
 .creditTextEdit
 {
