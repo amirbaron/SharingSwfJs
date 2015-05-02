@@ -28,7 +28,7 @@ angular.module('ng-uploadcare', [])
         $scope.onWidgetReady({widget: $scope.widget});
         $scope.widget.onUploadComplete(function(info) {
             $scope.bindedValue = info.cdnUrl;
-            $scope.apply();
+            $scope.$apply();
         });
           $scope.$watch('bindedValue', function(newValue, oldValue) {
               $scope.widget.value(newValue);

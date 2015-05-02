@@ -10,6 +10,8 @@ app.controller("itemViewerCtrl", function ($scope, $location,item,loginService) 
     $scope.myUrl = '#'+$location.url();
 
     $scope.entityClicked = function(entityIndex, itemSelected) {
+        if ($scope.editMode)
+            return;
         setTimeout(function() {
             $scope.selectedSlide++; $scope.$apply()}, 1000);
 
@@ -59,16 +61,16 @@ app.controller("itemViewerCtrl", function ($scope, $location,item,loginService) 
         });
     };
 
-    $scope.openImageSelector = function (image) {
-        var file = uploadcare.fileFrom('uploaded', image);
-        uploadcare.openDialog(file, {
+    $scope.openImageSelector = function (item, strCrop) {
+       // var file = uploadcare.fileFrom('uploaded', image);
+        uploadcare.openDialog(null, {
             publicKey: "4b4265edeea7c06bf980",
             imagesOnly: true,
-            crop: "468:263 minimum"
+            crop: strCrop
         }).done(function(file) {
             if (file) {
                 file.done(function (info) {
-                    $scope.page.slides[$scope.selectedSlide].imgSmall = info.cdnUrl;
+                    item.imgSmall = info.cdnUrl;
                 });
                 $scope.$apply();
             }
