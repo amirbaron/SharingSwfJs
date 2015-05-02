@@ -44,21 +44,21 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('base', {
             abstract: true,
             url: "/",
-            controller: "itemListCtrl",
-            templateUrl: "partials/baseView.html",
-            resolve: {
-                items: function (itemsService) {
-                    return itemsService.getItems();
-                },
-                loginService: 'loginService'
-            }
+            templateUrl: "partials/baseView.html"
+
         })
         .state('base.itemList', {
             url: "itemList",
             views: {
                 'itemList': {
                     templateUrl: "partials/itemList.html",
-                    controller: "itemListCtrl"
+                    controller: "itemListCtrl",
+                    resolve: {
+                        items: function (itemsService) {
+                            return itemsService.getItems();
+                        },
+                        loginService: 'loginService'
+                    }
                 }
             }
         }).state('base.itemList.item', {
