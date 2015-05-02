@@ -109,8 +109,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             onEnter: ['$stateParams', '$state', '$modal', function ($stateParams, $state, $modal) {
                 console.log('Open modal');
                 $modal.open({
-                    template: '<div ui-view="modal"></div>'
-
+                    template: '<div ui-view="modal"></div>',
+                    animation: true,
+                    size:'lg'
                 }).result.finally(function () {
                         $state.go('^.^');
                     });

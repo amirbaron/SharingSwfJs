@@ -1,7 +1,5 @@
-<div class="container defaultPad well">
-<div ng-class="slideVisibility">
-
-
+<div ng-class="modal-body">
+    <div class="container">
         <div class="row clearfix defaultPad">
             <div class="btn-group" role="editing" aria-label="editing and saving">
                 <button type="button" class="btn btn-default" aria-label="Edit"
@@ -43,8 +41,9 @@
 
                 <div ng-class="{'selectMainImageNoImage' : (page.slides[selectedSlide].imgSmall == null), 'selectMainImage' : (page.slides[selectedSlide].imgSmall != null)}"
                      ng-show="editMode">
-                    <button type="button" class="btn btn-default cameraButton" aria-label="Save" ng-click="openImageSelector(page.slides[selectedSlide], '468:263 minimum')">
-                        <span class="glyphicon glyphicon-camera" aria-hidden="true" ></span>
+                    <button type="button" class="btn btn-default cameraButton" aria-label="Save"
+                            ng-click="openImageSelector(page.slides[selectedSlide], '468:263 minimum')">
+                        <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
                     </button>
                 </div>
 
@@ -68,13 +67,15 @@
                     <img class="img-responsive " ng-src="{{entity.imgSmall}}" data-toggle="modal"/>
                 </button>
 
-                <div ng-class="{'selectButtonImage':true}"  ng-show="editMode">
-                    <button type="button" class="btn btn-default btn-xs cameraButton" aria-label="Save" ng-click="openImageSelector(entity, '85:63 minimum')">
-                        <span class="glyphicon glyphicon-camera" aria-hidden="true" ></span>
+                <div ng-class="{'selectButtonImage':true}" ng-show="editMode">
+                    <button type="button" class="btn btn-default btn-xs cameraButton" aria-label="Save"
+                            ng-click="openImageSelector(entity, '85:63 minimum')">
+                        <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
                     </button>
                 </div>
 
-                <div class="btn-group answerRightWrong cameraButton" role="rightAnswer" aria-label="rightOrWrong" ng-show="editMode">
+                <div class="btn-group answerRightWrong cameraButton" role="rightAnswer" aria-label="rightOrWrong"
+                     ng-show="editMode">
                     <button type="button" class="btn btn-default btn-xs  " aria-label="Right"
                             ng-class="{'btn-success' : entity.points>0}" ng-click="entity.points=!entity.points">
                         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
@@ -87,7 +88,7 @@
             <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad text-center">
                 <input type="checkbox" checked data-toggle="toggle">
                 <button class="btn btn-default btn-xs defaultPad "
-                                     ng-click="jumpToSlide($index)">Title
+                        ng-click="jumpToSlide($index)">Title
                 </button>
                 <button class="btn btn-default defaultPad jump-button" ng-repeat="slide in page.slides"
                         ng-class="{'btn-success' : slide.isSuccess && !editMode, 'btn-danger' : slide.isFailed && !editMode, 'active' : $index == selectedSlide }"
