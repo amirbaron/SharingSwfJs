@@ -1,11 +1,5 @@
-app.controller("itemListCtrl", function ($scope, $location, $modal, items,loginService) {
-    // Queries
-
-    //$scope.appPages = appPages;
+app.controller("itemListCtrl", function ($scope, $location, $modal, items) {
     $scope.items = items;
-    $scope.profileImg=loginService.getUserImg();
-    console.log("Profile img= " + $scope.profileImg);
-
     $scope.viewItem = function (item) {
         var itemViewerCtrl = $modal.open({
             templateUrl: 'partials/itemViewer.html',
@@ -17,20 +11,7 @@ app.controller("itemListCtrl", function ($scope, $location, $modal, items,loginS
             }
         });
     }
-
-    $scope.userLoggedIn = function () {
-        return loginService.isLoggedIn();
-    }
-
-    $scope.login = function () {
-        loginService.login();
-    }
-
-    $scope.logout = function () {
-       loginService.logout();
-    }
-
-    $scope.create= function(){
+    $scope.create = function () {
 
     }
 
