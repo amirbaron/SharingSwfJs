@@ -1,7 +1,7 @@
 app.controller("loginCtrl", function ($scope, $location, loginService) {
 
     $scope.profileImg=loginService.getUserImg();
-    
+
     $scope.userLoggedIn = function () {
         return loginService.isLoggedIn();
     }

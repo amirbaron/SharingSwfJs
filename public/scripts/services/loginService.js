@@ -10,12 +10,15 @@ app.service('loginService', function ($q) {
                 return;
             }
             // Run code after the Facebook SDK is loaded.
-            Parse.FacebookUtils.logIn(null, {
+            Parse.FacebookUtils.logIn('email', {
                 success: function (user) {
-                    var faceBookUserId = angular.fromJson(user.get('authData')).facebook.id;
+                    userJson = angular.fromJson(user.get('authData'));
+                    var faceBookUserId = userJson.facebook.id;
+                    var email = userJson.facebook.email;
                     console.log('facebook id ' + faceBookUserId);
                     var profileImg = '//graph.facebook.com/' + faceBookUserId + '/picture';
                     user.set('profileImg', profileImg);
+                    user.set('email',email);
                     user.save();
                 },
                 error: function (user, error) {

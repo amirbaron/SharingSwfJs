@@ -10,6 +10,9 @@ app.service('itemsService', function ($q) {
         },
         setPageObject: function (pageObject) {
             this.setPage(angular.toJson(pageObject));
+        },
+        setUser: function (user) {
+            this.set('user', user);
         }
     });
 
@@ -17,6 +20,16 @@ app.service('itemsService', function ($q) {
         getItems: function () {
             var dfd = $q.defer();
             var query = new Parse.Query("AppPage");
+            query.find().then(function (result) {
+                dfd.resolve(result);
+            });
+
+            return dfd.promise
+        },
+        getUserItems: function () {
+            var dfd = $q.defer();
+            var query = new Parse.Query("AppPage");
+            query.equalTo("user", Parse.User.current());
             query.find().then(function (result) {
                 dfd.resolve(result);
             });
@@ -49,7 +62,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
                 loginService: 'loginService'
             },
-            controller:'loginCtrl'
+            controller: 'loginCtrl'
         })
         .state('base.itemList', {
             url: "itemList",
@@ -68,14 +81,17 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }).state('base.profile', {
             url: "profile",
             views: {
+                'userInfo': {
+                    templateUrl: "partials/userInfo.html",
+                    controller:"userInfoCtrl"
+                },
                 'itemList': {
                     templateUrl: "partials/itemList.html",
                     controller: "itemListCtrl",
                     resolve: {
                         items: function (itemsService) {
-                            return itemsService.getItems();
-                        },
-                        loginService: 'loginService'
+                            return itemsService.getUserItems();
+                        }
                     }
                 }
             }
