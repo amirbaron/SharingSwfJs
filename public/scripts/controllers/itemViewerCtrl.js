@@ -38,8 +38,6 @@ app.controller("itemViewerCtrl", function ($scope, $location,item,loginService) 
         );
     }
 
-
-
     $scope.jumpToSlide = function(slideIndex) {
         $scope.selectedSlide =  slideIndex; }
 
@@ -48,10 +46,8 @@ app.controller("itemViewerCtrl", function ($scope, $location,item,loginService) 
     }
 
     $scope.save = function () {
+        loginService.login();
         $scope.item.setPageObject($scope.page);
-        if(!Parse.User.current()){
-            console.log("$scope.$parent.login is " + $scope.$parent.login);
-        }
         $scope.item.setUser(Parse.User.current());
         $scope.item.save(null, {
             success: function (object) {
