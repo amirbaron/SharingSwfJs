@@ -1,5 +1,4 @@
 <div class="container defaultPad">
-
     <div class="row clearfix defaultPad">
         <div class="col-md-8 col-sm-12 col-xs-24 column col-no-gutter pull-right">
             <div class="btn-group" role="login" aria-label="login">
@@ -41,16 +40,6 @@
         </div>
 
     </div>
-    <div class="row clearfix">
-        <div class="col-md-8 col-sm-12 col-xs-24 column col-no-gutter" ng-repeat="item in items track by $index">
-            <h4 class="text-left">
-                {{item.getPageObject().title}}
-            </h4>
-            <a ng-href="#/itemList/{{item.id}}/view">
-                <img alt="360*276"
-                     ng-src="{{item.getPageObject().previewImg}}" class="img-responsive" data-toggle="modal">
-            </a>
 
-        </div>
-    </div>
+    <div class="row clearfix" ui-view="list"/>
 </div>

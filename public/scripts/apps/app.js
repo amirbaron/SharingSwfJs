@@ -41,6 +41,18 @@ app.service('itemsService', function ($q) {
 app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/itemList");
     $stateProvider
+        .state('base', {
+            abstract:true,
+            url: "/itemList",
+            templateUrl: "partials/itemList.html",
+            resolve: {
+                items: function (itemsService) {
+                    return itemsService.getItems();
+                },
+                loginService: 'loginService'
+            },
+            controller: "itemListCtrl"
+        })
         .state('itemList', {
             url: "/itemList",
             templateUrl: "partials/itemList.html",

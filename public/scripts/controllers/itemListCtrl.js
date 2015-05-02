@@ -3,6 +3,9 @@ app.controller("itemListCtrl", function ($scope, $location, $modal, items,loginS
 
     //$scope.appPages = appPages;
     $scope.items = items;
+    $scope.profileImg=loginService.getUserImg();
+    console.log("Profile img= " + $scope.profileImg);
+
     $scope.viewItem = function (item) {
         var itemViewerCtrl = $modal.open({
             templateUrl: 'partials/itemViewer.html',
