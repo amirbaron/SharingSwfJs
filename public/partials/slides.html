@@ -27,7 +27,7 @@
         <div class="col-md-2 col-sm-3 col-xs-6 column defaultPad"
              ng-repeat="entity in page.slides[selectedSlide].entities">
             <button class="btn btn-default defaultPad  "
-                    ng-class="{'btn-success' : (!editMode && entity.isSucess) || (editMode && entity.points>0),
+                    ng-class="{'btn-success' : (!editMode && entity.isSuccess) || (editMode && entity.points>0),
                                    'btn-danger' : (!editMode && entity.isFailed) || (editMode && entity.points==0),
                                    'disabled' : (!editMode && entity.isPressed )}"
                     type="button" width="100%" ng-click="entityClicked($index, this)">

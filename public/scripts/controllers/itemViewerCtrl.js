@@ -33,7 +33,7 @@ app.controller("itemViewerCtrl", function ($scope, $location,item,loginService,$
             {
                 if (entity.points > 0)
                 {
-                    entity.isSucess = true;
+                    entity.isSuccess = true;
                 }
                 entity.isPressed = true;
             }
@@ -48,13 +48,16 @@ app.controller("itemViewerCtrl", function ($scope, $location,item,loginService,$
     //    var fbpopup = window.open('https://www.facebook.com/sharer/sharer.php?u=quiz22.parseapp.com/i/'+item.id, "pop", "width=600, height=400, scrollbars=no");
     //}
 
+
     $scope.save = function () {
+        console.log("Saved1 with parse id: " + object.id);
         loginService.login();
+
         $scope.item.setPageObject($scope.page);
         $scope.item.setUser(Parse.User.current());
         $scope.item.save(null, {
             success: function (object) {
-                console.log("Saved with parse id: " + object.id);
+                console.log("Saved2 with parse id: " + object.id);
             },
             error: function (model, error) {
                 alert("Error" + error);
