@@ -84,6 +84,16 @@ app.controller("slidesCtrl", function ($scope, $location, item, loginService, $s
         });
     }
 
+    $scope.removeSlide = function()
+    {
+        if ($scope.page.slides.length <= 1)
+            return;
+
+        $scope.page.slides.splice($scope.selectedSlide,1);
+        if ($scope.selectedSlide >= $scope.page.slides.length)
+            $scope.selectedSlide = $scope.page.slides.length-1;
+    }
+
 
 
 });
