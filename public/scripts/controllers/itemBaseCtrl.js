@@ -3,10 +3,10 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
     console.log("in itemBaseCtrl");
     console.log("in itemBaseCtrl selected item is " + item);
     console.log("in itemBaseCtrl selected item is " + item.id);
+    console.log("in itemBaseCtrl slide is " + $state.current.data.sharedIndex);
 
 
     $scope.item=item;
-    $scope.selectedSlide = 0;
     $scope.page = $scope.item.getPageObject();
     $scope.editMode = false;
     $scope.myUrl = '#'+$location.url();
@@ -21,9 +21,11 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
     $scope.toggleEdit=function(){
         $scope.editMode=!$scope.editMode;
         if($scope.editMode){
-            $state.go('.edit.slides');
+            $state.go('^.edit.slides');
+            console.log("in itemBaseCtrl slide is " + $state.current.data.sharedIndex);
+
         }else{
-            $state.go('^.^');
+            $state.go('^.^.view');
         }
     }
 

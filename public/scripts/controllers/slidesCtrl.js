@@ -1,38 +1,39 @@
-app.controller("itemViewerCtrl", function ($scope, $location,item,loginService,$state) {
+app.controller("slidesCtrl", function ($scope, $location, item, loginService, $state) {
     // Queries
     console.log("in itemViewerCtrl");
     console.log("in itemViewerCtrl selected item is " + item);
     console.log("in itemViewerCtrl selected item is " + item.id);
-    $scope.item=item;
-    $scope.selectedSlide = 0;
+    console.log("in itemViewerCtrl selected slide " + $state.current.data.sharedIndex);
+
+    $scope.item = item;
+    $scope.selectedSlide = $state.current.data.sharedIndex;
     $scope.page = $scope.item.getPageObject();
     //$scope.editMode = false;
-    $scope.myUrl = '#'+$location.url();
+    $scope.myUrl = '#' + $location.url();
 
-    $scope.entityClicked = function(entityIndex, itemSelected) {
+    $scope.entityClicked = function (entityIndex, itemSelected) {
         if ($scope.editMode)
             return;
-        setTimeout(function() {
-            $scope.selectedSlide++; $scope.$apply()}, 1000);
+        setTimeout(function () {
+            $scope.selectedSlide++;
+            $state.current.data.sharedIndex = $scope.selectedSlide;
+            $scope.$apply()
+        }, 1000);
 
         var selectedSlide = $scope.page.slides[$scope.selectedSlide];
         var selectedEntity = selectedSlide.entities[entityIndex];
 
-        if (selectedEntity.points == 0)
-        {
+        if (selectedEntity.points == 0) {
             selectedEntity.isFailed = true;
             selectedSlide.isFailed = true;
         }
-        else
-        {
+        else {
             selectedSlide.isSuccess = true;
         }
 
         selectedSlide.entities.forEach(
-            function handleEntity(entity)
-            {
-                if (entity.points > 0)
-                {
+            function handleEntity(entity) {
+                if (entity.points > 0) {
                     entity.isSuccess = true;
                 }
                 entity.isPressed = true;
@@ -40,8 +41,11 @@ app.controller("itemViewerCtrl", function ($scope, $location,item,loginService,$
         );
     }
 
-    $scope.jumpToSlide = function(slideIndex) {
-        $scope.selectedSlide =  slideIndex;
+    $scope.jumpToSlide = function (slideIndex) {
+        $scope.selectedSlide = slideIndex;
+        $state.current.data.sharedIndex = $scope.selectedSlide;
+        console.log("in itemViewerCtrl selected slide " + $state.current.data.sharedIndex);
+
     }
 
     //$scope.shareToFacebook= function(){
@@ -65,21 +69,21 @@ app.controller("itemViewerCtrl", function ($scope, $location,item,loginService,$
         });
     };
 
-    //$scope.openImageSelector = function (item, strCrop) {
-    //   // var file = uploadcare.fileFrom('uploaded', image);
-    //    uploadcare.openDialog(null, {
-    //        publicKey: "4b4265edeea7c06bf980",
-    //        imagesOnly: true,
-    //        crop: strCrop
-    //    }).done(function(file) {
-    //        if (file) {
-    //            file.done(function (info) {
-    //                item.imgSmall = info.cdnUrl;
-    //            });
-    //            $scope.$apply();
-    //        }
-    //    });
-    //}
+    $scope.openImageSelector = function (item, strCrop) {
+        uploadcare.openDialog(null, {
+            publicKey: "4b4265edeea7c06bf980",
+            imagesOnly: true,
+            crop: strCrop
+        }).done(function (file) {
+            if (file) {
+                file.done(function (info) {
+                    item.imgSmall = info.cdnUrl;
+                });
+                $scope.$apply();
+            }
+        });
+    }
+
 
 
 });

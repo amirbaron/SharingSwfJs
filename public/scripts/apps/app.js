@@ -99,6 +99,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: "/:itemId",
             abstract: true,
             backdrop: false,
+            data:
+            {
+                sharedIndex:0
+            },
             resolve: {
                 item: function (itemsService, $stateParams) {
                     console.log("Item id is " + $stateParams.itemId);
@@ -123,6 +127,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                             return loginService;
                         }
                     }
+
                 }).result.finally(function () {
                         $state.go('base.itemList');
                     });
@@ -134,10 +139,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             views: {
                 'slides@': {
                     templateUrl: 'partials/slides.html',
-                    controller: 'itemViewerCtrl'
+                    controller: 'slidesCtrl'
                 }
             }
-        }).state('base.itemList.item.view.edit', {
+        }).state('base.itemList.item.edit', {
             abstract: true,
             url: '/edit',
             views: {
@@ -146,20 +151,20 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     controller: 'itemTabsCtrl'
                 }
             }
-        }).state('base.itemList.item.view.edit.slides', {
+        }).state('base.itemList.item.edit.slides', {
             abstract: false,
             url: '/slides',
             views: {
                 'slides': {
-                    //templateUrl: 'partials/slides.html',
-                    controller: 'slidesEditorCtrl'
+                    templateUrl: 'partials/slides.html',
+                    controller: 'slidesCtrl'
                 }
             }
-        }).state('base.itemList.item.view.edit.cover', {
+        }).state('base.itemList.item.edit.cover', {
             abstract: false,
             url: '/cover'
 
-        }).state('base.itemList.item.view.edit.results', {
+        }).state('base.itemList.item.edit.results', {
             abstract: false,
             url: '/results'
 
