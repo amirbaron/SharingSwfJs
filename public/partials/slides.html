@@ -3,19 +3,22 @@
         <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad">
             <img class="img-responsive" ng-animate="'animate'"
                  ng-src="{{(page.slides[selectedSlide].imgSmall != null)?page.slides[selectedSlide].imgSmall : 'http://placehold.it/468X263&text=+'}}">
-            <h4 class=" slideText slideMainText defaultPad defaultMargin " ng-show="!editMode">
+            <h4 class=" slideText opacityText slideMainText defaultPad defaultMargin " ng-show="!editMode">
                 {{page.slides[selectedSlide].text}}</h4>
 
             <div ng-class="{'selectMainImageNoImage' : (page.slides[selectedSlide].imgSmall == null), 'selectMainImage' : (page.slides[selectedSlide].imgSmall != null)}"
                  ng-show="editMode">
+
                 <button type="button" class="btn btn-default cameraButton" aria-label="Save"
                         ng-click="openImageSelector(page.slides[selectedSlide], '468:263 minimum')">
                     <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
                 </button>
+
+
             </div>
 
 
-            <input type="text" class="form-control slideText slideMainText defaultPad defaultMargin" ng-show="editMode"
+            <input type="text" class="form-control opacityText slideMainText defaultPad defaultMargin" ng-show="editMode"
                    placeholder="Type Your Question.." ng-model="page.slides[selectedSlide].text"></textarea></img>
             <button type="button" class="btn btn-default btn-xs copyrightMain dropdown-toggle"
                     data-toggle="dropdown" aria-label="copyright" ng-show="!editMode">
@@ -32,9 +35,9 @@
                                    'disabled' : (!editMode && entity.isPressed )}"
                     type="button" width="100%" ng-click="entityClicked($index, this)">
                 <img class="img-responsive " ng-src="{{entity.imgSmall}}" data-toggle="modal"/>
-                <h4 class="slideText slideAnswerText " ng-show="!editMode">
+                <h4 class="opacityText slideAnswerText " ng-show="!editMode">
                     {{entity.text}}</h4>
-                <input type="text" class="form-control slideText slideAnswerInput" ng-show="editMode"
+                <input type="text" class="form-control opacityText slideAnswerText slideAnswerInput" ng-show="editMode"
                        placeholder="Answer.." ng-model="entity.text"></textarea></img>
 
             </button>
@@ -58,14 +61,25 @@
     </div>
     <div class="row clearfix">
         <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad text-center">
-            <input type="checkbox" checked data-toggle="toggle">
-            <button class="btn btn-default btn-xs defaultPad "
-                    ng-click="jumpToSlide($index)">Title
+            <button type="button" ng-show="editMode" class="btn btn-default btn-xs" aria-label="Save"
+                    ng-click="openImageSelector(page.slides[selectedSlide], '468:263 minimum')">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
             </button>
-            <button class="btn btn-default defaultPad jump-button" ng-repeat="slide in page.slides"
-                    ng-class="{'btn-success' : slide.isSuccess && !editMode, 'btn-danger' : slide.isFailed && !editMode, 'active' : $index == selectedSlide }"
+            <button class="btn btn-default defaultPad" ng-repeat="slide in page.slides"
+                    ng-class="{'btn-success' : slide.isSuccess && !editMode,
+                               'btn-danger' : slide.isFailed && !editMode,
+                               'active' : $index == selectedSlide,
+                               'jump-button-edit' : editMode,
+                               'jump-button-view' : !editMode}"
                     ng-click="jumpToSlide($index)">
+                <h6 class="jump-button-text" ng-show="editMode">{{$index+1}}</h6>
+
             </button>
+            <button type="button" ng-show="editMode" class="btn btn-default btn-xs  " aria-label="Save"
+                    ng-click="openImageSelector(page.slides[selectedSlide], '468:263 minimum')">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+
         </div>
     </div>
 </div>
