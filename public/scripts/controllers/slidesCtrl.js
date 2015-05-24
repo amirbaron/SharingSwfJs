@@ -90,7 +90,7 @@ app.controller("slidesCtrl", function ($scope, $location,  loginService, $state)
         if ($scope.page.slides.length >= 10)
             return;
 
-        $scope.page.slides.splice($scope.selectedSlide+1, 0, $scope.createDefaultSlide());
+        $scope.page.slides.splice($scope.page.selectedSlide+1, 0, $scope.createDefaultSlide());
         $scope.page.selectedSlide+=1;
     }
 
