@@ -1,17 +1,14 @@
 app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$state) {
 // Queries
     console.log("in itemBaseCtrl");
-    console.log("in itemBaseCtrl selected item is " + item);
-    console.log("in itemBaseCtrl selected item is " + item.id);
-    console.log("in itemBaseCtrl slide is " + $state.current.data.sharedIndex);
+    console.log("Current state " + $state.$current);
 
 
+    $scope.selectedSlide=0;
     $scope.item=item;
     $scope.page = $scope.item.getPageObject();
-    $scope.editMode = false;
+    $scope.editMode = $state.includes('base.itemList.item.edit');
     $scope.myUrl = '#'+$location.url();
-
-
 
     $scope.shareToFacebook= function(){
         var fbpopup = window.open('https://www.facebook.com/sharer/sharer.php?u=quiz22.parseapp.com/i/'+item.id, "pop", "width=600, height=400, scrollbars=no");
@@ -22,8 +19,6 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
         $scope.editMode=!$scope.editMode;
         if($scope.editMode){
             $state.go('^.edit.slides');
-            console.log("in itemBaseCtrl slide is " + $state.current.data.sharedIndex);
-
         }else{
             $state.go('^.^.view');
         }
@@ -51,7 +46,7 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
 
     $scope.save = function () {
         $scope.cleanUserActivity();
-        loginService.login();
+        //loginService.login();
         $scope.item.setPageObject($scope.page);
         $scope.item.setUser(Parse.User.current());
         $scope.item.save(null, {

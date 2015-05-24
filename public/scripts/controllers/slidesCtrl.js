@@ -1,13 +1,9 @@
-app.controller("slidesCtrl", function ($scope, $location, item, loginService, $state) {
+app.controller("slidesCtrl", function ($scope, $location,  loginService, $state) {
     // Queries
     console.log("in itemViewerCtrl");
-    console.log("in itemViewerCtrl selected item is " + item);
-    console.log("in itemViewerCtrl selected item is " + item.id);
-    console.log("in itemViewerCtrl selected slide " + $state.current.data.sharedIndex);
+    console.log("in itemViewerCtrl selected item is " + $scope.item);
+    console.log("in itemViewerCtrl selected item is " + $scope.item.id);
 
-    $scope.item = item;
-    $scope.selectedSlide = $state.current.data.sharedIndex;
-    $scope.page = $scope.item.getPageObject();
     //$scope.editMode = false;
     $scope.myUrl = '#' + $location.url();
 
@@ -16,7 +12,6 @@ app.controller("slidesCtrl", function ($scope, $location, item, loginService, $s
             return;
         setTimeout(function () {
             $scope.selectedSlide++;
-            $state.current.data.sharedIndex = $scope.selectedSlide;
             $scope.$apply()
         }, 1000);
 
@@ -43,31 +38,9 @@ app.controller("slidesCtrl", function ($scope, $location, item, loginService, $s
 
     $scope.jumpToSlide = function (slideIndex) {
         $scope.selectedSlide = slideIndex;
-        $state.current.data.sharedIndex = $scope.selectedSlide;
-        console.log("in itemViewerCtrl selected slide " + $state.current.data.sharedIndex);
-
     }
 
-    //$scope.shareToFacebook= function(){
-    //    var fbpopup = window.open('https://www.facebook.com/sharer/sharer.php?u=quiz22.parseapp.com/i/'+item.id, "pop", "width=600, height=400, scrollbars=no");
-    //}
 
-
-    $scope.save = function () {
-        console.log("Saved1 with parse id: " + object.id);
-        loginService.login();
-
-        $scope.item.setPageObject($scope.page);
-        $scope.item.setUser(Parse.User.current());
-        $scope.item.save(null, {
-            success: function (object) {
-                console.log("Saved2 with parse id: " + object.id);
-            },
-            error: function (model, error) {
-                alert("Error" + error);
-            }
-        });
-    };
 
     $scope.openImageSelector = function (item, strCrop) {
         uploadcare.openDialog(null, {
