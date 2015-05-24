@@ -1,10 +1,23 @@
 app.controller("slidesCtrl", function ($scope, $location,  loginService, $state) {
+
+
+
+    var initM = function () {
+        if (!$scope.page.slides) {
+            $scope.page.slides=[];
+            $scope.page.selectedSlide=-1;
+            $scope.addSlide();
+            console.log("Init method");
+        }
+    };
+
     // Queries
     console.log("in itemViewerCtrl");
     console.log("in itemViewerCtrl selected item is " + $scope.item);
     console.log("in itemViewerCtrl selected item is " + $scope.item.id);
     //$scope.editMode = false;
     $scope.myUrl = '#' + $location.url();
+
 
     $scope.entityClicked = function (entityIndex, itemSelected) {
         if ($scope.editMode)
@@ -90,9 +103,13 @@ app.controller("slidesCtrl", function ($scope, $location,  loginService, $state)
         if ($scope.page.slides.length >= 10)
             return;
 
-        $scope.page.slides.splice($scope.selectedSlide+1, 0, $scope.createDefaultSlide());
-        $scope.selectedSlide+=1;
+        $scope.page.slides.splice($scope.page.selectedSlide+1, 0, $scope.createDefaultSlide());
+        $scope.page.selectedSlide+=1;
     }
+
+    initM();
+
+
 
 });
 

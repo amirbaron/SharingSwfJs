@@ -14,4 +14,6 @@ app.controller("loginCtrl", function ($scope, $location, loginService) {
     $scope.logout = function () {
         loginService.logout();
     }
+
+
 });

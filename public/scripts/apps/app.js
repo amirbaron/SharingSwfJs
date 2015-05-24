@@ -38,14 +38,28 @@ app.service('itemsService', function ($q) {
         },
 
         getItem: function (itemId) {
-            var dfd = $q.defer()
+            var dfd = $q.defer();
             var query = new Parse.Query("AppPage");
             query.get(itemId).then(function (result) {
                 dfd.resolve(result
                 )
             });
-            return dfd.promise
+            return dfd.promise;
+        },
+        createNewItem:function(){
+            var dfd = $q.defer();
 
+            var appPage = new Parse.Object("AppPage");
+            appPage.setPageObject(new Object())
+            appPage.save(null, {
+                success: function (object) {
+                    console.log("Created new item with id " + object.id);
+                    dfd.resolve(object)
+                },
+                error: function (model, error) {
+                }
+            });
+            return dfd.promise;
         }
     }
 })
@@ -59,7 +73,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: "/",
             templateUrl: "partials/baseView.html",
             resolve: {
-
                 loginService: 'loginService'
             },
             controller: 'loginCtrl'
@@ -75,7 +88,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                             return itemsService.getItems();
                         }
                     }
-
+                },
+                'create':{
+                    templateUrl: "partials/create.html",
+                    controller: 'createCtrl',
+                    resolve:{
+                        newItem:function(itemsService){
+                            return itemsService.createNewItem();
+                        }
+                    }
                 }
             }
         }).state('base.profile', {
