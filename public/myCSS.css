@@ -45,10 +45,10 @@
 
 
 .opacityText {
-    color:#FBF7F7;
+    color:#FFFFFF;
     z-index:100;
-    opacity: 0.76;
-    filter: alpha(opacity=76);
+    opacity: 0.75;
+    filter: alpha(opacity=75);
     background-color: #000000;
 }
 
