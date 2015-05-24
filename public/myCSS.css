@@ -22,14 +22,25 @@
     border: 5px dashed blue;
 }
 
+.noPad
+{
+    padding: 0px;
+}
 .slideAnswerText{
     width:86%;
     position:absolute;
-    bottom:2px;
+    bottom:7px;
+
 }
 
+.wrapButtonText
+{
+    white-space: normal;
+}
 .slideMainText{
     width:97%;
+    position:absolute;
+    bottom:2px;
 }
 
 
@@ -40,15 +51,15 @@
     filter: alpha(opacity=76);
     background-color: #000000;
 }
-.slideMainText{
-    position:absolute;
-    bottom:2px;
-}
 
 .slideAnswerInput{
     position: absolute;
     bottom: 5px;
     height: 20px;
+}
+
+.slideMainInput{
+    height: 25px;
 }
 
 .copyrightMain {
@@ -67,9 +78,12 @@
 }
 .selectMainImageNoImage{
     position:absolute;
-    top:100px;
-    left:145px;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
 }
+
+.row-bottom-margin { margin-bottom:0px; }
 
 .selectButtonImage{
     position:absolute;
@@ -97,16 +111,12 @@
 
 .cameraButton
 {
-    opacity: 0.50;
-    filter: alpha(opacity=50);
+    opacity: 0.80;
+    filter: alpha(opacity=80);
 }
 
-.answerRightWrong
-{
-    position:absolute;
-    top:6px;
-    right:6px;
-}
+.row-bottom-margin { margin-bottom:0px !important;  margin-top:0px !important;}
+
 .creditTextEdit
 {
     z-index:100;
