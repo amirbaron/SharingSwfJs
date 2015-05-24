@@ -13,7 +13,7 @@
                 </button>
             </div>
 
-            <button type="button" class="btn btn-default" aria-label="Save" ng-click="save()">
+            <button type="button" class="btn btn-default" aria-label="Save" ng-click="save()" ng-class="{'active' : !editMode,'disabled':!editMode}">
                 <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
             </button>
 
