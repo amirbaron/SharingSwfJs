@@ -91,7 +91,7 @@ app.controller("slidesCtrl", function ($scope, $location,  loginService, $state)
             return;
 
         $scope.page.slides.splice($scope.selectedSlide+1, 0, $scope.createDefaultSlide());
-        $scope.selectedSlide+=1;
+        $scope.page.selectedSlide+=1;
     }
 
 });
