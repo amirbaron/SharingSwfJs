@@ -64,7 +64,7 @@ app.controller("slidesCtrl", function ($scope, $location,  loginService, $state)
 
     $scope.createDefaultSlide = function()
     {
-        var emptySlide = {text : "", imgSmall : "", entities : []}
+        var emptySlide = {text : null, imgSmall : null, entities : []}
         emptySlide.entities.push($scope.createDefaultEntity());
         emptySlide.entities.push($scope.createDefaultEntity());
 
@@ -73,7 +73,7 @@ app.controller("slidesCtrl", function ($scope, $location,  loginService, $state)
 
     $scope.createDefaultEntity = function()
     {
-        return {imgSmall : "", title : "", points : 0};
+        return {imgSmall : null, title : null, points : 0};
     }
 
     $scope.removeSlide = function()
