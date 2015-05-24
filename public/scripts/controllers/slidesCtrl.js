@@ -84,6 +84,26 @@ app.controller("slidesCtrl", function ($scope, $location, item, loginService, $s
         });
     }
 
+    $scope.createDefaultEntity = function()
+    {
+        var emptySlide = {text : "", imgSmall : "", entities : []}
+
+    }
+
+    $scope.createDefaultSlide = function()
+    {
+        var emptySlide = {text : "", imgSmall : "", entities : []}
+        emptySlide.entities.push($scope.createDefaultEntity());
+        emptySlide.entities.push($scope.createDefaultEntity());
+
+        return emptySlide;
+    }
+
+    $scope.createDefaultEntity = function()
+    {
+        return {imgSmall : "", title : "", points : 0};
+    }
+
     $scope.removeSlide = function()
     {
         if ($scope.page.slides.length <= 1)
@@ -94,7 +114,13 @@ app.controller("slidesCtrl", function ($scope, $location, item, loginService, $s
             $scope.selectedSlide = $scope.page.slides.length-1;
     }
 
+    $scope.addSlide = function() {
+        if ($scope.page.slides.length >= 10)
+            return;
 
+        $scope.page.slides.splice($scope.selectedSlide+1, 0, $scope.createDefaultSlide());
+        $scope.selectedSlide+=1;
+    }
 
 });
 
