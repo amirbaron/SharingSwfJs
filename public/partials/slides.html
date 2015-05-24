@@ -35,7 +35,7 @@
                                    'btn-danger' : (!editMode && entity.isFailed) || (editMode && entity.points==0),
                                    'disabled' : (!editMode && entity.isPressed )}"
                     type="button" width="100%" ng-click="entityClicked($index, this)">
-                <img class="img-responsive " ng-src="{{entity.imgSmall}}" data-toggle="modal"/>
+                <img class="img-responsive " ng-src="{{entity.imgSmall!=null?entity.imgSmall:'http://placehold.it/109X80&text=+'}}" data-toggle="modal"/>
                 <div class="opacityText slideAnswerText noPad "  ng-show="!editMode">
                     {{entity.text}}</div>
                 <input type="text" class="form-control opacityText slideAnswerText noPad slideAnswerInput" ng-show="editMode"
