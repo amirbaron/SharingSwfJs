@@ -14,7 +14,7 @@
     width: 200px;
     height: 65px;
     text-align: center;
-    padding-top: 25px;
+    padding-top: 20px;
     margin: 10px;
 }
 
@@ -22,17 +22,24 @@
     border: 5px dashed blue;
 }
 
+.slideAnswerText{
+    width:86%;
+    position:absolute;
+    bottom:2px;
+}
 
-.slideText{
+.slideMainText{
+    width:97%;
+}
+
+
+.opacityText {
     color:#FBF7F7;
     z-index:100;
     opacity: 0.76;
     filter: alpha(opacity=76);
     background-color: #000000;
-    width:86%;
 }
-
-
 .slideMainText{
     position:absolute;
     bottom:2px;
@@ -42,11 +49,6 @@
     position: absolute;
     bottom: 5px;
     height: 20px;
-}
-
-.slideAnswerText{
-    position:absolute;
-    top:2px;
 }
 
 .copyrightMain {
@@ -146,12 +148,29 @@ body {
 
 }
 
-.jump-button
+.jump-button-edit
 {
+    padding:0px;
+    margin:5px;
+    height: 20px;
+    width:20px;
+    border-radius: 20px;
+}
+
+.jump-button-view
+{
+    padding:0px;
+    margin:5px;
     height: 12px;
     width:12px;
     border-radius: 12px;
-    margin:5px;
+}
+
+.jump-button-text
+{
+    padding:0px;
+    margin:0px;
+    font-size: 0.75em;
 }
 
 .defaultPad
