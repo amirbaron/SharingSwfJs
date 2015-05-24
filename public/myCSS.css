@@ -22,33 +22,44 @@
     border: 5px dashed blue;
 }
 
-.slideAnswerText {
-    width: 86%;
-    position: absolute;
-    bottom: 2px;
+.noPad
+{
+    padding: 0px;
+}
+.slideAnswerText{
+    width:86%;
+    position:absolute;
+    bottom:7px;
+
 }
 
-.slideMainText {
-    width: 97%;
+.wrapButtonText
+{
+    white-space: normal;
 }
+.slideMainText{
+    width:97%;
+    position:absolute;
+    bottom:2px;
+}
+
 
 .opacityText {
-    color: #FBF7F7;
-    z-index: 100;
+    color:#FBF7F7;
+    z-index:100;
     opacity: 0.76;
     filter: alpha(opacity=76);
     background-color: #000000;
 }
 
-.slideMainText {
-    position: absolute;
-    bottom: 2px;
-}
-
-.slideAnswerInput {
+.slideAnswerInput{
     position: absolute;
     bottom: 5px;
     height: 20px;
+}
+
+.slideMainInput{
+    height: 25px;
 }
 
 .copyrightMain {
@@ -60,30 +71,33 @@
     height: 20px;
 }
 
-.copyrightMainFont {
-    left: 0px;
+.copyrightMainFont
+{
+    left:0px;
     font-size: 1em;
 }
-
-.selectMainImageNoImage {
-    position: absolute;
-    top: 100px;
-    left: 145px;
+.selectMainImageNoImage{
+    position:absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
 }
 
-.selectButtonImage {
-    position: absolute;
-    top: 6px;
-    left: 6px;
+.row-bottom-margin { margin-bottom:0px; }
+
+.selectButtonImage{
+    position:absolute;
+    top:6px;
+    left:6px;
+}
+.selectMainImage{
+    position:absolute;
+    top:3px;
+    left:4px;
 }
 
-.selectMainImage {
-    position: absolute;
-    top: 3px;
-    left: 4px;
-}
-
-.uploadcare-widget-text {
+.uploadcare-widget-text
+{
     color: white;
     padding: .4em .6em;
     line-height: 1;
@@ -95,27 +109,26 @@
     border-bottom: none;
 }
 
-.cameraButton {
-    opacity: 0.50;
-    filter: alpha(opacity=50);
+.cameraButton
+{
+    opacity: 0.80;
+    filter: alpha(opacity=80);
 }
 
-.answerRightWrong {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-}
+.row-bottom-margin { margin-bottom:0px !important;  margin-top:0px !important;}
 
-.creditTextEdit {
-    z-index: 100;
-    position: absolute;
-    top: 4px;
+.creditTextEdit
+{
+    z-index:100;
+    position:absolute;
+    top:4px;
     right: 5px;
     width: 120px;
     height: 25px;
 }
 
-.uploadcare-widget-file-name {
+.uploadcare-widget-file-name
+{
     color: white;
 }
 
@@ -145,47 +158,50 @@ body {
 
 }
 
-.jump-button-edit {
-    padding: 0px;
-    margin: 5px;
+.jump-button-edit
+{
+    padding:0px;
+    margin:5px;
     height: 20px;
-    width: 20px;
+    width:20px;
     border-radius: 20px;
 }
 
-.jump-button-view {
-    padding: 0px;
-    margin: 5px;
+.jump-button-view
+{
+    padding:0px;
+    margin:5px;
     height: 12px;
-    width: 12px;
+    width:12px;
     border-radius: 12px;
 }
 
-.jump-button-text {
-    padding: 0px;
-    margin: 0px;
+.jump-button-text
+{
+    padding:0px;
+    margin:0px;
     font-size: 0.75em;
 }
 
-.defaultPad {
-    padding: 3px;
+.defaultPad
+{
+    padding:3px;
+}
+.defaultMargin
+{
+    margin:3px;
 }
 
-.defaultMargin {
-    margin: 3px;
+@media all
+{
 }
-
-@media all {
-}
-
 @media all and (max-width: 1200px) {
 }
-
 @media all and (max-width: 992px) {
 
 }
-
 @media all and (max-width: 460px) {
+
 
     .modal-dialog {
         width: 100%;
@@ -194,18 +210,13 @@ body {
         top: 0;
         left: 0;
     }
-
-    .row-no-gutter {
+    .row-no-gutter{
         margin-left: -15px;
         margin-right: -15px;
     }
 
-    .col-no-gutter {
+    .col-no-gutter{
         padding-left: 0px;
         padding-right: 0px;
     }
-}
-
-body {
-    padding-top: 70px;
 }
