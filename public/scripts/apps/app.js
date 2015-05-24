@@ -98,11 +98,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }).state('base.itemList.item', {
             url: "/:itemId",
             abstract: true,
-            backdrop: false,
-            data:
-            {
-                sharedIndex:0
-            },
+            backdrop: true,
+
             resolve: {
                 item: function (itemsService, $stateParams) {
                     console.log("Item id is " + $stateParams.itemId);
@@ -118,7 +115,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     animation: true,
                     abstract: true,
                     size: 'lg',
+
                     controller: 'itemBaseCtrl',
+
                     resolve: {
                         item: function () {
                             return item;
