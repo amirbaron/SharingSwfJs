@@ -7,6 +7,9 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
     $scope.selectedSlide=0;
     $scope.item=item;
     $scope.page = $scope.item.getPageObject();
+    $scope.page.selectedSlide=0;
+
+
     $scope.editMode = $state.includes('base.itemList.item.edit');
     $scope.myUrl = '#'+$location.url();
 
@@ -26,11 +29,13 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
 
     $scope.cleanUserActivity = function()
     {
+        $scope.page.selectedSlide=0;
         $scope.page.slides.forEach(
             function handleSlide(slide)
             {
                 slide.isSuccess = undefined;
                 slide.isFailed = undefined;
+
                 slide.entities.forEach(
                     function handleEntity(entity)
                     {

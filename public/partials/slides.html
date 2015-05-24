@@ -2,15 +2,15 @@
     <div class="row clearfix">
         <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad">
             <img class="img-responsive" ng-animate="'animate'"
-                 ng-src="{{(page.slides[selectedSlide].imgSmall != null)?page.slides[selectedSlide].imgSmall : 'http://placehold.it/468X263&text=+'}}">
+                 ng-src="{{(page.slides[page.selectedSlide].imgSmall != null)?page.slides[page.selectedSlide].imgSmall : 'http://placehold.it/468X263&text=+'}}">
             <h4 class=" slideText opacityText slideMainText defaultPad defaultMargin " ng-show="!editMode">
-                {{page.slides[selectedSlide].text}}</h4>
+                {{page.slides[page.selectedSlide].text}}</h4>
 
-            <div ng-class="{'selectMainImageNoImage' : (page.slides[selectedSlide].imgSmall == null), 'selectMainImage' : (page.slides[selectedSlide].imgSmall != null)}"
+            <div ng-class="{'selectMainImageNoImage' : (page.slides[page.selectedSlide].imgSmall == null), 'selectMainImage' : (page.slides[page.selectedSlide].imgSmall != null)}"
                  ng-show="editMode">
 
                 <button type="button" class="btn btn-default cameraButton" aria-label="Save"
-                        ng-click="openImageSelector(page.slides[selectedSlide], '468:263 minimum')">
+                        ng-click="openImageSelector(page.slides[page.selectedSlide], '468:263 minimum')">
                     <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
                 </button>
 
@@ -19,7 +19,7 @@
 
 
             <input type="text" class="form-control opacityText slideMainText defaultPad defaultMargin" ng-show="editMode"
-                   placeholder="Type Your Question.." ng-model="page.slides[selectedSlide].text"></textarea></img>
+                   placeholder="Type Your Question.." ng-model="page.slides[page.selectedSlide].text"></textarea></img>
             <button type="button" class="btn btn-default btn-xs copyrightMain dropdown-toggle"
                     data-toggle="dropdown" aria-label="copyright" ng-show="!editMode">
                 <span class="copyrightMainFont" aria-hidden="true">©</span>
@@ -28,7 +28,7 @@
     </div>
     <div class="row">
         <div class="col-md-2 col-sm-3 col-xs-6 column defaultPad"
-             ng-repeat="entity in page.slides[selectedSlide].entities">
+             ng-repeat="entity in page.slides[page.selectedSlide].entities">
             <button class="btn btn-default defaultPad  "
                     ng-class="{'btn-success' : (!editMode && entity.isSuccess) || (editMode && entity.points>0),
                                    'btn-danger' : (!editMode && entity.isFailed) || (editMode && entity.points==0),
@@ -68,7 +68,7 @@
             <button class="btn btn-default defaultPad" ng-repeat="slide in page.slides"
                     ng-class="{'btn-success' : slide.isSuccess && !editMode,
                                'btn-danger' : slide.isFailed && !editMode,
-                               'active' : $index == selectedSlide,
+                               'active' : $index == page.selectedSlide,
                                'jump-button-edit' : editMode,
                                'jump-button-view' : !editMode}"
                     ng-click="jumpToSlide($index)">
@@ -76,7 +76,7 @@
 
             </button>
             <button type="button" ng-show="editMode" class="btn btn-default btn-xs  " aria-label="Save"
-                    ng-click="openImageSelector(page.slides[selectedSlide], '468:263 minimum')">
+                    ng-click="openImageSelector(page.slides[page.selectedSlide], '468:263 minimum')">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             </button>
 

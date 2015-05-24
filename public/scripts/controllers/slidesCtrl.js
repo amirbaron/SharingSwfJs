@@ -3,7 +3,6 @@ app.controller("slidesCtrl", function ($scope, $location,  loginService, $state)
     console.log("in itemViewerCtrl");
     console.log("in itemViewerCtrl selected item is " + $scope.item);
     console.log("in itemViewerCtrl selected item is " + $scope.item.id);
-
     //$scope.editMode = false;
     $scope.myUrl = '#' + $location.url();
 
@@ -11,11 +10,11 @@ app.controller("slidesCtrl", function ($scope, $location,  loginService, $state)
         if ($scope.editMode)
             return;
         setTimeout(function () {
-            $scope.selectedSlide++;
+            $scope.page.selectedSlide++;
             $scope.$apply()
         }, 1000);
 
-        var selectedSlide = $scope.page.slides[$scope.selectedSlide];
+        var selectedSlide = $scope.page.slides[$scope.page.selectedSlide];
         var selectedEntity = selectedSlide.entities[entityIndex];
 
         if (selectedEntity.points == 0) {
@@ -37,7 +36,7 @@ app.controller("slidesCtrl", function ($scope, $location,  loginService, $state)
     }
 
     $scope.jumpToSlide = function (slideIndex) {
-        $scope.selectedSlide = slideIndex;
+        $scope.page.selectedSlide = slideIndex;
     }
 
 
@@ -62,9 +61,9 @@ app.controller("slidesCtrl", function ($scope, $location,  loginService, $state)
         if ($scope.page.slides.length <= 1)
             return;
 
-        $scope.page.slides.splice($scope.selectedSlide,1);
-        if ($scope.selectedSlide >= $scope.page.slides.length)
-            $scope.selectedSlide = $scope.page.slides.length-1;
+        $scope.page.slides.splice($scope.page.selectedSlide,1);
+        if ($scope.page.selectedSlide >= $scope.page.slides.length)
+            $scope.page.selectedSlide = $scope.page.slides.length-1;
     }
 
 
