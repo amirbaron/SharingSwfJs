@@ -65,7 +65,16 @@
             </div>
 
         </div>
+
+        <div class="col-md-2 col-sm-3 col-xs-6">
+            <button type="button" ng-show="editMode && page.slides[page.selectedSlide].entities.length<4" class="btn btn-default btn-md selectCenterAddEntity " aria-label="Right"
+                    class="" ng-click="addEntity()">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+        </div>
     </div>
+
+
 
     <div class="row clearfix ">
         <div class="col-md-2 col-sm-3 col-xs-6 column defaultPad text-center"
