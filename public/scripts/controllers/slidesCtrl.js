@@ -99,6 +99,10 @@ app.controller("slidesCtrl", function ($scope, $location,  loginService, $state)
             $scope.page.selectedSlide = $scope.page.slides.length-1;
     }
 
+    $scope.removeEntity = function(entityIndex)
+    {
+        $scope.page.slides[$scope.page.selectedSlide].entities.splice(entityIndex, 1);
+    }
     $scope.addSlide = function() {
         if ($scope.page.slides.length >= 10)
             return;

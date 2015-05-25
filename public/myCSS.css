@@ -91,6 +91,13 @@
     top:6px;
     left:6px;
 }
+
+.trashButtonImage
+{
+    position:absolute;
+    top:6px;
+    right:6px;
+}
 .selectMainImage{
     position:absolute;
     top:3px;
