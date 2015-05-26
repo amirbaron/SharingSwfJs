@@ -1,10 +1,13 @@
-var app = angular.module('app', ['ui.router', 'parse-angular', 'parse-angular.enhance', 'ui.bootstrap', 'ng-uploadcare']);
+var app = angular.module('app', ['ui.router', 'parse-angular', 'parse-angular.enhance', 'ui.bootstrap', 'ng-uploadcare','ngClipboard']);
 
+app.config(['ngClipProvider', function(ngClipProvider) {
+    ngClipProvider.setPath("components/zeroclipboard/dist/ZeroClipboard.swf");
+}]);
 
 app.service('itemsService', function ($q) {
     Parse.Object.extend({
         className: "AppPage",
-        attrs: ['page', 'name', 'title', 'type', 'user'],
+        attrs: ['page', 'name', 'title', 'type', 'user','published'],
         getPageObject: function () {
             return angular.fromJson(this.getPage());
         },
@@ -20,6 +23,7 @@ app.service('itemsService', function ($q) {
         getItems: function () {
             var dfd = $q.defer();
             var query = new Parse.Query("AppPage");
+            query.equalTo("published", true);
             query.find().then(function (result) {
                 dfd.resolve(result);
             });
@@ -46,7 +50,7 @@ app.service('itemsService', function ($q) {
             });
             return dfd.promise;
         },
-        createNewItem:function(){
+        createNewItem: function () {
             var dfd = $q.defer();
 
             var appPage = new Parse.Object("AppPage");
@@ -89,12 +93,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                         }
                     }
                 },
-                'create':{
-                    templateUrl: "partials/create.html",
+                'create': {
                     controller: 'createCtrl',
-                    resolve:{
-                        newItem:function(itemsService){
-                            return itemsService.createNewItem();
+                    templateUrl: "partials/createPanel.html",
+                    resolve: {
+                        itemsService: function (itemsService) {
+                            return itemsService;
                         }
                     }
                 }
@@ -129,7 +133,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 loginService: 'loginService'
             },
 
-            onEnter: ['$stateParams', '$state', '$modal', 'item','loginService', function ($stateParams, $state, $modal, item,loginService) {
+            onEnter: ['$stateParams', '$state', '$modal', 'item', 'loginService', function ($stateParams, $state, $modal, item, loginService) {
                 console.log('Passed item as ' + item.id);
                 $modal.open({
                     templateUrl: 'partials/itemBase.html',
@@ -143,13 +147,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                         item: function () {
                             return item;
                         },
-                        loginService:function(){
+                        loginService: function () {
                             return loginService;
                         }
                     }
 
                 }).result.finally(function () {
-                        $state.go('base.itemList');
+                        $state.go('base.itemList',{},{reload: true});
+
                     });
             }]
 
@@ -191,3 +196,5 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
 })
 ;
+
+

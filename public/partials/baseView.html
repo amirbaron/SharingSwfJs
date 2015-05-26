@@ -14,7 +14,7 @@
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed=true">
+        <div class="collapse navbar-collapse defaultPad" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed=true">
 
 
             <form class="navbar-form navbar-left" role="search">
@@ -24,9 +24,24 @@
             </form>
 
 
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right ">
+                <div class="row clearfix defaultPad">
+                    <div class="col-md-8 col-sm-8 col-xs-8 column ">
+
+                        <button type="button" popover-placement="bottom" popover="Login with facebook"
+                                popover-trigger="mouseenter"
+                                class="btn btn-primary navbar-btn" ng-click="login()" ng-show="!userLoggedIn()"
+                                aria-hidden="true" >Login
+                        </button>
+                    </div>
+
+                    <div class="col-md-8 col-sm-8 col-xs-8 column " ui-view="create">
+                    </div>
+
+                    <div class="col-md-8 col-sm-8 col-xs-8 column ">
+
                 <span class="dropdown" dropdown on-toggle="toggled(open)" ng-show="userLoggedIn()" aria-hidden="true">
-                    <img ng-src="{{profileImg}}" class="img-thumbnail" dropdown-toggle aria-hidden="true"/>
+                    <img ng-src="{{profileImg}}" class="img-circle" dropdown-toggle aria-hidden="true" />
 
                     <ul class="dropdown-menu">
                         <li>
@@ -40,18 +55,8 @@
                         </li>
                     </ul>
                 </span>
-
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <button type="button" popover-placement="bottom" popover="Login with facebook"
-                        popover-trigger="mouseenter"
-                        class="btn btn-primary navbar-btn" ng-click="login()" ng-show="!userLoggedIn()"
-                        aria-hidden="true">Login
-                </button>
-                <span ui-view="create">
-                    Place holder
-                </span>
-
+                    </div>
+                </div>
             </ul>
 
 
