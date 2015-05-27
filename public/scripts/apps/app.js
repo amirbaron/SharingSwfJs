@@ -187,7 +187,13 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         }).state('base.itemList.item.edit.cover', {
             abstract: false,
-            url: '/cover'
+            url: '/cover',
+            views: {
+                'slides': {
+                    templateUrl: 'partials/cover.html',
+                    controller: 'coverCtrl'
+                }
+            }
 
         }).state('base.itemList.item.edit.results', {
             abstract: false,
