@@ -5,9 +5,14 @@ app.service('loginService', function ($q) {
     });
 
     return {
+
         login: function () {
+            var dfd = $q.defer();
+
             if (this.isLoggedIn()) {
-                return;
+                dfd.resolve(true);
+                return dfd.promise;
+
             }
             // Run code after the Facebook SDK is loaded.
             Parse.FacebookUtils.logIn('email', {
@@ -20,10 +25,15 @@ app.service('loginService', function ($q) {
                     user.set('profileImg', profileImg);
                     user.set('email',email);
                     user.save();
+                    dfd.resolve(true);
                 },
                 error: function (user, error) {
+                    dfd.reject(false);
                 }
             });
+
+            return dfd.promise;
+
         },
         isLoggedIn: function () {
             if (Parse.User.current()) {

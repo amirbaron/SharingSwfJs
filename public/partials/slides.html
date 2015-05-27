@@ -15,8 +15,6 @@
                         ng-click="openImageSelector(page.slides[page.selectedSlide], '468:263 minimum')">
                     <span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Add Image
                 </button>
-
-
             </div>
 
 
@@ -32,7 +30,7 @@
     <div class="row clearfix ">
         <div class="col-md-2 col-sm-3 col-xs-6 column defaultPad text-center"
              ng-repeat="entity in page.slides[page.selectedSlide].entities">
-            <button class="btn btn-default defaultPad wrapButtonText"
+            <button class="btn btn-default defaultPad wrapButtonText "
                     ng-class="{'btn-success' : (!editMode && entity.isSuccess) || (editMode && entity.points>0),
                                    'btn-danger' : (!editMode && entity.isFailed) || (editMode && entity.points==0),
                                    'disabled' : (!editMode && entity.isPressed )}"
