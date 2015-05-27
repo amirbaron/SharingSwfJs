@@ -15,7 +15,6 @@ app.controller("slidesCtrl", function ($scope, $location,  loginService, $state)
     console.log("in itemViewerCtrl");
     console.log("in itemViewerCtrl selected item is " + $scope.item);
     console.log("in itemViewerCtrl selected item is " + $scope.item.id);
-    //$scope.editMode = false;
     $scope.myUrl = '#' + $location.url();
 
 
@@ -65,7 +64,6 @@ app.controller("slidesCtrl", function ($scope, $location,  loginService, $state)
                     item.imgSmall = info.cdnUrl;
                 });
                 $scope.$apply();
-                $scope.save();
             }
         });
     }
@@ -99,20 +97,17 @@ app.controller("slidesCtrl", function ($scope, $location,  loginService, $state)
         if ($scope.page.selectedSlide >= $scope.page.slides.length) {
             $scope.page.selectedSlide = $scope.page.slides.length - 1
         }
-        $scope.save();
-
     }
 
     $scope.removeEntity = function(entityIndex)
     {
         $scope.page.slides[$scope.page.selectedSlide].entities.splice(entityIndex, 1);
-        $scope.save();
+        //$scope.save();
     }
 
     $scope.addEntity = function()
     {
         $scope.page.slides[$scope.page.selectedSlide].entities.push($scope.createDefaultEntity());
-        $scope.save();
     }
 
     $scope.addSlide = function() {
@@ -121,11 +116,14 @@ app.controller("slidesCtrl", function ($scope, $location,  loginService, $state)
 
         $scope.page.slides.splice($scope.page.selectedSlide+1, 0, $scope.createDefaultSlide());
         $scope.page.selectedSlide+=1;
-        $scope.save();
     }
 
     init();
-
+    $scope.$watch('page',function(newValue, oldValue){
+        if($scope.editMode){
+            $scope.save();
+        }
+    },true);
 
 });
 

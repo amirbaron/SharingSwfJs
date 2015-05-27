@@ -153,7 +153,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     }
 
                 }).result.finally(function () {
-                        $state.go('base.itemList',{},{reload: true});
+                        $state.go('base.itemList',[],[]);
 
                     });
             }]
