@@ -189,7 +189,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             abstract: false,
             url: '/cover',
             views: {
-                'slides': {
+                'cover': {
                     templateUrl: 'partials/cover.html',
                     controller: 'coverCtrl'
                 }

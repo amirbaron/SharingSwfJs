@@ -1,3 +1,3 @@
-app.controller("slidesCtrl", function ($scope, $location,  $state) {
+app.controller("coverCtrl", function ($scope, $location,  $state) {
 
 });
