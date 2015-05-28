@@ -1,13 +1,13 @@
-var app = angular.module('app', ['ui.router', 'parse-angular', 'parse-angular.enhance', 'ui.bootstrap', 'ng-uploadcare','ngClipboard']);
+var app = angular.module('app', ['ui.router', 'parse-angular', 'parse-angular.enhance', 'ui.bootstrap', 'ng-uploadcare', 'ngClipboard']);
 
-app.config(['ngClipProvider', function(ngClipProvider) {
+app.config(['ngClipProvider', function (ngClipProvider) {
     ngClipProvider.setPath("components/zeroclipboard/dist/ZeroClipboard.swf");
 }]);
 
 app.service('itemsService', function ($q) {
     Parse.Object.extend({
         className: "AppPage",
-        attrs: ['page', 'name', 'title', 'type', 'user','published'],
+        attrs: ['page', 'name', 'title', 'type', 'user', 'published'],
         getPageObject: function () {
             return angular.fromJson(this.getPage());
         },
@@ -20,15 +20,33 @@ app.service('itemsService', function ($q) {
     });
 
     return {
-        getItems: function () {
-            var dfd = $q.defer();
+        getItemsQuery: function () {
             var query = new Parse.Query("AppPage");
             query.equalTo("published", true);
+            return query;
+        },
+        getItems: function () {
+            var dfd = $q.defer();
+            var query = this.getItemsQuery();
             query.find().then(function (result) {
                 dfd.resolve(result);
             });
 
             return dfd.promise
+        },
+        getItemsWithTerm: function (term) {
+            var dfd = $q.defer();
+            var queryName = this.getItemsQuery();
+            var queryTitle = this.getItemsQuery();
+            queryName.contains("name", term);
+            queryTitle.contains("title", term);
+            var query = Parse.Query.or(queryName, queryTitle);
+            query.find().then(function (result) {
+                dfd.resolve(result);
+            });
+
+            return dfd.promise
+
         },
         getUserItems: function () {
             var dfd = $q.defer();
@@ -50,6 +68,7 @@ app.service('itemsService', function ($q) {
             });
             return dfd.promise;
         },
+
         createNewItem: function () {
             var dfd = $q.defer();
 
@@ -65,6 +84,7 @@ app.service('itemsService', function ($q) {
             });
             return dfd.promise;
         }
+
     }
 })
 
@@ -77,21 +97,25 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: "/",
             templateUrl: "partials/baseView.html",
             resolve: {
-                loginService: 'loginService'
+                loginService: 'loginService',
+                itemsService: 'itemsService'
             },
             controller: 'loginCtrl'
         })
         .state('base.itemList', {
             url: "itemList",
+            controller: 'itemsProviderCtrl',
+            resolve: {
+                items: function (itemsService) {
+                    return itemsService.getItems();
+                }
+            },
+
             views: {
                 'itemList': {
                     templateUrl: "partials/itemList.html",
-                    controller: "itemListCtrl",
-                    resolve: {
-                        items: function (itemsService) {
-                            return itemsService.getItems();
-                        }
-                    }
+                    controller:'itemsProviderCtrl'
+
                 },
                 'create': {
                     controller: 'createCtrl',
@@ -153,7 +177,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     }
 
                 }).result.finally(function () {
-                        $state.go('base.itemList',[],[]);
+                        $state.go('base.itemList', [], []);
 
                     });
             }]
