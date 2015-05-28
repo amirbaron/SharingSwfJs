@@ -1,5 +1,5 @@
 <div class="row clearfix">
-    <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad">
+    <div class="col-md-12 col-sm-12 col-xs-12 column defaultPad">
         <img class="img-responsive" ng-animate="'animate'"
              ng-src="{{(page.slides[page.selectedSlide].imgSmall != null)?page.slides[page.selectedSlide].imgSmall : 'http://placehold.it/468X263&text=+'}}">
 
@@ -27,7 +27,7 @@
     </div>
 </div>
 <div class="row clearfix ">
-    <div class="col-md-2 col-sm-3 col-xs-6 column defaultPad text-center"
+    <div class="col-md-3 col-sm-3 col-xs-6 column defaultPad text-center"
          ng-repeat="entity in page.slides[page.selectedSlide].entities">
         <button class="btn btn-default defaultPad wrapButtonText "
                 ng-class="{'btn-success' : (!editMode && entity.isSuccess) || (editMode && entity.points>0),
@@ -63,7 +63,7 @@
 
     </div>
 
-    <div class="col-md-2 col-sm-3 col-xs-6">
+    <div class="col-md-3 col-sm-3 col-xs-6">
         <button type="button" ng-show="editMode && page.slides[page.selectedSlide].entities.length<4"
                 class="btn btn-default btn-md selectCenterAddEntity " aria-label="Right"
                 class="" ng-click="addEntity()">
@@ -74,7 +74,7 @@
 
 
 <div class="row clearfix ">
-    <div class="col-md-2 col-sm-3 col-xs-6 column defaultPad text-center"
+    <div class="col-md-3 col-sm-3 col-xs-6 column defaultPad text-center"
          ng-repeat="entity in page.slides[page.selectedSlide].entities">
 
         <div class="btn-group" role="rightAnswer" aria-label="rightOrWrong"
@@ -88,12 +88,12 @@
 </div>
 
 <div class="row clearfix">
-    <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad text-center" ng-show="editMode">
+    <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad text-center" ng-show="editMode">
         <hr>
     </div>
 </div>
 <div class="row clearfix">
-    <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad text-center">
+    <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad text-center">
         <button class="btn btn-default defaultPad" ng-repeat="slide in page.slides"
                 ng-class="{'btn-success' : slide.isSuccess && !editMode,
                                'btn-danger' : slide.isFailed && !editMode,
