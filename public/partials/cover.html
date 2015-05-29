@@ -1,16 +1,13 @@
-<div>
-    לקודד ברעל
-</div>
-<!--<div class="container">
+<div class="container">
     <div class="row clearfix">
         <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad">
             <img class="img-responsive" ng-animate="'animate'"
-                 ng-src="{{(page.slides[page.selectedSlide].imgSmall != null)?page.slides[page.selectedSlide].imgSmall : 'http://placehold.it/468X263&text=+'}}">
+                 ng-src="{{(page.previewImg != null)?page.previewImg : 'http://placehold.it/468X263&text=+'}}">
 
             <div class="selectMainImageNoImage">
 
                 <button type="button" class="btn btn-default cameraButton" aria-label="Save"
-                        ng-click="openImageSelector(page.slides[page.selectedSlide], '468:263 minimum')">
+                        ng-click="openImageSelector(setPreviewImg, page, '468:263 minimum')">
                     <span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Add Image
                 </button>
 
@@ -19,4 +16,19 @@
 
         </div>
     </div>
-</div>-->
+
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label  class="col-md-1 col-sm-2 col-xs-6 control-label column defaultPad">Title</label>
+            <div class="col-md-7 col-sm-10 col-xs-18 column defaultPad">
+                <input type="text" class="form-control" ng-model="page.title" placeholder="Just choose a nice title for your activity..">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 col-sm-2 col-xs-6 control-label column defaultPad">Tags</label>
+            <div class="col-md-7 col-sm-10 col-xs-18 column defaultPad">
+                <input type="text" class="form-control" placeholder="#sports #ladygaga #gameofthrones">
+            </div>
+        </div>
+    </form>
+</div>

@@ -53,20 +53,7 @@ app.controller("slidesCtrl", function ($scope, $location,  loginService, $state)
 
 
 
-    $scope.openImageSelector = function (item, strCrop) {
-        uploadcare.openDialog(null, {
-            publicKey: "4b4265edeea7c06bf980",
-            imagesOnly: true,
-            crop: strCrop
-        }).done(function (file) {
-            if (file) {
-                file.done(function (info) {
-                    item.imgSmall = info.cdnUrl;
-                });
-                $scope.$apply();
-            }
-        });
-    }
+
 
     $scope.createDefaultEntity = function()
     {
@@ -119,11 +106,7 @@ app.controller("slidesCtrl", function ($scope, $location,  loginService, $state)
     }
 
     init();
-    $scope.$watch('page',function(newValue, oldValue){
-        if($scope.editMode){
-            $scope.save();
-        }
-    },true);
+
 
 });
 

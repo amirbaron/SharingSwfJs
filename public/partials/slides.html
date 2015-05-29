@@ -11,7 +11,7 @@
              ng-show="editMode">
 
             <button type="button" class="btn btn-default cameraButton" aria-label="Save"
-                    ng-click="openImageSelector(page.slides[page.selectedSlide], '468:263 minimum')">
+                    ng-click="openImageSelector(setImgSmall, page.slides[page.selectedSlide], '468:263 minimum')">
                 <span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Add Image
             </button>
         </div>
@@ -49,7 +49,7 @@
 
         <div class="selectButtonImage" ng-show="editMode">
             <button type="button" class="btn btn-default btn-xs cameraButton" aria-label="Save"
-                    ng-click="openImageSelector(entity, '85:63 minimum')">
+                    ng-click="openImageSelector(setImgSmall, entity, '85:63 minimum')">
                 <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
             </button>
         </div>

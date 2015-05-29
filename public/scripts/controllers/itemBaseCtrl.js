@@ -75,6 +75,29 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
         )
     }
 
+    $scope.openImageSelector = function (fnSuccess, item, strCrop) {
+        uploadcare.openDialog(null, {
+            publicKey: "4b4265edeea7c06bf980",
+            imagesOnly: true,
+            crop: strCrop
+        }).done(function (file) {
+            if (file) {
+                file.done(function (info) {
+                    fnSuccess(item, info.cdnUrl);
+                });
+                $scope.$apply();
+            }
+        });
+    }
+
+    $scope.setPreviewImg = function (item, image) {
+        item.previewImg = image;
+    }
+
+    $scope.setImgSmall = function (item, image) {
+        item.imgSmall = image;
+    }
+
     $scope.save = function () {
         $scope.cleanUserActivity();
         $scope.item.setPageObject($scope.page);
@@ -88,6 +111,12 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
             }
         });
     };
+
+    $scope.$watch('page',function(newValue, oldValue){
+        if($scope.editMode){
+            $scope.save();
+        }
+    },true);
 
 });
 
