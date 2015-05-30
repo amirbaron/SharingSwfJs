@@ -107,16 +107,20 @@
     </div>
 </div>
 <div class="row clearfix">
-    <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad text-center">
+    <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad text-center">
 
-        <button type="button" ng-show="editMode" class="btn btn-default " aria-label="Save"
+        <button ng-show="editMode" class="btn btn-default defaultPad " aria-label="Save"
                 ng-click="removeSlide()">Delete Question
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
-        <button type="button" ng-show="editMode" class="btn btn-default  " aria-label="Save"
+        <button ng-show="editMode" class="btn btn-default defaultPad" aria-label="Save"
                 ng-click="addSlide();">Add Question
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
         </button>
     </div>
 </div>
-
+<div class="row clearfix">
+    <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad text-center" ng-show="editMode">
+        <hr class="soften">
+    </div>
+</div>

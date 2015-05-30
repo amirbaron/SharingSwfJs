@@ -20,7 +20,7 @@
         <input type="text" class="form-control opacityText slideMainText slideMainInput defaultMargin"
                ng-show="editMode"
                placeholder="You are a 'Toy Story' expert! No one knows it better than you.."
-               ng-model="page.results[page.selectedResults].text"></textarea></img>
+               ng-model="page.results[page.selectedResult].text"></textarea></img>
         <button type="button" class="btn btn-default btn-xs copyrightMain dropdown-toggle"
                 data-toggle="dropdown" aria-label="copyright" ng-show="!editMode">
             <span class="copyrightMainFont" aria-hidden="true">©</span>
@@ -39,13 +39,14 @@
         <button class="btn btn-default defaultPad jump-button-results" ng-repeat="result in page.results"
                 ng-class="{    'btn-info' : $index == page.selectedResult}"
                 ng-click="jumpToResult($index)">
-            <h6 class="jump-button-text" ng-show="editMode">{{($index*100/(page.results.length))+1 |number:0}}% - {{($index+1)*100/(page.results.length) | number:0}}%</h6>
+            <h6 class="jump-button-text" ng-show="editMode">{{($index*100/(page.results.length))+1 |number:0}}% -
+                {{($index+1)*100/(page.results.length) | number:0}}%</h6>
 
         </button>
     </div>
 </div>
 <div class="row clearfix">
-    <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad text-center">
+    <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad text-center">
 
         <button type="button" ng-show="editMode" class="btn btn-default " aria-label="Save"
                 ng-click="removeResult()">Delete Result
@@ -58,3 +59,8 @@
     </div>
 </div>
 
+<div class="row clearfix">
+    <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad text-center" ng-show="editMode">
+        <hr class="soften">
+    </div>
+</div>
