@@ -114,7 +114,7 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
     };
 
     $scope.$watch('page',function(newValue, oldValue){
-        if($scope.editMode){
+        if($scope.editMode && newValue.selectedSlide == oldValue.selectedSlide){
             $scope.save();
         }
     },true);

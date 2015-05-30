@@ -95,9 +95,9 @@
 <div class="row clearfix">
     <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad text-center">
         <button class="btn btn-default defaultPad" ng-repeat="slide in page.slides"
-                ng-class="{'btn-success' : slide.isSuccess && !editMode,
-                               'btn-danger' : slide.isFailed && !editMode,
-                               'active' : $index == page.selectedSlide,
+                ng-class="{'btn-success' : slide.isSuccess && !editMode && $index != page.selectedSlide,
+                               'btn-danger' : slide.isFailed && !editMode && $index != page.selectedSlide,
+                               'btn-info' : $index == page.selectedSlide,
                                'jump-button-edit' : editMode,
                                'jump-button-view' : !editMode}"
                 ng-click="jumpToSlide($index)">

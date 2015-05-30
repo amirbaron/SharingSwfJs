@@ -51,10 +51,6 @@ app.controller("slidesCtrl", function ($scope, $location,  loginService, $state)
         $scope.page.selectedSlide = slideIndex;
     }
 
-
-
-
-
     $scope.createDefaultEntity = function()
     {
         var emptySlide = {text : "", imgSmall : "", entities : []}

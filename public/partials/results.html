@@ -28,3 +28,35 @@
     </div>
 </div>
 
+<div class="row clearfix">
+    <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad text-center" ng-show="editMode">
+        <hr>
+    </div>
+</div>
+
+<div class="row clearfix">
+    <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad text-center">
+        <button class="btn btn-default defaultPad" ng-repeat="slide in page.slides"
+                ng-class="{    'active' : $index == page.selectedSlide,
+                               'jump-button-edit' : editMode,
+                               'jump-button-view' : !editMode}"
+                ng-click="jumpToSlide($index)">
+            <h6 class="jump-button-text" ng-show="editMode">{{$index+1}}</h6>
+
+        </button>
+    </div>
+</div>
+<div class="row clearfix">
+    <div class="col-md-8 col-sm-12 col-xs-24 column defaultPad text-center">
+
+        <button type="button" ng-show="editMode" class="btn btn-default " aria-label="Save"
+                ng-click="removeSlide()">Delete Question
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+        </button>
+        <button type="button" ng-show="editMode" class="btn btn-default  " aria-label="Save"
+                ng-click="addSlide();">Add Question
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </button>
+    </div>
+</div>
+
