@@ -90,13 +90,25 @@
 
 .glyphicon.imageSmall {
     font-size: 2em;
+    color: #333333;
 }
 
+.mainImageEdit:hover
+{
+    cursor: pointer;
+}
 .selectCenterAddEntity{
     position:absolute;
     top: 50%;
     left:50%;
     transform: translate(-50%,50%);
+}
+
+.selectCenterNoImage{
+    position:absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
 }
 
 .row-bottom-margin { margin-bottom:0px; }
@@ -112,6 +124,7 @@
     position:absolute;
     top:6px;
     right:6px;
+    font-size: 1.2em;
 }
 .selectMainImage{
     position:absolute;
@@ -119,23 +132,10 @@
     left:4px;
 }
 
-.uploadcare-widget-text
-{
-    color: white;
-    padding: .4em .6em;
-    line-height: 1;
-    margin: -1em 0;
-    margin-right: .5ex;
-    border-radius: .25em;
-    background: #c3c3c3;
-    cursor: default;
-    border-bottom: none;
-}
-
 .cameraButton
 {
-    opacity: 0.80;
-    filter: alpha(opacity=80);
+    opacity: 1.0;
+    filter: alpha(opacity=1);
 }
 
 .row-bottom-margin { margin-bottom:0px !important;  margin-top:0px !important;}
@@ -148,11 +148,6 @@
     right: 5px;
     width: 120px;
     height: 25px;
-}
-
-.uploadcare-widget-file-name
-{
-    color: white;
 }
 
 body {

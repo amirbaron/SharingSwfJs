@@ -1,5 +1,5 @@
 <div class="row clearfix">
-    <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad">
+    <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad" ng-class="{'mainImageEdit': editMode}">
         <img class="img-responsive" ng-animate="'animate'"
              ng-click="openImageSelector(setImgSmall, page.slides[page.selectedSlide], '468:263 minimum')"
              ng-src="{{(page.slides[page.selectedSlide].imgSmall != null)?page.slides[page.selectedSlide].imgSmall : 'http://placehold.it/468X263&text=+'}}">
@@ -35,6 +35,10 @@
                  ng-src="{{entity.imgSmall!=null?entity.imgSmall:'http://placehold.it/109X80&text=+'}}"
                  data-toggle="modal"/>
 
+            <div class="selectMainImageNoImage" ng-show="editMode && entity.imgSmall == null">
+                <span class="glyphicon glyphicon-picture imageSmall" aria-hidden="true"></span>
+            </div>
+
             <div class="opacityText slideAnswerText noPad " ng-show="!editMode">
                 {{entity.text}}
             </div>
@@ -42,15 +46,16 @@
                    ng-show="editMode"
                    placeholder="Answer {{$index+1}}.." ng-model="entity.text"></textarea></img>
 
+
         </button>
 
 
         <div class="trashButtonImage" ng-show="editMode">
-            <button type="button" class="btn btn-default btn-xs  cameraButton" aria-label="Right"
-                    class="" ng-click="removeEntity($index)">
-                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-            </button>
+                <span ng-click="removeEntity($index)" class="glyphicon glyphicon-remove-circle mainImageEdit" aria-hidden="true"></span>
         </div>
+
+
+
 
     </div>
 
