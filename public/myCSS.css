@@ -26,12 +26,21 @@
 {
     padding: 0px;
 }
-.slideAnswerText{
+.slideAnswerTextWithImage{
     width:86%;
     position:absolute;
     bottom:7px;
     font-size: 1em;
+}
 
+.slideAnswerTextNoImage{
+    width:86%;
+    position:absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    font-weight: bold;
+    color:#333333;
 }
 
 .wrapButtonText
@@ -55,8 +64,9 @@
 
 .slideAnswerInput{
     position: absolute;
-    bottom: 5px;
+    bottom: 7px;
     height: 20px;
+    left: 8px;
 }
 
 .slideMainInput{

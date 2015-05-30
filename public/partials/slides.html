@@ -32,23 +32,25 @@
                                    'disabled' : (!editMode && entity.isPressed )}"
                 type="button" width="100%" ng-click="entityClicked($index, this, entity)">
             <img class="img-responsive "
-                 ng-src="{{entity.imgSmall!=null?entity.imgSmall:'http://placehold.it/109X80&text=+'}}"
+                 ng-src="{{(entity.imgSmall==null)?'http://placehold.it/109X80/ffffff/&text=+':entity.imgSmall}}"
                  data-toggle="modal"/>
 
             <div class="selectMainImageNoImage" ng-show="editMode && entity.imgSmall == null">
                 <span class="glyphicon glyphicon-picture imageSmall" aria-hidden="true"></span>
             </div>
 
-            <div class="opacityText slideAnswerText noPad " ng-show="!editMode">
+            <div
+                 ng-class="{
+                 'slideAnswerTextNoImage':entity.imgSmall==null,
+                 'slideAnswerTextWithImage':entity.imgSmall!=null,
+                 'opacityText':entity.imgSmall!=null}" ng-show="!editMode">
                 {{entity.text}}
             </div>
-            <input type="text" class="form-control opacityText slideAnswerText noPad slideAnswerInput"
-                   ng-show="editMode"
-                   placeholder="Answer {{$index+1}}.." ng-model="entity.text"></textarea></img>
-
-
         </button>
 
+        <input type="text" class="form-control opacityText slideAnswerText defaultPad slideAnswerInput" maxlength="40"
+               ng-show="editMode"
+               placeholder="Answer {{$index+1}}.." ng-model="entity.text"></textarea>
 
         <div class="trashButtonImage" ng-show="editMode">
                 <span ng-click="removeEntity($index)" class="glyphicon glyphicon-remove-circle mainImageEdit" aria-hidden="true"></span>
