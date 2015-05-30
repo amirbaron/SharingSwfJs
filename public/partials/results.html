@@ -1,18 +1,22 @@
 <div class="row clearfix">
     <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad">
-        <img class="img-responsive"
-             ng-src="{{(page.results[page.selectedResult].imgSmall != null)?page.results[page.selectedResult].imgSmall : 'http://placehold.it/468X263&text=+'}}"
-             ng-click="openImageSelector(setImgSmall, page.results[page.selectedResult], '468:263 minimum')">
+        <div ng-click="openImageSelector(setImgSmall, page.results[page.selectedResult], '468:263 minimum')"
+             ng-class="{'hoverPointer': editMode}">
+            <img class="img-responsive"
+                 ng-src="{{(page.results[page.selectedResult].imgSmall != null)?page.results[page.selectedResult].imgSmall : 'http://placehold.it/468X263&text=+'}}"
+                 ng-click="openImageSelector(setImgSmall, page.results[page.selectedResult], '468:263 minimum')">
+
+            <div class="selectMainImageNoImage"
+                 ng-show="editMode && page.results[page.selectedResult].imgSmall == null">
+                Click to add image</br>
+                <span class="glyphicon glyphicon-picture imageBig " aria-hidden="true"></span>
+            </div>
+        </div>
 
         <div class="opacityText slideMainText defaultPad defaultMargin " ng-show="!editMode">
             {{page.results[page.selectedResult].text}}
         </div>
 
-        <div class="selectMainImageNoImage" ng-show="editMode && page.results[page.selectedResult].imgSmall == null">
-            <label>Click to add image </br>
-                <span class="glyphicon glyphicon-picture imageBig" aria-hidden="true"></span>
-            </label>
-        </div>
 
         <input type="text" class="form-control opacityText slideMainText slideMainInput defaultMargin"
                ng-show="editMode"

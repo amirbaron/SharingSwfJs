@@ -92,8 +92,12 @@
     top: 50%;
     left:50%;
     transform: translate(-50%,-50%);
+    font-weight: bold;
 }
 
+.hoverPointer:hover {
+    cursor: pointer;
+}
 .glyphicon.imageBig {
     font-size: 9.2em;
 }
@@ -103,10 +107,6 @@
     color: #333333;
 }
 
-.mainImageEdit:hover
-{
-    cursor: pointer;
-}
 .selectCenterAddEntity{
     position:absolute;
     top: 50%;

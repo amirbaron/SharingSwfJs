@@ -1,17 +1,16 @@
 <div class="row clearfix">
     <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad">
-        <img class="img-responsive" ng-click="openImageSelector(setPreviewImg, page, '468:263 minimum')"
-             ng-src="{{(page.previewImg != null)?page.previewImg : 'http://placehold.it/468X263&text=+'}}">
+        <div ng-click="openImageSelector(setPreviewImg, page, '468:263 minimum')"
+             ng-class="{'hoverPointer': editMode}">
+            <img class="img-responsive"
+                 ng-src="{{(page.previewImg != null)?page.previewImg : 'http://placehold.it/468X263&text=+'}}">
 
-        <div class="selectMainImageNoImage" ng-show="editMode && page.previewImg == null">
-            <label>Click to add image</br>
-                <span class="glyphicon glyphicon-picture imageBig" aria-hidden="true"></span>
-            </label>
+            <div class="selectMainImageNoImage" ng-show="editMode && page.previewImg == null">
+                Click to add image</br>
+                <span class="glyphicon glyphicon-picture imageBig " aria-hidden="true"></span>
+            </div>
         </div>
-
     </div>
-
-
 </div>
 <div class="row clearfix">
     <form class="form-horizontal">
