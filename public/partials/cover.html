@@ -3,7 +3,15 @@
         <img class="img-responsive" ng-click="openImageSelector(setPreviewImg, page, '468:263 minimum')"
              ng-src="{{(page.previewImg != null)?page.previewImg : 'http://placehold.it/468X263&text=+'}}">
 
+        <div class="selectMainImageNoImage" ng-show="editMode && page.previewImg == null">
+            <label>Click to add image</br>
+                <span class="glyphicon glyphicon-picture imageBig" aria-hidden="true"></span>
+            </label>
+        </div>
+
     </div>
+
+
 </div>
 <div class="row clearfix">
     <form class="form-horizontal">

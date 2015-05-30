@@ -1,12 +1,18 @@
 <div class="row clearfix">
     <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad">
-        <img class="img-responsive" ng-animate="'animate'" ng-click="openImageSelector(setImgSmall, page.slides[page.selectedSlide], '468:263 minimum')"
+        <img class="img-responsive" ng-animate="'animate'"
+             ng-click="openImageSelector(setImgSmall, page.slides[page.selectedSlide], '468:263 minimum')"
              ng-src="{{(page.slides[page.selectedSlide].imgSmall != null)?page.slides[page.selectedSlide].imgSmall : 'http://placehold.it/468X263&text=+'}}">
 
         <div class="opacityText slideMainText defaultPad defaultMargin " ng-show="!editMode">
             {{page.slides[page.selectedSlide].text}}
         </div>
 
+        <div class="selectMainImageNoImage" ng-show="editMode && page.slides[page.selectedSlide].imgSmall == null">
+            <label>Click to add image</br>
+                <span class="glyphicon glyphicon-picture imageBig" aria-hidden="true"></span>
+            </label>
+        </div>
 
         <input type="text" class="form-control opacityText slideMainText slideMainInput defaultMargin"
                ng-show="editMode"
@@ -37,6 +43,7 @@
                    placeholder="Answer {{$index+1}}.." ng-model="entity.text"></textarea></img>
 
         </button>
+
 
         <div class="trashButtonImage" ng-show="editMode">
             <button type="button" class="btn btn-default btn-xs  cameraButton" aria-label="Right"

@@ -84,6 +84,14 @@
     transform: translate(-50%,-50%);
 }
 
+.glyphicon.imageBig {
+    font-size: 9.2em;
+}
+
+.glyphicon.imageSmall {
+    font-size: 2em;
+}
+
 .selectCenterAddEntity{
     position:absolute;
     top: 50%;

@@ -8,6 +8,12 @@
             {{page.results[page.selectedResult].text}}
         </div>
 
+        <div class="selectMainImageNoImage" ng-show="editMode && page.results[page.selectedResult].imgSmall == null">
+            <label>Click to add image </br>
+                <span class="glyphicon glyphicon-picture imageBig" aria-hidden="true"></span>
+            </label>
+        </div>
+
         <input type="text" class="form-control opacityText slideMainText slideMainInput defaultMargin"
                ng-show="editMode"
                placeholder="You are a 'Toy Story' expert! No one knows it better than you.."
