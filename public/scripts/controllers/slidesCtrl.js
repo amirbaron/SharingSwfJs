@@ -18,33 +18,36 @@ app.controller("slidesCtrl", function ($scope, $location,  loginService, $state)
     $scope.myUrl = '#' + $location.url();
 
 
-    $scope.entityClicked = function (entityIndex, itemSelected) {
-        if ($scope.editMode)
-            return;
-        setTimeout(function () {
-            $scope.page.selectedSlide++;
-            $scope.$apply()
-        }, 1000);
-
-        var selectedSlide = $scope.page.slides[$scope.page.selectedSlide];
-        var selectedEntity = selectedSlide.entities[entityIndex];
-
-        if (selectedEntity.points == 0) {
-            selectedEntity.isFailed = true;
-            selectedSlide.isFailed = true;
+    $scope.entityClicked = function (entityIndex, itemSelected, entity) {
+        if ($scope.editMode) {
+            $scope.openImageSelector($scope.setImgSmall, entity, '85:63 minimum');
         }
         else {
-            selectedSlide.isSuccess = true;
-        }
+            setTimeout(function () {
+                $scope.page.selectedSlide++;
+                $scope.$apply()
+            }, 1000);
 
-        selectedSlide.entities.forEach(
-            function handleEntity(entity) {
-                if (entity.points > 0) {
-                    entity.isSuccess = true;
-                }
-                entity.isPressed = true;
+            var selectedSlide = $scope.page.slides[$scope.page.selectedSlide];
+            var selectedEntity = selectedSlide.entities[entityIndex];
+
+            if (selectedEntity.points == 0) {
+                selectedEntity.isFailed = true;
+                selectedSlide.isFailed = true;
             }
-        );
+            else {
+                selectedSlide.isSuccess = true;
+            }
+
+            selectedSlide.entities.forEach(
+                function handleEntity(entity) {
+                    if (entity.points > 0) {
+                        entity.isSuccess = true;
+                    }
+                    entity.isPressed = true;
+                }
+            );
+        }
     }
 
     $scope.jumpToSlide = function (slideIndex) {

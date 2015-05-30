@@ -1,19 +1,10 @@
 <div class="row clearfix">
     <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad">
-        <img class="img-responsive" ng-animate="'animate'"
+        <img class="img-responsive" ng-animate="'animate'" ng-click="openImageSelector(setImgSmall, page.slides[page.selectedSlide], '468:263 minimum')"
              ng-src="{{(page.slides[page.selectedSlide].imgSmall != null)?page.slides[page.selectedSlide].imgSmall : 'http://placehold.it/468X263&text=+'}}">
 
         <div class="opacityText slideMainText defaultPad defaultMargin " ng-show="!editMode">
             {{page.slides[page.selectedSlide].text}}
-        </div>
-
-        <div class="selectMainImageNoImage"
-             ng-show="editMode">
-
-            <button type="button" class="btn btn-default cameraButton" aria-label="Save"
-                    ng-click="openImageSelector(setImgSmall, page.slides[page.selectedSlide], '468:263 minimum')">
-                <span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Add Image
-            </button>
         </div>
 
 
@@ -33,7 +24,7 @@
                 ng-class="{'btn-success' : (!editMode && entity.isSuccess) || (editMode && entity.points>0),
                                    'btn-danger' : (!editMode && entity.isFailed) || (editMode && entity.points==0),
                                    'disabled' : (!editMode && entity.isPressed )}"
-                type="button" width="100%" ng-click="entityClicked($index, this)">
+                type="button" width="100%" ng-click="entityClicked($index, this, entity)">
             <img class="img-responsive "
                  ng-src="{{entity.imgSmall!=null?entity.imgSmall:'http://placehold.it/109X80&text=+'}}"
                  data-toggle="modal"/>
@@ -46,13 +37,6 @@
                    placeholder="Answer {{$index+1}}.." ng-model="entity.text"></textarea></img>
 
         </button>
-
-        <div class="selectButtonImage" ng-show="editMode">
-            <button type="button" class="btn btn-default btn-xs cameraButton" aria-label="Save"
-                    ng-click="openImageSelector(setImgSmall, entity, '85:63 minimum')">
-                <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
-            </button>
-        </div>
 
         <div class="trashButtonImage" ng-show="editMode">
             <button type="button" class="btn btn-default btn-xs  cameraButton" aria-label="Right"

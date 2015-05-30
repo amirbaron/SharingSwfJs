@@ -1,21 +1,12 @@
 <div class="row clearfix">
     <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad">
         <img class="img-responsive"
-             ng-src="{{(page.results[page.selectedResult].imgSmall != null)?page.results[page.selectedResult].imgSmall : 'http://placehold.it/468X263&text=+'}}">
+             ng-src="{{(page.results[page.selectedResult].imgSmall != null)?page.results[page.selectedResult].imgSmall : 'http://placehold.it/468X263&text=+'}}"
+             ng-click="openImageSelector(setImgSmall, page.results[page.selectedResult], '468:263 minimum')">
 
         <div class="opacityText slideMainText defaultPad defaultMargin " ng-show="!editMode">
             {{page.results[page.selectedResult].text}}
         </div>
-
-        <div class="selectMainImageNoImage"
-             ng-show="editMode">
-
-            <button type="button" class="btn btn-default cameraButton" aria-label="Save"
-                    ng-click="openImageSelector(setImgSmall, page.results[page.selectedResult], '468:263 minimum')">
-                <span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Add Image
-            </button>
-        </div>
-
 
         <input type="text" class="form-control opacityText slideMainText slideMainInput defaultMargin"
                ng-show="editMode"

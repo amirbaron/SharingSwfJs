@@ -1,17 +1,7 @@
 <div class="row clearfix">
     <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad">
-        <img class="img-responsive"
+        <img class="img-responsive" ng-click="openImageSelector(setPreviewImg, page, '468:263 minimum')"
              ng-src="{{(page.previewImg != null)?page.previewImg : 'http://placehold.it/468X263&text=+'}}">
-
-        <div class="selectMainImageNoImage">
-
-            <button type="button" class="btn btn-default cameraButton" aria-label="Save"
-                    ng-click="openImageSelector(setPreviewImg, page, '468:263 minimum')">
-                <span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Add Image
-            </button>
-
-
-        </div>
 
     </div>
 </div>

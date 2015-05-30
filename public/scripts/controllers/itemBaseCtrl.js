@@ -77,6 +77,9 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
     }
 
     $scope.openImageSelector = function (fnSuccess, item, strCrop) {
+        if (!$scope.editMode)
+            return;
+
         uploadcare.openDialog(null, {
             publicKey: "4b4265edeea7c06bf980",
             imagesOnly: true,
