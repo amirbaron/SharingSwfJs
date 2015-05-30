@@ -8,6 +8,7 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
     $scope.item=item;
     $scope.page = $scope.item.getPageObject();
     $scope.page.selectedSlide=0;
+    $scope.page.selectedResult=0;
     $scope.publish=false;
     if($scope.item.getPublished()){
         $scope.publish=true;

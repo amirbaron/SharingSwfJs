@@ -15,12 +15,13 @@
 
         </div>
     </tab>
-    <tab heading="Results" select="showResults()">
+    <tab select="showResults()">
         <tab-heading>
             <i class="glyphicon glyphicon-stats" aria-hidden="true"></i> Results
         </tab-heading>
 
-        Results
+        <div ui-view="results">
+        </div>
     </tab>
 
 </tabset>

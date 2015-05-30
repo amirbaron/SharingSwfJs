@@ -221,7 +221,13 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         }).state('base.itemList.item.edit.results', {
             abstract: false,
-            url: '/results'
+            url: '/results',
+            views: {
+                'results': {
+                    templateUrl: 'partials/results.html',
+                    controller: 'resultsCtrl'
+                }
+            }
 
         })
 })
