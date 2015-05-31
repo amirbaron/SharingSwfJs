@@ -200,7 +200,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             views: {
                 'slides@': {
                     templateUrl: 'partials/results.html',
-                    controller: 'slidesCtrl'
+                    controller: 'resultsCtrl'
                 }
             }
         }).state('base.itemList.item.edit', {

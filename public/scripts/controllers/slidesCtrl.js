@@ -23,9 +23,8 @@ app.controller("slidesCtrl", function ($scope, $location, loginService, $state) 
             }
             else {
                 setTimeout(function () {
-                        for (var i = 0; i < $scope.page.slides.length; i++ ) {
-                            if (($scope.page.slides[i].isFailed == null) && ($scope.page.slides[i].isSuccess == null))
-                            {
+                        for (var i = 0; i < $scope.page.slides.length; i++) {
+                            if (($scope.page.slides[i].isFailed == null) && ($scope.page.slides[i].isSuccess == null)) {
                                 $scope.page.selectedSlide = i;
                                 $scope.$apply();
                                 return;
@@ -35,8 +34,7 @@ app.controller("slidesCtrl", function ($scope, $location, loginService, $state) 
                         $state.go("^.results");
 
                     }
-                    ,
-                    1000
+                    , 1000
                 )
                 ;
 
@@ -49,6 +47,7 @@ app.controller("slidesCtrl", function ($scope, $location, loginService, $state) 
                 }
                 else {
                     selectedSlide.isSuccess = true;
+                    $scope.page.score++;
                 }
 
                 selectedSlide.entities.forEach(
