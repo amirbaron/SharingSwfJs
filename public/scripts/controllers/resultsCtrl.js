@@ -7,6 +7,10 @@ app.controller("resultsCtrl", function ($scope, $location,  $state) {
             $scope.addResult();
             console.log("Init result method");
         }
+        else if (!$scope.editMode)
+        {
+            $scope.page.selectedResult = parseInt((($scope.page.score/$scope.page.slides.length)*$scope.page.results.length)-0.0001);
+        }
     };
 
     $scope.jumpToResult = function (resultIndex) {

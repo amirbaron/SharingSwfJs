@@ -194,12 +194,24 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }]
 
         }).state('base.itemList.item.view', {
+            abstract: true,
+            url: '/view'
+        }).state('base.itemList.item.view.slides', {
             abstract: false,
-            url: '/view',
+            url: '/slides',
             views: {
                 'slides@': {
                     templateUrl: 'partials/slides.html',
                     controller: 'slidesCtrl'
+                }
+            }
+        }).state('base.itemList.item.view.results', {
+            abstract: false,
+            url: '/results',
+            views: {
+                'slides@': {
+                    templateUrl: 'partials/results.html',
+                    controller: 'resultsCtrl'
                 }
             }
         }).state('base.itemList.item.edit', {
