@@ -183,8 +183,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }]
 
         }).state('base.itemList.item.view', {
+            abstract: true,
+            url: '/view'
+        }).state('base.itemList.item.view.slides', {
             abstract: false,
-            url: '/view',
+            url: '/slides',
             views: {
                 'slides@': {
                     templateUrl: 'partials/slides.html',
