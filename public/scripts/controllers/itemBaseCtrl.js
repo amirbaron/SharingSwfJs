@@ -57,6 +57,7 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
 
     $scope.cleanUserActivity = function()
     {
+        $scope.page.score=0;
         $scope.page.selectedSlide=0;
         $scope.page.slides.forEach(
             function handleSlide(slide)
