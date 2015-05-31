@@ -29,9 +29,9 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
     $scope.toggleEdit=function(){
         $scope.editMode=!$scope.editMode;
         if($scope.editMode){
-            $state.go('^.edit.slides');
+            $state.go('^.^.edit.slides');
         }else{
-            $state.go('^.^.view');
+            $state.go('^.^.view.slides');
         }
     }
 
