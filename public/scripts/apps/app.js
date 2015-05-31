@@ -147,7 +147,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 },
                 'itemList': {
                     templateUrl: "partials/itemList.html",
-                    controller: "itemListCtrl",
+                    controller: "itemsProviderCtrl",
                     resolve: {
                         items: function (itemsService) {
                             return itemsService.getUserItems();
