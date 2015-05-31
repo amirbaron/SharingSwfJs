@@ -1,4 +1,4 @@
-app.controller("loginCtrl", function ($scope, $location, loginService) {
+app.controller("loginCtrl", function ($scope, $location, loginService,itemsService) {
 
     $scope.profileImg = loginService.getUserImg();
 
@@ -19,5 +19,9 @@ app.controller("loginCtrl", function ($scope, $location, loginService) {
         loginService.logout();
     }
 
-
+    $scope.searchTerm='';
+    $scope.searching=false;
+    $scope.getItemsWithTerm = function(searchTerm) {
+        return itemsService.getItemsWithTerm(searchTerm);
+    };
 });

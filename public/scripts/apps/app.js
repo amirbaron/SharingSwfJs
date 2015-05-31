@@ -34,6 +34,8 @@ app.service('itemsService', function ($q) {
 
             return dfd.promise
         },
+
+
         getItemsWithTerm: function (term) {
             var dfd = $q.defer();
             var queryName = this.getItemsQuery();
@@ -47,6 +49,14 @@ app.service('itemsService', function ($q) {
 
             return dfd.promise
 
+        }, getTitles: function (searchTerm) {
+            var dfd = $q.defer();
+            this.getItemsWithTerm(searchTerm).then(function (result) {
+                dfd.resolve(result.map(function (item) {
+                    return item.getTitle()
+                }));
+            });
+            return dfd.promise
         },
         getUserItems: function () {
             var dfd = $q.defer();
@@ -85,6 +95,7 @@ app.service('itemsService', function ($q) {
             return dfd.promise;
         }
 
+
     }
 })
 
@@ -114,7 +125,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             views: {
                 'itemList': {
                     templateUrl: "partials/itemList.html",
-                    controller:'itemsProviderCtrl'
+                    controller: 'itemsProviderCtrl'
 
                 },
                 'create': {

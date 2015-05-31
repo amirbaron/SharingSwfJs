@@ -1,5 +1,4 @@
 app.controller("itemsProviderCtrl", function ($scope, $location, $modal, items, itemsService) {
-    console.log("fdffkjfkldsjlfjdslfjlkasjdflkdfjldjl")
     $scope.items = items;
     $scope.search = function (term) {
         itemsService.getItemsWithTerm(term).then(function (results) {
@@ -8,4 +7,10 @@ app.controller("itemsProviderCtrl", function ($scope, $location, $modal, items, 
         });
     }
 
+
+
+
+    $scope.$watch('searchTerm',function(newValue, oldValue){
+        $scope.search(newValue);
+    },true);
 });

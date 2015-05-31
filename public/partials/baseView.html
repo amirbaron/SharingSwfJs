@@ -20,12 +20,19 @@
 
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
+
+                    <input type="text" ng-model="searchTerm" placeholder="Search"
+                           typeahead="item.getTitle() for item in getItemsWithTerm($viewValue)" typeahead-loading="searching"
+                           class="form-control" typeahead-wait-ms="300" typeahead-template-url="templates/itemPreview.html">
+                    <i ng-show="searching" class="glyphicon glyphicon-refresh" ></i>
+
+
                 </div>
             </form>
 
             <ul class="nav navbar-nav navbar-right">
-                <li ng-show="!userLoggedIn()"><a ng-click="login()" class="btn navbar-btn"><span class="glyphicon glyphicon-user"></span> facebook
+                <li ng-show="!userLoggedIn()"><a ng-click="login()" class="btn navbar-btn"><span
+                        class="glyphicon glyphicon-user"></span> facebook
                     Login </a></li>
                 <li ui-view="create">
                 </li>
