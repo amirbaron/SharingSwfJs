@@ -57,9 +57,10 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
 
     $scope.cleanUserActivity = function()
     {
-        $scope.page.score=0;
-        $scope.page.selectedSlide=0;
-        $scope.page.slides.forEach(
+        var cleanCopy =  JSON.parse(JSON.stringify($scope.page));
+        cleanCopy.score=0;
+        cleanCopy.selectedSlide=0;
+        cleanCopy.slides.forEach(
             function handleSlide(slide)
             {
                 slide.isSuccess = undefined;
@@ -76,6 +77,8 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
 
             }
         )
+
+        return cleanCopy;
     }
 
     $scope.openImageSelector = function (fnSuccess, item, strCrop) {
@@ -105,8 +108,7 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
     }
 
     $scope.save = function () {
-        $scope.cleanUserActivity();
-        $scope.item.setPageObject($scope.page);
+        $scope.item.setPageObject($scope.cleanUserActivity());
         $scope.item.setUser(Parse.User.current());
         $scope.item.save(null, {
             success: function (object) {
