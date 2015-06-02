@@ -22,10 +22,10 @@
                 <div class="form-group">
                     <div class="form-group has-feedback column" >
                         <input  type="text" ng-model="searchTerm" placeholder="Search"
-                               typeahead="item.getTitle() for item in getItemsWithTerm($viewValue) | filter:$viewValue | limitTo:5"
+                               typeahead="item.getTitle() for item in getItemsWithTerm($viewValue)|filter:$viewValue"
                                typeahead-loading="searching"
                                class="form-control" typeahead-wait-ms="300"
-                               typeahead-template-url="templates/itemPreview.html">
+                               typeahead-template-url="templates/itemPreview.html" typeahead-on-select="selectItem($item, $model, $label)">
                         <i class="glyphicon form-control-feedback"
                            ng-class="{'glyphicon-search' : !searching, 'glyphicon-refresh' : searching }"></i>
                     </div>

@@ -1,4 +1,4 @@
-app.controller("loginCtrl", function ($scope, $location, loginService,itemsService) {
+app.controller("loginCtrl", function ($scope, $location, loginService,itemsService,$state) {
 
     $scope.profileImg = loginService.getUserImg();
 
@@ -24,4 +24,8 @@ app.controller("loginCtrl", function ($scope, $location, loginService,itemsServi
     $scope.getItemsWithTerm = function(searchTerm) {
         return itemsService.getItemsWithTerm(searchTerm);
     };
+    $scope.selectItem=function($item, $model, $label){
+        $state.go('base.itemList.item.view.slides',{itemId:""+$item.id+""})
+    }
+
 });
