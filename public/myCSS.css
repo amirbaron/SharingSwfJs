@@ -18,6 +18,17 @@
     margin: 10px;
 }
 
+.autoCompleteSearch
+{
+    padding: 5px;
+    cursor: pointer;
+}
+
+.autoCompleteSearch:hover
+{
+    background: #ebeef4;
+}
+
 .dragover {
     border: 5px dashed blue;
 }

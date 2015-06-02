@@ -20,13 +20,15 @@
 
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
-
-                    <input type="text" ng-model="searchTerm" placeholder="Search"
-                           typeahead="item.getTitle() for item in getItemsWithTerm($viewValue)" typeahead-loading="searching"
-                           class="form-control" typeahead-wait-ms="300" typeahead-template-url="templates/itemPreview.html">
-                    <i ng-show="searching" class="glyphicon glyphicon-refresh" ></i>
-
-
+                    <div class="form-group has-feedback column" >
+                        <input  type="text" ng-model="searchTerm" placeholder="Search"
+                               typeahead="item.getTitle() for item in getItemsWithTerm($viewValue) | filter:$viewValue | limitTo:5"
+                               typeahead-loading="searching"
+                               class="form-control" typeahead-wait-ms="300"
+                               typeahead-template-url="templates/itemPreview.html">
+                        <i class="glyphicon form-control-feedback"
+                           ng-class="{'glyphicon-search' : !searching, 'glyphicon-refresh' : searching }"></i>
+                    </div>
                 </div>
             </form>
 
