@@ -8,9 +8,10 @@ app.controller("itemsProviderCtrl", function ($scope, $location, $modal, items, 
     }
 
 
+    $scope.$watch('searchTerm', function (newValue, oldValue) {
+        if(newValue!=""||oldValue!=""){
+            $scope.search(newValue);
 
-
-    $scope.$watch('searchTerm',function(newValue, oldValue){
-        $scope.search(newValue);
-    },true);
+        }
+    }, true);
 });

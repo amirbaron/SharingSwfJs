@@ -43,6 +43,7 @@ app.service('itemsService', function ($q) {
             queryName.contains("name", term);
             queryTitle.contains("title", term);
             var query = Parse.Query.or(queryName, queryTitle);
+            query.limit(5);
             query.find().then(function (result) {
                 dfd.resolve(result);
             });
