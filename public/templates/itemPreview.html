@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
-<img ng-src="{{match.model.getPageObject().previewImg}}" width="60">
-<span>{{match.model.getTitle()}}</span>
-
+<div class="container-fluid">
+    <div class="row clearfix autoCompleteSearch">
+        <div class="column">
+            <img ng-src="{{match.model.getPageObject().previewImg}}" width="60">
+            <span>{{match.model.getTitle()}}</span>
+        </div>
+    </div>
+</div>
 </html>
