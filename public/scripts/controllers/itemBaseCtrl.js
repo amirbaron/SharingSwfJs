@@ -6,6 +6,7 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
 
     $scope.selectedSlide=0;
     $scope.item=item;
+    $scope.title= $scope.item.getTitle()
     $scope.page = $scope.item.getPageObject();
     $scope.page.selectedSlide=0;
     $scope.page.selectedResult=0;
@@ -120,10 +121,14 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
         });
     };
 
-    $scope.$watch('page',function(newValue, oldValue){
+    $scope.$watch('page', function(newValue, oldValue){
         if($scope.editMode && newValue.selectedSlide == oldValue.selectedSlide){
             $scope.save();
         }
+    },true);
+
+    $scope.$watch('title', function(newValue, oldValue){
+            $scope.save();
     },true);
 
 });

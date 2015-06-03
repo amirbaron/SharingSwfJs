@@ -2,7 +2,7 @@
     <div class="row clearfix">
         <div class="col-md-8 col-sm-12 col-xs-24 column col-no-gutter" ng-repeat="item in items track by $index">
             <h4 class="text-left">
-                {{item.getPageObject().title}}
+                {{item.getTitle()}}
             </h4>
             <a ng-href="#/itemList/{{item.id}}/view/slides">
                 <img alt="360*276"
