@@ -6,7 +6,6 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
 
     $scope.selectedSlide=0;
     $scope.item=item;
-    $scope.title= $scope.item.getTitle()
     $scope.page = $scope.item.getPageObject();
     $scope.page.selectedSlide=0;
     $scope.page.selectedResult=0;
@@ -127,9 +126,7 @@ app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$st
         }
     },true);
 
-    $scope.$watch('title', function(newValue, oldValue){
-            $scope.save();
-    },true);
+
 
 });
 
