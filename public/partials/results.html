@@ -1,5 +1,5 @@
 <div class="row clearfix">
-    <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad">
+    <div col-xs-24 column defaultPad">
         <div ng-click="openImageSelector(setImgSmall, page.results[page.selectedResult], '468:263 minimum')"
              ng-class="{'hoverPointer': editMode}">
             <img class="img-responsive"
@@ -30,13 +30,13 @@
 </div>
 
 <div class="row clearfix">
-    <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad text-center" ng-show="editMode">
+    <div class="col-xs-24 column defaultPad text-center" ng-show="editMode">
         <hr class="soften">
     </div>
 </div>
 
 <div class="row clearfix" ng-show="editMode">
-    <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad text-center">
+    <div class="col-xs-24 column defaultPad text-center">
         <button class="btn btn-default defaultPad jump-button-results" ng-repeat="result in page.results"
                 ng-class="{    'btn-info' : $index == page.selectedResult}"
                 ng-click="jumpToResult($index)">
@@ -47,7 +47,7 @@
     </div>
 </div>
 <div class="row clearfix">
-    <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad text-center">
+    <div class="col-xs-24 column defaultPad text-center">
 
         <button type="button" ng-show="editMode" class="btn btn-default " aria-label="Save"
                 ng-click="removeResult()">Delete Result
@@ -61,7 +61,7 @@
 </div>
 
 <div class="row clearfix">
-    <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad text-center" ng-show="editMode">
+    <div class="col-xs-24 column defaultPad text-center" ng-show="editMode">
         <hr class="soften">
     </div>
 </div>
