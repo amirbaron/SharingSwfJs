@@ -166,10 +166,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     console.log("Item id is " + $stateParams.itemId);
                     return itemsService.getItem($stateParams.itemId);
                 },
-                loginService: 'loginService'
+                loginService: 'loginService',
+                itemService: 'itemService'
             },
 
-            onEnter: ['$stateParams', '$state', '$modal', 'item', 'loginService', function ($stateParams, $state, $modal, item, loginService) {
+            onEnter: ['$stateParams', '$state', '$modal', 'item', 'loginService', 'itemService', function ($stateParams, $state, $modal, item, loginService, itemService) {
                 console.log('Passed item as ' + item.id);
                 $modal.open({
                     templateUrl: 'partials/itemBase.html',
