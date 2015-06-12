@@ -4,10 +4,13 @@ app.config(['ngClipProvider', function (ngClipProvider) {
     ngClipProvider.setPath("components/zeroclipboard/dist/ZeroClipboard.swf");
 }]);
 
+
+
+
 app.service('itemsService', function ($q) {
     Parse.Object.extend({
         className: "AppPage",
-        attrs: ['page', 'name', 'title', 'type', 'user', 'published'],
+        attrs: ['page', 'name', 'title', 'type', 'user', 'published','tags'],
         getPageObject: function () {
             return angular.fromJson(this.getPage());
         },
@@ -94,7 +97,24 @@ app.service('itemsService', function ($q) {
                 }
             });
             return dfd.promise;
+        },
+        getCreatorImg:function(item){
+            var dfd = $q.defer();
+
+            var appPage = new Parse.Object("AppPage");
+            appPage.setPageObject(new Object())
+            appPage.save(null, {
+                success: function (object) {
+                    console.log("Created new item with id " + object.id);
+                    dfd.resolve(object)
+                },
+                error: function (model, error) {
+                }
+            });
+            return dfd.promise;
         }
+
+
 
 
     }
