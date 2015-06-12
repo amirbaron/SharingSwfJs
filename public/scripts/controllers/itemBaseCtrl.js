@@ -1,11 +1,22 @@
-app.controller("itemBaseCtrl", function ($scope, $location,item,loginService,$state) {
+app.controller("itemBaseCtrl", function ($scope, $location,item,loginService, itemService, $state) {
 // Queries
     console.log("in itemBaseCtrl");
     console.log("Current state " + $state.$current);
 
+    $scope.item=item;
+
+    $scope.getCreatorName = function () {
+        itemService.getCreatorInfo(item).then(function () {
+                $scope.creatorName=itemService.getProfileImg();
+            }, function () {
+
+            }
+        );
+    };
 
     $scope.selectedSlide=0;
-    $scope.item=item;
+
+    $scope.getCreatorName();
     $scope.page = $scope.item.getPageObject();
     $scope.page.selectedSlide=0;
     $scope.page.selectedResult=0;
