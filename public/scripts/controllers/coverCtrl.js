@@ -8,9 +8,7 @@ app.controller("coverCtrl", function ($scope, $location,  $state) {
         }
     },true);
 
-    $scope.tags='';
-
-
+    $scope.tags=$scope.item.getTags();
 
     $scope.$watch('tags', function(newValue, oldValue){
         if(newValue!=oldValue){

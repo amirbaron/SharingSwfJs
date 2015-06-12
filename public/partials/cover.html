@@ -19,14 +19,14 @@
 
             <div class="col-xs-20 column ">
                 <input type="text" class="form-control" ng-model="title"
-                       placeholder="Just choose a nice title for your activity..">
+                       placeholder="Just choose a nice title for your activity.." ng-model-options="{ debounce: 1000 }">
             </div>
         </div>
         <div class="form-group">
             <label class="col-xs-4 control-label ">Tags:</label>
 
             <div class="col-xs-20 column">
-                <input type="text" class="form-control" placeholder="#sports #ladygaga #gameofthrones">
+                <input type="text" class="form-control" ng-model="tags" ng-model-options="{ debounce: 1000 }" placeholder="#sports #ladygaga #gameofthrones">
             </div>
         </div>
     </form>

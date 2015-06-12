@@ -21,8 +21,8 @@
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
                     <div class="form-group has-feedback column" >
-                        <input  type="text" ng-model="searchTerm" placeholder="Search"
-                               typeahead="item.getTitle() for item in getItemsWithTerm($viewValue)|filter:$viewValue"
+                        <input  type="text" ng-model-options="{ debounce: 1000 }" ng-model="searchTerm" placeholder="Search"
+                               typeahead="item.getTitle() for item in getItemsWithTerm($viewValue)"
                                typeahead-loading="searching"
                                class="form-control" typeahead-wait-ms="300"
                                typeahead-template-url="templates/itemPreview.html" typeahead-on-select="selectItem($item, $model, $label)">

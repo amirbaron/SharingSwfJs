@@ -17,7 +17,7 @@
         </div>
 
         <input type="text" class="form-control opacityText slideMainText slideMainInput defaultMargin"
-               ng-show="editMode"
+               ng-show="editMode" ng-model-options="{ debounce: 1000 }"
                placeholder="Type Your Question.." ng-model="page.slides[page.selectedSlide].text"></textarea></img>
         <button type="button" class="btn btn-default btn-xs copyrightMain dropdown-toggle"
                 data-toggle="dropdown" aria-label="copyright" ng-show="!editMode">
@@ -51,7 +51,7 @@
         </button>
 
         <input type="text" class="form-control opacityText slideAnswerTextWithImage defaultPad slideAnswerInput"
-               maxlength="40"
+               maxlength="40" ng-model-options="{ debounce: 1000 }"
                ng-show="editMode"
                placeholder="Answer {{$index+1}}.." ng-model="entity.text"></textarea>
 
