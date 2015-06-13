@@ -8,6 +8,7 @@ app.controller("coverCtrl", function ($scope, $location,  $state) {
         }
     },true);
 
+    $scope.foo='foo,bar';
     $scope.tags=$scope.item.getTags();
 
     $scope.$watch('tags', function(newValue, oldValue){

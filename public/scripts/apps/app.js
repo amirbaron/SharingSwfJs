@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router', 'parse-angular', 'parse-angular.enhance', 'ui.bootstrap', 'ng-uploadcare', 'ngClipboard']);
+var app = angular.module('app', ['ui.router', 'parse-angular', 'parse-angular.enhance', 'ui.bootstrap', 'ng-uploadcare', 'ngClipboard','decipher.tags']);
 
 app.config(['ngClipProvider', function (ngClipProvider) {
     ngClipProvider.setPath("components/zeroclipboard/dist/ZeroClipboard.swf");
