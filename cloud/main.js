@@ -33,8 +33,9 @@ Parse.Cloud.beforeSave("AppPage", function (request, response) {
     //var stopWords = ["the", "in", "and"]
     //words = _.filter(words, function(w) { return w.match(/^w+$/) && ! _.contains(stopWords, w); });
 
-    var hashtags = appPage.get("tags").match(/#.+?\b/g);
+    var hashtags = appPage.get("hashtags");
     hashtags = _.map(hashtags, toLowerCase);
+    hashtags=_.uniq(hashtags);
     console.log("hashtags " + hashtags);
     //appPage.set("words", words);
     appPage.set("hashtags", hashtags);
