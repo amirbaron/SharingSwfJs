@@ -8,10 +8,10 @@ app.controller("coverCtrl", function ($scope, $location,  $state) {
         }
     },true);
 
-    $scope.foo=$scope.item.getHashtags();
+    $scope.tags=$scope.item.getHashtags();
     //$scope.tags=$scope.item.getTags();
 
-    $scope.$watch('foo', function(newValue, oldValue){
+    $scope.$watch('tags', function(newValue, oldValue){
         if(newValue!=oldValue){
             console.log("Saving tags")
             $scope.item.setHashtags(newValue);
