@@ -25,9 +25,12 @@
         <div class="form-group">
             <label class="col-xs-4 control-label ">Tags:</label>
 
-            <div class="col-xs-20 column">
-                <input type="text" class="form-control" ng-model="tags" ng-model-options="{ debounce: 1000 }" placeholder="#sports #ladygaga #gameofthrones">
-            </div>
+            <!--<div class="col-xs-20 column">-->
+                <!--<input type="text" class="form-control" ng-model="tags" ng-model-options="{ debounce: 1000 }" placeholder="#sports #ladygaga #gameofthrones" ngPattern="/#.+?\b/g">-->
+            <!--</div>-->
+            <tags model="tags" div class="col-xs-20 column"></tags>
+
         </div>
     </form>
+
 </div>

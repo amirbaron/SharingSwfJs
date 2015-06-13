@@ -8,12 +8,13 @@ app.controller("coverCtrl", function ($scope, $location,  $state) {
         }
     },true);
 
-    $scope.tags=$scope.item.getTags();
+    $scope.tags=$scope.item.getHashtags();
+    //$scope.tags=$scope.item.getTags();
 
     $scope.$watch('tags', function(newValue, oldValue){
         if(newValue!=oldValue){
             console.log("Saving tags")
-            $scope.item.setTags(newValue);
+            $scope.item.setHashtags(newValue);
             $scope.save();
         }
     },true);

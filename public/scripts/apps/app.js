@@ -1,16 +1,14 @@
-var app = angular.module('app', ['ui.router', 'parse-angular', 'parse-angular.enhance', 'ui.bootstrap', 'ng-uploadcare', 'ngClipboard']);
+var app = angular.module('app', ['ui.router', 'parse-angular', 'parse-angular.enhance', 'ui.bootstrap', 'ng-uploadcare', 'ngClipboard', 'decipher.tags']);
 
 app.config(['ngClipProvider', function (ngClipProvider) {
     ngClipProvider.setPath("components/zeroclipboard/dist/ZeroClipboard.swf");
 }]);
 
 
-
-
 app.service('itemsService', function ($q) {
     Parse.Object.extend({
         className: "AppPage",
-        attrs: ['page', 'name', 'title', 'type', 'user', 'published','tags'],
+        attrs: ['page', 'name', 'title', 'type', 'user', 'published', 'hashtags'],
         getPageObject: function () {
             return angular.fromJson(this.getPage());
         },
@@ -28,6 +26,13 @@ app.service('itemsService', function ($q) {
             query.equalTo("published", true);
             return query;
         },
+        getItemsWithHashQuery: function (term) {
+            var query = this.getItemsQuery();
+            var searchTerm = term.split(" ");
+            query.containsAll("hashtags",searchTerm);
+            return query;
+        }
+        ,
         getItems: function () {
             var dfd = $q.defer();
             var query = this.getItemsQuery();
@@ -43,9 +48,10 @@ app.service('itemsService', function ($q) {
             var dfd = $q.defer();
             var queryName = this.getItemsQuery();
             var queryTitle = this.getItemsQuery();
+            var queryHash =  this.getItemsWithHashQuery(term);
             queryName.contains("name", term);
             queryTitle.contains("title", term);
-            var query = Parse.Query.or(queryName, queryTitle);
+            var query = Parse.Query.or(queryName, queryTitle,queryHash);
             query.limit(5);
             query.find().then(function (result) {
                 dfd.resolve(result);
@@ -98,7 +104,7 @@ app.service('itemsService', function ($q) {
             });
             return dfd.promise;
         },
-        getCreatorImg:function(item){
+        getCreatorImg: function (item) {
             var dfd = $q.defer();
 
             var appPage = new Parse.Object("AppPage");
@@ -113,8 +119,6 @@ app.service('itemsService', function ($q) {
             });
             return dfd.promise;
         }
-
-
 
 
     }
