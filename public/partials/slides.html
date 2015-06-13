@@ -81,7 +81,7 @@
              ng-show="editMode">
             <button type="button" class="btn btn-default btn-xs  " aria-label="Right"
                     ng-class="{'btn-success' : entity.points>0}" ng-click="entity.points=!entity.points">
-                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Correct
+                <span ng-class="{'fa fa-check-square-o ' : entity.points>0, 'fa fa-square-o' : entity.points<=0}" aria-hidden="true"></span> Correct
             </button>
         </div>
     </div>
