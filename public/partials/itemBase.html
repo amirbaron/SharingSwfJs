@@ -18,8 +18,24 @@
             </div>
         </div>
     </div>
+
+    <div class="row clearfix defaultPad" ng-show="editMode">
+        <div>
+            <div ui-view="itemTabs" class="col-md-12 col-sm-12 col-xs-24 column">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row clearfix defaultPad" ng-show="!editMode">
+        <div>
+            <div class="col-md-12 col-sm-12 col-xs-24 column" ui-view="slides"></div>
+        </div>
+    </div>
+
     <div class="row clearfix defaultPad">
-        <div class="col-md-24 col-sm-8 col-xs-8 column defaultPad">
+        <div class="col-md-24 col-sm-8 col-xs-8 column defaultPad ">
 
             <div class="btn-group" role="editing" aria-label="editing and saving">
                 <button type="button" class="btn btn-default" aria-label="Edit"
@@ -58,18 +74,4 @@
 
     </div>
 
-    <div class="row clearfix defaultPad">
-        <div>
-            <div ui-view="itemTabs" class="col-md-12 col-sm-12 col-xs-24 column">
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="row clearfix defaultPad">
-        <div>
-            <div class="col-md-12 col-sm-12 col-xs-24 column" ui-view="slides"></div>
-        </div>
-    </div>
 </div>

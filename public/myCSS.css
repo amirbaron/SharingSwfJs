@@ -239,6 +239,31 @@ body {
     margin:3px;
 }
 
+.slidesMargin
+{
+    margin:10px;
+}
+
+.btn.outline {
+    background: white;
+    padding: 12px 22px;
+}
+
+.btn-default.outline {
+    border: 2px solid #DDD;
+    color: #333333;
+}
+
+.btn-default.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+    color: #333333;
+    border-color: #33a6cc;
+}
+.btn-default.outline:active, .btn-primary.outline.active {
+    border-color: #333333;
+    color: #007299;
+    box-shadow: none;
+}
+
 @media all
 {
 }
