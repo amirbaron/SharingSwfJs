@@ -234,6 +234,12 @@ body {
 {
     padding:3px;
 }
+
+.leftRightPad
+{
+    padding-right: 3px;
+    padding-left: 3px;
+}
 .defaultMargin
 {
     margin:3px;

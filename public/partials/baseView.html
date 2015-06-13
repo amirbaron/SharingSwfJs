@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container defaultPad">
+    <div class="container">
 
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -15,7 +15,7 @@
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse defaultPad" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed=true">
+        <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed=true">
 
 
             <form class="navbar-form navbar-left" role="search">
@@ -32,12 +32,16 @@
                 </div>
             </form>
 
-            <ul class="nav navbar-nav navbar-right">
-                <li ng-show="!userLoggedIn()"><a ng-click="login()" class="btn navbar-btn"><span
-                        class="glyphicon glyphicon-user"></span> facebook
-                    Login </a></li>
-                <li ui-view="create">
+            <ul class="nav navbar-nav navbar-right ">
+                <li ui-view="create" class="leftRightPad" >
                 </li>
+                <li ng-show="!userLoggedIn()" class="leftRightPad">
+                    <button type="button" class="btn btn-primary navbar-btn" aria-label="Show"
+                            ng-click="login()">
+                        Login
+                    </button>
+                </li>
+
                 <li>
                     <span class="dropdown" dropdown on-toggle="toggled(open)" ng-show="userLoggedIn()"
                           aria-hidden="true">
