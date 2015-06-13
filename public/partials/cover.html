@@ -22,15 +22,21 @@
                        placeholder="Just choose a nice title for your activity.." ng-model-options="{ debounce: 1000 }">
             </div>
         </div>
+
+    </form>
+</div>
+<div class="row clearfix">
+    <form class="form-horizontal">
+
         <div class="form-group">
-            <label class="col-xs-4 control-label ">Tags:</label>
+            <label class="col-xs-4 col-md-4 control-label ">Tags:</label>
 
             <!--<div class="col-xs-20 column">-->
-                <!--<input type="text" class="form-control" ng-model="tags" ng-model-options="{ debounce: 1000 }" placeholder="#sports #ladygaga #gameofthrones" ngPattern="/#.+?\b/g">-->
+            <!--<input type="text" class="form-control" ng-model="tags" ng-model-options="{ debounce: 1000 }" placeholder="#sports #ladygaga #gameofthrones" ngPattern="/#.+?\b/g">-->
             <!--</div>-->
-            <tags model="tags" div class="col-xs-20 column"></tags>
+            <tags model="tags" class="col-xs-20 col-md-20 column"></tags>
 
         </div>
-    </form>
 
+    </form>
 </div>
