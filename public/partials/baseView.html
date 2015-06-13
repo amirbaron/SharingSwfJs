@@ -44,8 +44,11 @@
 
                 <li>
                     <span class="dropdown" dropdown on-toggle="toggled(open)" ng-show="userLoggedIn()"
-                          aria-hidden="true">
-                    <img ng-src="{{profileImg}}" class="img-thumbnail img-responsive" dropdown-toggle aria-hidden="true"/>
+                         aria-hidden="true">
+                        <div class="col-sm-19 navbar-btn">
+                            <img ng-src="{{profileImg}}"
+                                 class="img-responsive img-circle" dropdown-toggle aria-hidden="true"/>
+                        </div>
 
                     <ul class="dropdown-menu">
                         <li>
