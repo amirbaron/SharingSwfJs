@@ -1,4 +1,44 @@
 <div class="modal-body">
+    <div class="row clearfix defaultPad">
+        <div class="col-md-24 col-sm-8 col-xs-8 column defaultPad">
+            <div class="btn-group" role="sharing" aria-label="sharing">
+                <a ng-click="shareToFacebook()" ng-href="{{myUrl}}" class="btn btn-primary">
+                    <span class="fa fa-facebook" aria-hidden="true"></span> Share
+                </a>
+                <a ng-click="shareToFacebook()" ng-href="{{myUrl}}" class="btn btn-info">
+                    <span class="fa fa-twitter" aria-hidden="true"></span> Share
+                </a>
+                <a ng-click="shareToFacebook()" ng-href="{{myUrl}}" class="btn btn-danger">
+                    <span class="fa fa-pinterest" aria-hidden="true"></span> Pin
+                </a>
+                <a ng-click="shareToFacebook()" ng-href="{{myUrl}}" class="btn btn-warning">
+                    <span class="fa fa-code" aria-hidden="true"></span> Embed
+                </a>
+                <button type="button" class="btn btn-success" aria-label="getLink" clip-copy="getLink()"
+                        ng-class="{'disabled':false}">
+                <span class="glyphicon glyphicon glyphicon-link
+                " aria-hidden="true"></span> Copy
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row clearfix defaultPad" ng-show="editMode">
+        <div>
+            <div ui-view="itemTabs" class="col-md-12 col-sm-12 col-xs-24 column">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row clearfix defaultPad" ng-show="!editMode">
+        <div>
+            <div class="col-md-12 col-sm-12 col-xs-24 column" ui-view="slides"></div>
+        </div>
+    </div>
+
     <div class="row clearfix defaultPad ">
         <div class="col-md-12 col-sm-12 col-xs-24 column defaultPad panel panel-default">
             <div class="row clearfix defaultPad">
@@ -19,21 +59,8 @@
         </div>
     </div>
 
-    <div class="row clearfix defaultPad" ng-show="editMode">
-        <div>
-            <div ui-view="itemTabs" class="col-md-12 col-sm-12 col-xs-24 column">
-            </div>
 
-        </div>
-
-    </div>
-
-    <div class="row clearfix defaultPad" ng-show="!editMode">
-        <div>
-            <div class="col-md-12 col-sm-12 col-xs-24 column" ui-view="slides"></div>
-        </div>
-    </div>
-
+    
     <div class="row clearfix defaultPad">
         <div class="col-md-24 col-sm-8 col-xs-8 column defaultPad ">
 
@@ -55,23 +82,6 @@
 
 
         </div>
-    </div>
-    <div class="row clearfix defaultPad">
-        <div class="col-md-24 col-sm-8 col-xs-8 column defaultPad">
-
-            <button type="button" class="btn btn-default" aria-label="getLink" clip-copy="getLink()"
-                    ng-class="{'disabled':false}">
-                <span class="glyphicon glyphicon glyphicon-link
-                " aria-hidden="true"></span> Copy Link to clipboard
-            </button>
-
-            <div class="btn-group" role="sharing" aria-label="sharing">
-                <a ng-click="shareToFacebook()" ng-href="{{myUrl}}" class="btn btn-default">
-                    <span class="glyphicon glyphicon glyphicon-share" aria-hidden="true"></span> Share
-                </a>
-            </div>
-        </div>
-
     </div>
 
 </div>

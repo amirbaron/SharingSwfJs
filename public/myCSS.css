@@ -256,18 +256,14 @@ body {
 }
 
 .btn-default.outline {
-    border: 2px solid #DDD;
-    color: #333333;
+    padding: 5px; border: solid 1px #EFEFEF;
 }
 
 .btn-default.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
-    color: #333333;
-    border-color: #33a6cc;
-}
-.btn-default.outline:active, .btn-primary.outline.active {
-    border-color: #333333;
-    color: #007299;
-    box-shadow: none;
+    border: solid 1px #CCC;
+    -moz-box-shadow: 1px 1px 5px #999;
+    -webkit-box-shadow: 1px 1px 5px #999;
+    box-shadow: 1px 1px 5px #999;
 }
 
 @media all
