@@ -45,15 +45,12 @@ Parse.Cloud.beforeSave("AppPage", function (request, response) {
 });
 
 Parse.Cloud.afterSave("AppPage", function (request) {
-    console.log("in after save");
+    var appPage = request.object;
+    var hashtags = appPage.get("hashtags");
     var query = new Parse.Query("hashTags");
-    console.log("before adding to global tags\n\n\n");
     query.get('AnZE0fGxdF', {
         success: function (tags) {
-            console.log("in adding to global " + tags + "\n\n\n");
-            tags.set("newCol","justToTest");
-            tags.add("hashtags", "flying");
-            tags.add("hashtags", "kungfu");
+            tags.set("hashtagsf", ["fdf"]);
             tags.save();
         },
         error: function (object, error) {
